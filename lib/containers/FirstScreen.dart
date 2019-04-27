@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_book/helpers/constants.dart' show Constants;
+import 'package:flutter_book/widgets/firstScreen/firstScreenContent.dart';
+import 'package:flutter_book/helpers/constants.dart' show AppColors, Constants;
 
 class FirstScreen extends StatefulWidget {
   @override
@@ -12,7 +13,36 @@ class _FirstScreenState extends State<FirstScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("今日推荐"),
+        title: GestureDetector(
+          onTap: () {
+            print("点击了搜索");
+          },
+          child: Container(
+            padding:
+                EdgeInsets.only(right: 14.0, left: 14.0, top: 2.0, bottom: 3.0),
+            decoration: BoxDecoration(
+                color: Color(AppColors.themeColorGray),
+                borderRadius: BorderRadius.all(Radius.circular(4.0))),
+            child: Row(
+              children: <Widget>[
+                SvgPicture.asset('assets/icon/icon_search.svg',
+                    width: Constants.appBarIconSize + 2.0,
+                    height: Constants.appBarIconSize + 2.0),
+                SizedBox(
+                  width: 10.0,
+                  height: 1.0,
+                ),
+                Text(
+                  "搜索",
+                  style: TextStyle(
+                      color: Color(AppColors.fontColorGray),
+                      fontSize: 16.0,
+                      height: 1.0),
+                )
+              ],
+            ),
+          ),
+        ),
         centerTitle: true,
         elevation: 0,
         actions: <Widget>[
@@ -41,10 +71,7 @@ class _FirstScreenState extends State<FirstScreen> {
           },
         ),
       ),
-      body: Text(
-        "首页",
-        style: TextStyle(color: Colors.white70),
-      ),
+      body: FirstScreenContent(),
     );
   }
 }

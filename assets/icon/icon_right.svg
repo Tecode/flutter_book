@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Book-details" transform="translate(-337.000000, -593.000000)" fill="#9295A9" fill-rule="nonzero">
+            <g id="Book-information" transform="translate(24.000000, 104.000000)">
+                <g id="Check-the-directory" transform="translate(0.000000, 484.000000)">
+                    <g id="back" transform="translate(317.000000, 11.000000) rotate(-270.000000) translate(-317.000000, -11.000000) translate(311.000000, 7.000000)">
+                        <path d="M0,7.14307982 C0,6.92363015 0.0700822827,6.70419415 0.210727345,6.53675611 L5.49056011,0.251157067 C5.77138146,-0.0837190224 6.22740851,-0.0837190224 6.50871036,0.251157067 L11.7890236,6.53675611 C12.0703255,6.8716322 12.0703255,7.41396684 11.7890236,7.74884293 C11.5082023,8.08371902 11.0521752,8.08371902 10.7708734,7.74884293 L5.9998872,2.0695676 L1.22938153,7.74884293 C0.948079683,8.08371902 0.492533126,8.08371902 0.211231282,7.74884293 C0.0701057216,7.58196548 2.34388905e-05,7.36252948 2.34388905e-05,7.14307982 L2.34388905e-05,7.14307982 L0,7.14307982 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
