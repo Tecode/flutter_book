@@ -1,8 +1,14 @@
-# flutter_book
+<h1 align="center">Flutter book App</h1>
 
-A new Flutter project.
+## 预览图
 
-## Getting Started
+<p align="center">
+    <img width="375" title="Flutter" src="assets/preview/Find-2-min.png">
+    <img width="375" title="Flutter" src="assets/preview/Home-min.png">
+    <img width="375" title="Flutter" src="assets/preview/Success-min.png">
+</p>
+
+## 开始
 
 This project is a starting point for a Flutter application.
 
