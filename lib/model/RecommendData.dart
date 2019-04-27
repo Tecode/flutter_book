@@ -1,0 +1,109 @@
+import 'package:flutter/material.dart';
+
+class RecommendModel {
+  final String title;
+  final String imageUrl;
+  RecommendModel({@required this.title, @required this.imageUrl})
+      : assert(title != null, imageUrl != null);
+}
+
+class RecommendData {
+  final List<RecommendModel> recommendData = [
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Dart从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'GoLang从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'TypeScript从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Angular从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'React从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'C++从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+    RecommendModel(
+        title: 'Flutter从入门到飞起',
+        imageUrl:
+            'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
+  ];
+}

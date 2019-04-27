@@ -15,7 +15,7 @@ class Entrance extends StatefulWidget {
 }
 
 class _EntranceState extends State<Entrance> {
-  int _activeIndex = 2;
+  int _activeIndex = 0;
   List<Widget> _pages;
   final List<String> _SvgAssetUrl = [
     'assets/icon/icon_home.svg',

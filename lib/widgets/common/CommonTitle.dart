@@ -6,7 +6,7 @@ class CommonTitle extends StatelessWidget {
   final String title;
   final Function onTap;
 
-  CommonTitle({@required this.title, this.onTap});
+  CommonTitle({@required this.title, this.onTap}) : assert(title != null);
 
   @override
   Widget build(BuildContext context) {
