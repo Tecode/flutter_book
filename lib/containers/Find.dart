@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutter_book/helpers/constants.dart' show Constants;
+import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/widgets/Find/BookCover.dart';
 
 class Find extends StatefulWidget {
   @override
@@ -36,6 +37,7 @@ class _FindState extends State<Find> {
         centerTitle: true,
         elevation: 0,
       ),
+      body: BookCover(),
     );
   }
 }
