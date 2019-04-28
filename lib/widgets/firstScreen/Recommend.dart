@@ -52,6 +52,8 @@ class _CardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 80.0,
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4.0))),
       margin: EdgeInsets.only(right: 12.0),
       child: Column(
         children: <Widget>[

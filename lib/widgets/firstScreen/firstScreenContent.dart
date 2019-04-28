@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/firstScreen/Recommend.dart';
 import 'package:flutter_book/widgets/firstScreen/HotProduct.dart';
 import 'package:flutter_book/widgets/firstScreen/SearchNouns.dart';
+import 'package:flutter_book/widgets/firstScreen/PopularBooks.dart';
 
 class FirstScreenContent extends StatelessWidget {
   @override
@@ -12,7 +13,12 @@ class FirstScreenContent extends StatelessWidget {
           margin:
               EdgeInsets.only(left: 24.0, right: 24.0, top: 20.0, bottom: 40),
           child: Column(
-            children: <Widget>[Recommend(), HotProduct(), SearchNouns()],
+            children: <Widget>[
+              Recommend(),
+              HotProduct(),
+              SearchNouns(),
+              PopularBooks()
+            ],
           ),
         ),
       ],

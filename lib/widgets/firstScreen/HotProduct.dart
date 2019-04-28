@@ -18,7 +18,9 @@ class HotProduct extends StatelessWidget {
         CommonTitle(
           title: '热门图书',
         ),
-        SizedBox(height: 30.0,),
+        SizedBox(
+          height: 30.0,
+        ),
         Wrap(
           // 计算间隙
           spacing: (MediaQuery.of(context).size.width - 96 * 3 - 24 * 2) / 2,
@@ -53,11 +55,14 @@ class _HotProduct extends StatelessWidget {
             width: 96.0,
             height: 148.0,
             decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(4.0)),
                 color: Color(AppColors.themeColorGray),
                 image: DecorationImage(
                     fit: BoxFit.cover, image: NetworkImage(this.imageUrl))),
           ),
-          SizedBox(height: 16.0,),
+          SizedBox(
+            height: 16.0,
+          ),
           Text(
             this.title,
             maxLines: 2,
