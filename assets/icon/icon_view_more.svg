@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="3px" viewBox="0 0 15 3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>View</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Success" transform="translate(-320.000000, -141.000000)" fill="#969BAF">
+            <g id="Content" transform="translate(24.000000, 104.000000)">
+                <g id="Part-1">
+                    <g id="View" transform="translate(296.000000, 37.000000)">
+                        <circle id="Oval" cx="7.5" cy="1.5" r="1.5"></circle>
+                        <circle id="Oval-Copy-2" cx="1.5" cy="1.5" r="1.5"></circle>
+                        <circle id="Oval-Copy" cx="13.5" cy="1.5" r="1.5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
