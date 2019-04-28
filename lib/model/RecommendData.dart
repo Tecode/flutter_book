@@ -14,7 +14,7 @@ class RecommendData {
         imageUrl:
             'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
     RecommendModel(
-        title: 'Dart从入门到飞起',
+        title: 'Dart2从入门到飞起',
         imageUrl:
             'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
     RecommendModel(
@@ -22,7 +22,7 @@ class RecommendData {
         imageUrl:
             'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
     RecommendModel(
-        title: 'TypeScript从入门到飞起',
+        title: 'TS从入门到放弃学习,哈哈',
         imageUrl:
             'http://admin.soscoon.com/uploadImages/dbf0928cd91045a22eb332bb5e01b0712f5a41a9.png'),
     RecommendModel(

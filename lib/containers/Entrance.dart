@@ -17,7 +17,7 @@ class Entrance extends StatefulWidget {
 class _EntranceState extends State<Entrance> {
   int _activeIndex = 0;
   List<Widget> _pages;
-  final List<String> _SvgAssetUrl = [
+  final List<String> _svgAssetUrl = [
     'assets/icon/icon_home.svg',
     'assets/icon/icon_find.svg',
     'assets/icon/icon_book.svg',
@@ -31,7 +31,7 @@ class _EntranceState extends State<Entrance> {
 
 // 底部导航标签
   SvgPicture bottomIcon(int index) {
-    return SvgPicture.asset(_SvgAssetUrl[index],
+    return SvgPicture.asset(_svgAssetUrl[index],
         width: Constants.bottomIconWidth,
         height: Constants.bottomIconHeight,
         color: Color(
