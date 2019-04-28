@@ -56,6 +56,7 @@ class _CardItem extends StatelessWidget {
           BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(4.0))),
       margin: EdgeInsets.only(right: 12.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Image.network(
             this.imageUrl,

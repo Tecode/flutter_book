@@ -13,4 +13,6 @@ class Constants {
   static const double bottomIconWidth = 26.0;
   static const double bottomIconHeight = 26.0;
   static const double appBarIconSize = 16.0;
+  // 页面左右边距
+  static const double pageMargin = 24.0;
 }

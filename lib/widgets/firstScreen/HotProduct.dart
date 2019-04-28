@@ -50,6 +50,7 @@ class _HotProduct extends StatelessWidget {
       alignment: Alignment.center,
       width: 96.0,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
             width: 96.0,

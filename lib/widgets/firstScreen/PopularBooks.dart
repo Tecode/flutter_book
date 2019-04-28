@@ -16,11 +16,13 @@ class PopularBooks extends StatelessWidget {
         ),
         Container(
           height: 140.0,
-          decoration: BoxDecoration(color: Colors.red),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(10, (int index) {
-              return CommonBookCard();
+              return Container(
+                margin: EdgeInsets.only(right: 16.0),
+                child: CommonBookCard()
+              );
             }),
           ),
         )
