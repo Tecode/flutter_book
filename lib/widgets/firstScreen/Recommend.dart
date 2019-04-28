@@ -45,7 +45,8 @@ class _CardItem extends StatelessWidget {
 
 // 构造方法
   _CardItem({@required this.title, @required this.imageUrl})
-      : assert(title != null, imageUrl != null);
+      : assert(title != null),
+        assert(imageUrl != null);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +66,7 @@ class _CardItem extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
               style:
-                  TextStyle(fontSize: 16.0, color: Color(AppColors.fontColor)))
+                  TextStyle(fontSize: 14.0, color: Color(AppColors.fontColor)))
         ],
       ),
     );
