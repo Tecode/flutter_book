@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/widgets/Find/BookCover.dart';
+import 'package:flutter_book/widgets/Find/BookTile.dart';
 
 class Find extends StatefulWidget {
   @override
@@ -9,6 +10,8 @@ class Find extends StatefulWidget {
 }
 
 class _FindState extends State<Find> {
+  bool _tile = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +20,11 @@ class _FindState extends State<Find> {
         actions: <Widget>[
           IconButton(
             alignment: Alignment.centerRight,
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                this._tile = true;
+              });
+            },
             icon: SvgPicture.asset(
               'assets/icon/icon_more.svg',
               width: Constants.appBarIconSize + 2.0,
@@ -26,7 +33,11 @@ class _FindState extends State<Find> {
           ),
           IconButton(
             alignment: Alignment.centerLeft,
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                this._tile = false;
+              });
+            },
             icon: SvgPicture.asset(
               'assets/icon/icon_cube.svg',
               width: Constants.appBarIconSize + 2.0,
@@ -37,7 +48,7 @@ class _FindState extends State<Find> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: BookCover(),
+      body: this._tile ? BookTile() : BookCover(),
     );
   }
 }
