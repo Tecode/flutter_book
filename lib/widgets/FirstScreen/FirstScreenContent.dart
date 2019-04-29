@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/widgets/firstScreen/Recommend.dart';
-import 'package:flutter_book/widgets/firstScreen/HotProduct.dart';
-import 'package:flutter_book/widgets/firstScreen/SearchNouns.dart';
-import 'package:flutter_book/widgets/firstScreen/PopularBooks.dart';
+import 'package:flutter_book/widgets/FirstScreen/Recommend.dart';
+import 'package:flutter_book/widgets/FirstScreen/HotProduct.dart';
+import 'package:flutter_book/widgets/FirstScreen/SearchNouns.dart';
+import 'package:flutter_book/widgets/FirstScreen/PopularBooks.dart';
 import 'package:flutter_book/helpers/constants.dart';
 
 class FirstScreenContent extends StatelessWidget {

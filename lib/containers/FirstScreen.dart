@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_book/widgets/firstScreen/firstScreenContent.dart';
+import 'package:flutter_book/widgets/FirstScreen/FirstScreenContent.dart';
 import 'package:flutter_book/helpers/constants.dart' show AppColors, Constants;
 
 class FirstScreen extends StatefulWidget {

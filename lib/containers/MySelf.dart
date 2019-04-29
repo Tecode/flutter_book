@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutter_book/helpers/constants.dart' show Constants;
+import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/widgets/Mine/Mine.dart';
 
 class MySelf extends StatefulWidget {
   @override
@@ -27,6 +28,7 @@ class _MySelfState extends State<MySelf> {
           )
         ],
       ),
+      body: Mine(),
     );
   }
 }

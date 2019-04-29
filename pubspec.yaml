@@ -50,7 +50,6 @@ flutter:
    - lib/helpers/constants.dart
    - lib/containers/Entrance.dart
    - lib/widgets/common/CommonTitle.dart
-   - lib/widgets/firstScreen/firstScreenContent.dart
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
