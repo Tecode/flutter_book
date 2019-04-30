@@ -94,29 +94,46 @@ class BasicInfo extends StatelessWidget {
               ))
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: _statistics.map((Map<String, dynamic> data) {
-            return Container(
-                child: Column(
-              children: <Widget>[
-                Text(
-                  data['value'].toString(),
-                  style: TextStyle(
-                      color: Color(AppColors.fontColor),
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  data['key'],
-                  style: TextStyle(
-                      color: Color(AppColors.fontColorGray),
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
-            ));
-          }).toList())
+          Container(
+            margin: EdgeInsets.only(top: 26.0),
+            padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 10.0),
+            decoration: BoxDecoration(
+                color: Color(AppColors.themeColorGray),
+                borderRadius: BorderRadius.all(Radius.circular(2.0))),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: _statistics.map((Map<String, dynamic> data) {
+                  return Expanded(
+                      child: Container(
+                    decoration: BoxDecoration(
+                        border: Border(
+                            left: BorderSide(
+                                width: 1.0,
+                                color: Color.fromRGBO(255, 255, 255, 0.5)),
+                            right: BorderSide(
+                                width: 1.0,
+                                color: Color.fromRGBO(255, 255, 255, 0.5)))),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          data['value'].toString(),
+                          style: TextStyle(
+                              color: Color(AppColors.fontColor),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          data['key'],
+                          style: TextStyle(
+                              color: Color(AppColors.fontColorGray),
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ));
+                }).toList()),
+          )
         ],
       ),
     );
