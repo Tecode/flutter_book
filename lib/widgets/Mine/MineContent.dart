@@ -6,8 +6,6 @@ import 'package:flutter_book/widgets/Mine/ListInfo.dart';
 class MineContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final String avatarUrl =
-        'http://admin.soscoon.com/uploadImages/2bdcbd37d2fae6874cce4bba45d14573630925b1.jpeg';
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: Constants.pageMargin),
