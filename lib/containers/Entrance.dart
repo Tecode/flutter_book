@@ -7,7 +7,7 @@ import 'package:flutter_book/helpers/constants.dart' show AppColors, Constants;
 import './FirstScreen.dart';
 import './Books.dart';
 import './Find.dart';
-import './MySelf.dart';
+import './Mine.dart';
 
 class Entrance extends StatefulWidget {
   @override
@@ -26,7 +26,7 @@ class _EntranceState extends State<Entrance> {
 
   initState() {
     super.initState();
-    _pages = <Widget>[FirstScreen(), Find(), Books(), MySelf()];
+    _pages = <Widget>[FirstScreen(), Find(), Books(), Mine()];
   }
 
 // 底部导航标签

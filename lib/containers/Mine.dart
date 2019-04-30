@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_book/helpers/constants.dart';
-import 'package:flutter_book/widgets/Mine/Mine.dart';
+import 'package:flutter_book/widgets/Mine/MineContent.dart';
 
-class MySelf extends StatefulWidget {
+class Mine extends StatefulWidget {
   @override
-  _MySelfState createState() => _MySelfState();
+  _MineState createState() => _MineState();
 }
 
-class _MySelfState extends State<MySelf> {
+class _MineState extends State<Mine> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +28,7 @@ class _MySelfState extends State<MySelf> {
           )
         ],
       ),
-      body: Mine(),
+      body: MineContent(),
     );
   }
 }

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Mine extends StatelessWidget {
+class ListInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Mine'),
-    );
+    return Text('列表信息');
   }
 }
