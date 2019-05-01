@@ -4,14 +4,18 @@ import 'package:flutter_book/helpers/constants.dart';
 class BookTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Wrap(
-        runSpacing: 24.0,
-        spacing: 15.0,
-        children: List.generate(4, (int index) {
-          return _BookTile();
-        }),
-      ),
+    return ListView(
+      children: <Widget>[
+        Center(
+          child: Wrap(
+            runSpacing: 24.0,
+            spacing: 15.0,
+            children: List.generate(4, (int index) {
+              return _BookTile();
+            }),
+          ),
+        )
+      ],
     );
   }
 }
@@ -24,6 +28,7 @@ class _BookTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        SizedBox(height: 40.0),
         Container(
             width: 134.0,
             height: 200.0,

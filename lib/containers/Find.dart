@@ -29,6 +29,8 @@ class _FindState extends State<Find> {
               'assets/icon/icon_more.svg',
               width: Constants.appBarIconSize + 2.0,
               height: Constants.appBarIconSize + 2.0,
+              color: Color(
+                  this._tile ? AppColors.fontColor : AppColors.fontColorGray),
             ),
           ),
           IconButton(
@@ -42,6 +44,8 @@ class _FindState extends State<Find> {
               'assets/icon/icon_cube.svg',
               width: Constants.appBarIconSize + 2.0,
               height: Constants.appBarIconSize + 2.0,
+              color: Color(
+                  !this._tile ? AppColors.fontColor : AppColors.fontColorGray),
             ),
           ),
         ],
