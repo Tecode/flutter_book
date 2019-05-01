@@ -62,6 +62,7 @@ class _CardItem extends StatelessWidget {
             width: 80.0,
             height: 80.0,
             decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.all(Radius.circular(4.0))),
             child: FadeInImage.assetNetwork(
               placeholder: 'assets/images/image_none.png',

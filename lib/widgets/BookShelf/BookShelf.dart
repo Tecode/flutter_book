@@ -6,7 +6,7 @@ import 'package:flutter_book/widgets/BookShelf/Finished.dart';
 class BookShelf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: <Widget>[CarouselMap(), Reading(), Finished()],
     );
   }

@@ -108,12 +108,11 @@ class BasicInfo extends StatelessWidget {
           ),
           Container(
             margin: EdgeInsets.only(top: 26.0),
-            padding: EdgeInsets.symmetric(horizontal: 28.0, vertical: 10.0),
+            padding: EdgeInsets.symmetric(vertical: 10.0),
             decoration: BoxDecoration(
                 color: Color(AppColors.themeColorGray),
                 borderRadius: BorderRadius.all(Radius.circular(2.0))),
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: _statistics.map((Map<String, dynamic> data) {
                   return Expanded(
                       child: Container(
@@ -122,6 +121,7 @@ class BasicInfo extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           data['value'].toString(),
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Color(AppColors.fontColor),
                               fontSize: 18.0,

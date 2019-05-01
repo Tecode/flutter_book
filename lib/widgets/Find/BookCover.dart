@@ -9,47 +9,54 @@ class BookCover extends StatelessWidget {
         'http://admin.soscoon.com/uploadImages/9b7c69ea2c754b0e0a8f3604f4ca4ad1d60e3c74.jpg';
 
     return Stack(children: <Widget>[
-      Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              width: 196.0,
-              height: 290.0,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(
-                          'http://admin.soscoon.com/uploadImages/21dc88543e012af8e8d55440b9cbcf8b379c4206.png'))),
-            ),
-            Container(
-              width: 168.0,
-              margin: EdgeInsets.symmetric(vertical: 24.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    'Empowering children and youth',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Color(AppColors.fontColor), fontSize: 18.0),
+      ListView(
+        children: <Widget>[
+          Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 196.0,
+                  height: 290.0,
+                  margin: EdgeInsets.only(top: 40.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                      color: Color(AppColors.themeColorGray),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              'http://admin.soscoon.com/uploadImages/21dc88543e012af8e8d55440b9cbcf8b379c4206.png'))),
+                ),
+                Container(
+                  width: 168.0,
+                  margin: EdgeInsets.symmetric(vertical: 24.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        'Empowering children and youth',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color(AppColors.fontColor), fontSize: 18.0),
+                      ),
+                      SizedBox(
+                        height: 2.0,
+                      ),
+                      Text(
+                        'Michael, Jost',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Color(AppColors.fontColorGray), fontSize: 14.0),
+                      )
+                    ],
                   ),
-                  SizedBox(
-                    height: 2.0,
-                  ),
-                  Text(
-                    'Michael, Jost',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Color(AppColors.fontColorGray), fontSize: 14.0),
-                  )
-                ],
-              ),
+                ),
+                ReadUser()
+              ],
             ),
-            ReadUser()
-          ],
-        ),
+          ),
+        ],
       ),
       Positioned(
         right: 0.0,
