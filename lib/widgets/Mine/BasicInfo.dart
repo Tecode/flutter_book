@@ -9,11 +9,23 @@ class BasicInfo extends StatelessWidget {
         'http://admin.soscoon.com/uploadImages/2bdcbd37d2fae6874cce4bba45d14573630925b1.jpeg';
     final List<Map<String, dynamic>> _statistics = [
       {'key': '关注', 'value': 818},
-      {'key': '关注者', 'value': 900},
+      {'key': '关注者', 'value': 900, 'border': true},
       {'key': '喜欢', 'value': 1000}
     ];
 
+    Border _border(bool boder) {
+      if (boder != null) {
+        return Border(
+            left: BorderSide(
+                width: 1.0, color: Color.fromRGBO(255, 255, 255, 0.5)),
+            right: BorderSide(
+                width: 1.0, color: Color.fromRGBO(255, 255, 255, 0.5)));
+      }
+      return Border();
+    }
+
     return Container(
+      margin: EdgeInsets.symmetric(horizontal: Constants.pageMargin),
       child: Column(
         children: <Widget>[
           Row(
@@ -105,14 +117,7 @@ class BasicInfo extends StatelessWidget {
                 children: _statistics.map((Map<String, dynamic> data) {
                   return Expanded(
                       child: Container(
-                    decoration: BoxDecoration(
-                        border: Border(
-                            left: BorderSide(
-                                width: 1.0,
-                                color: Color.fromRGBO(255, 255, 255, 0.5)),
-                            right: BorderSide(
-                                width: 1.0,
-                                color: Color.fromRGBO(255, 255, 255, 0.5)))),
+                    decoration: BoxDecoration(border: _border(data['border'])),
                     child: Column(
                       children: <Widget>[
                         Text(

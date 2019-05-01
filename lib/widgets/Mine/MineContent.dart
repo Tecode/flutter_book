@@ -6,11 +6,15 @@ import 'package:flutter_book/widgets/Mine/ListInfo.dart';
 class MineContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: Constants.pageMargin),
-      child: Column(
-        children: <Widget>[BasicInfo(), ListInfo()],
+      child: ListView(
+        children: <Widget>[
+          BasicInfo(),
+          SizedBox(
+            height: 10.0,
+          ),
+          ListInfo()
+        ],
       ),
     );
   }
