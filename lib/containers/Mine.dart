@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/widgets/Mine/MineContent.dart';
+import 'package:flutter_book/routers/application.dart';
+import 'package:fluro/fluro.dart';
 
 class Mine extends StatefulWidget {
   @override
@@ -9,6 +11,8 @@ class Mine extends StatefulWidget {
 }
 
 class _MineState extends State<Mine> {
+  TransitionType transitionType = TransitionType.native;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +23,14 @@ class _MineState extends State<Mine> {
         actions: <Widget>[
           IconButton(
             alignment: Alignment.centerLeft,
-            onPressed: () {},
+            onPressed: () {
+              Application.router.navigateTo(
+                context,
+                "/setting",
+                // transition: TransitionType.custom,
+                // transitionDuration: const Duration(milliseconds: 600),
+              );
+            },
             icon: SvgPicture.asset(
               'assets/icon/icon_setting.svg',
               width: Constants.appBarIconSize + 4.0,
