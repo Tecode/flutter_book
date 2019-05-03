@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/widgets/Setting/SettingContent.dart';
 
 class Setting extends StatelessWidget {
   @override
@@ -7,11 +7,10 @@ class Setting extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('设置'),
+        centerTitle: true,
+        elevation: 0,
       ),
-      body: Text(
-        'Setting',
-        style: TextStyle(color: Color(AppColors.fontColor)),
-      ),
+      body: SettingContent(),
     );
   }
 }
