@@ -1,15 +1,16 @@
 import 'package:flutter_book/containers/Setting.dart';
 import 'package:flutter_book/containers/FirstScreen.dart';
+import 'package:flutter_book/containers/Detail.dart';
 // import 'package:flutter/painting.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
-var rootHandler = Handler(
+Handler rootHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return FirstScreen();
 });
 
-var demoRouteHandler = Handler(
+Handler settingRouteHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   // String message = params["message"]?.first;
   // String colorHex = params["color_hex"]?.first;
@@ -20,6 +21,13 @@ var demoRouteHandler = Handler(
   // }
   return Setting();
 });
+
+Handler detailRouterHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return Detail();
+});
+
+
 
 // var demoFunctionHandler = Handler(
 //     type: HandlerType.function,

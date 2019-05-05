@@ -5,6 +5,7 @@ import 'package:flutter_book/routers/route_handlers.dart';
 class Routes {
   static String root = "/";
   static String setting = "/setting";
+  static String detail = "/detail";
   static String demoSimpleFixedTrans = "/demo/fixedtrans";
   static String demoFunc = "/demo/func";
   static String deepLink = "/message";
@@ -15,8 +16,9 @@ class Routes {
       print("ROUTE WAS NOT FOUND !!!");
     });
     router.define(root, handler: rootHandler);
-    router.define(setting, handler: demoRouteHandler);
-    router.define(demoSimpleFixedTrans,
-        handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
+    router.define(setting, handler: settingRouteHandler);
+    router.define(detail, handler: detailRouterHandler);
+    // router.define(demoSimpleFixedTrans,
+    //     handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
   }
 }

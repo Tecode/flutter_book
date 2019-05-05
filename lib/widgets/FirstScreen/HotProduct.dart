@@ -1,9 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/common/CommonTitle.dart';
 import 'package:flutter_book/model/HotBooksData.dart';
 import 'package:flutter_book/widgets/common/BookCard.dart';
+import 'package:fluro/fluro.dart';
+import 'package:flutter_book/routers/application.dart';
 
 class HotProduct extends StatelessWidget {
   final List<HotBooksModel> hotBooksData = HotBooksData().hotBooksData;
@@ -19,6 +19,14 @@ class HotProduct extends StatelessWidget {
       children: <Widget>[
         CommonTitle(
           title: '热门图书',
+          onTap: () {
+            Application.router.navigateTo(
+              context,
+              "/detail",
+              transition: TransitionType.native,
+              // transitionDuration: const Duration(milliseconds: 300),
+            );
+          },
         ),
         SizedBox(
           height: 30.0,

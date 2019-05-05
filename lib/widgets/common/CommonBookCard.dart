@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:flutter_book/helpers/constants.dart';
 
 class CommonBookCard extends StatelessWidget {
+  double boxWidth;
+  CommonBookCard({this.boxWidth});
+
   @override
   Widget build(BuildContext context) {
+    boxWidth ??= MediaQuery.of(context).size.width - Constants.pageMargin * 2 - 52.0 - 114.0;
     return Stack(
       overflow: Overflow.visible,
       children: <Widget>[
@@ -17,10 +21,7 @@ class CommonBookCard extends StatelessWidget {
           height: 125.0,
           child: Container(
             padding: EdgeInsets.all(10.0),
-            width: MediaQuery.of(context).size.width -
-                Constants.pageMargin * 2 -
-                52.0 -
-                114.0,
+            width: boxWidth,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -48,21 +49,21 @@ class CommonBookCard extends StatelessWidget {
                                 fontSize: 14.0))
                       ],
                     )),
-                    SizedBox(
-                      width: 18.0,
-                      height: 30.0,
-                      child: IconButton(
-                        padding: EdgeInsets.all(0.0),
-                        onPressed: () {
-                          print("object");
-                        },
-                        icon: SvgPicture.asset(
-                          'assets/icon/icon_view_more.svg',
-                          width: 20.0,
-                          height: 30.0,
-                        ),
-                      ),
-                    ),
+                    // SizedBox(
+                    //   width: 18.0,
+                    //   height: 30.0,
+                    //   child: IconButton(
+                    //     padding: EdgeInsets.all(0.0),
+                    //     onPressed: () {
+                    //       print("object");
+                    //     },
+                    //     icon: SvgPicture.asset(
+                    //       'assets/icon/icon_view_more.svg',
+                    //       width: 20.0,
+                    //       height: 30.0,
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
                 SizedBox(height: 14.0),

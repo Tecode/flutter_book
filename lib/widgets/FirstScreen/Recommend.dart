@@ -3,6 +3,8 @@ import 'package:flutter_book/widgets/common/CommonTitle.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/model/RecommendData.dart'
     show RecommendModel, RecommendData;
+import 'package:fluro/fluro.dart';
+import 'package:flutter_book/routers/application.dart';
 
 class Recommend extends StatelessWidget {
   final List<RecommendModel> recommendData = RecommendData().recommendData;
@@ -24,7 +26,14 @@ class Recommend extends StatelessWidget {
       children: <Widget>[
         CommonTitle(
           title: "推荐",
-          onTap: () => {print('点击')},
+          onTap: () => {
+                Application.router.navigateTo(
+                  context,
+                  "/detail",
+                  transition: TransitionType.native,
+                  // transitionDuration: const Duration(milliseconds: 300),
+                )
+              },
         ),
         Container(
           height: 140.0,
@@ -62,7 +71,7 @@ class _CardItem extends StatelessWidget {
             width: 80.0,
             height: 80.0,
             decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
+                shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.all(Radius.circular(4.0))),
             child: FadeInImage.assetNetwork(
               placeholder: 'assets/images/image_none.png',
