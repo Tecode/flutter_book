@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/common/CommonTitle.dart';
 import 'package:flutter_book/model/HotBooksData.dart';
@@ -21,12 +23,14 @@ class HotProduct extends StatelessWidget {
         SizedBox(
           height: 30.0,
         ),
-        Wrap(
-          // 计算间隙
-          spacing: (MediaQuery.of(context).size.width - 96 * 3 - 24 * 2) / 2,
-          runSpacing: 30.0,
-          alignment: WrapAlignment.spaceBetween,
-          children: _children,
+        Container(
+          width: MediaQuery.of(context).size.width,
+          child: Wrap(
+            // spacing: 20.0,
+            runSpacing: 30.0,
+            alignment: WrapAlignment.spaceBetween,
+            children: _children,
+          ),
         ),
       ],
     );

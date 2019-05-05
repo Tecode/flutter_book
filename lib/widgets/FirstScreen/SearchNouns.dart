@@ -45,12 +45,15 @@ class SearchNouns extends StatelessWidget {
           hiddenSubTitle: true,
         ),
         SizedBox(height: 24.0),
-        Wrap(
-          spacing: 10.0,
-          runSpacing: 12.0,
-          direction: Axis.horizontal,
-          alignment: WrapAlignment.start,
-          children: _textChildren,
+        Container(
+          child: Wrap(
+            spacing: 10.0,
+            runSpacing: 12.0,
+            direction: Axis.horizontal,
+            alignment: WrapAlignment.spaceBetween,
+            children: _textChildren,
+          ),
+          width: MediaQuery.of(context).size.width,
         )
       ],
     );
