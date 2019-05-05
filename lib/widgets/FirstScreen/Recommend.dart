@@ -5,6 +5,7 @@ import 'package:flutter_book/model/RecommendData.dart'
     show RecommendModel, RecommendData;
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/application.dart';
+import 'package:flutter_book/helpers/fluro_convert_util.dart';
 
 class Recommend extends StatelessWidget {
   final List<RecommendModel> recommendData = RecommendData().recommendData;
@@ -29,7 +30,7 @@ class Recommend extends StatelessWidget {
           onTap: () => {
                 Application.router.navigateTo(
                   context,
-                  "/detail",
+                  "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
                   transition: TransitionType.native,
                   // transitionDuration: const Duration(milliseconds: 300),
                 )

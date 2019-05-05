@@ -4,6 +4,7 @@ import 'package:flutter_book/containers/Detail.dart';
 // import 'package:flutter/painting.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/fluro_convert_util.dart';
 
 Handler rootHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
@@ -14,20 +15,14 @@ Handler settingRouteHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   // String message = params["message"]?.first;
   // String colorHex = params["color_hex"]?.first;
-  // String result = params["result"]?.first;
-  // Color color = Color(0xFFFFFFFF);
-  // if (colorHex != null && colorHex.length > 0) {
-  //   color = Colors.red;
-  // }
   return Setting();
 });
 
 Handler detailRouterHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  return Detail();
+  return Detail(
+      title: FluroConvertUtils.fluroCnParamsDecode(params["title"]?.first));
 });
-
-
 
 // var demoFunctionHandler = Handler(
 //     type: HandlerType.function,

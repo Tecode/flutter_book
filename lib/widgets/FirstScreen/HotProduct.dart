@@ -4,6 +4,7 @@ import 'package:flutter_book/model/HotBooksData.dart';
 import 'package:flutter_book/widgets/common/BookCard.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/application.dart';
+import 'package:flutter_book/helpers/fluro_convert_util.dart';
 
 class HotProduct extends StatelessWidget {
   final List<HotBooksModel> hotBooksData = HotBooksData().hotBooksData;
@@ -22,7 +23,7 @@ class HotProduct extends StatelessWidget {
           onTap: () {
             Application.router.navigateTo(
               context,
-              "/detail",
+              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('热门图书')}",
               transition: TransitionType.native,
               // transitionDuration: const Duration(milliseconds: 300),
             );

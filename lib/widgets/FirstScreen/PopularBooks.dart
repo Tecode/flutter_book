@@ -3,6 +3,7 @@ import 'package:flutter_book/widgets/common/CommonTitle.dart';
 import 'package:flutter_book/widgets/common/CommonBookCard.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/application.dart';
+import 'package:flutter_book/helpers/fluro_convert_util.dart';
 
 class PopularBooks extends StatelessWidget {
   @override
@@ -17,7 +18,7 @@ class PopularBooks extends StatelessWidget {
           onTap: () {
             Application.router.navigateTo(
               context,
-              "/detail",
+              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
               transition: TransitionType.native,
               // transitionDuration: const Duration(milliseconds: 300),
             );
