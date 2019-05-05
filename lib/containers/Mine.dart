@@ -11,7 +11,6 @@ class Mine extends StatefulWidget {
 }
 
 class _MineState extends State<Mine> {
-  TransitionType transitionType = TransitionType.native;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +26,8 @@ class _MineState extends State<Mine> {
               Application.router.navigateTo(
                 context,
                 "/setting",
-                // transition: TransitionType.custom,
-                // transitionDuration: const Duration(milliseconds: 600),
+                transition: TransitionType.native,
+                // transitionDuration: const Duration(milliseconds: 300),
               );
             },
             icon: SvgPicture.asset(
