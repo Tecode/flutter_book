@@ -35,9 +35,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 Text(
                   "搜索",
                   style: TextStyle(
-                      color: Color(AppColors.fontColorGray),
-                      fontSize: 16.0,
-                      height: 1.0),
+                      color: Color(AppColors.fontColorGray), fontSize: 16.0),
                 )
               ],
             ),

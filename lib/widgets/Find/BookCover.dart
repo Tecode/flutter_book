@@ -60,8 +60,9 @@ class BookCover extends StatelessWidget {
         bottom: 35.0,
         child: Container(
             height: 42.0,
-            width: 120.0,
-            margin: EdgeInsets.only(top: 4.0, bottom: 4.0, left: 4.0),
+            width: 124.0,
+            padding: EdgeInsets.only(left: 4.0),
+            margin: EdgeInsets.only(top: 4.0, bottom: 4.0),
             decoration: BoxDecoration(
                 color: Color(AppColors.themeColorGray),
                 borderRadius: BorderRadius.only(

@@ -13,34 +13,24 @@ class Finished extends StatelessWidget {
         ),
         Container(
           height: 180.0,
+          margin: EdgeInsets.only(top: 24.0),
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              BookCard(
-                title: '3书籍',
-                width: 84.0,
-                height: 125.0,
-                author: '--',
-                imageUrl:
-                    'http://admin.soscoon.com/uploadImages/763229ced887b7e1e61a20aa1b14b42425c01e01.png',
-              ),
-              BookCard(
-                title: '3书籍',
-                width: 84.0,
-                height: 125.0,
-                author: '--',
-                imageUrl:
-                    'http://admin.soscoon.com/uploadImages/763229ced887b7e1e61a20aa1b14b42425c01e01.png',
-              ),
-              BookCard(
-                title: '3书籍',
-                width: 84.0,
-                height: 125.0,
-                author: '--',
-                imageUrl:
-                    'http://admin.soscoon.com/uploadImages/763229ced887b7e1e61a20aa1b14b42425c01e01.png',
-              ),
-            ],
+            children: List.generate(10, (int index) {
+              return Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: BookCard(
+                  title: '爱的博弈',
+                  width: 84.0,
+                  height: 125.0,
+                  titleMaxLines: 1,
+                  author: '约翰•戈特曼；娜恩•西尔弗',
+                  gap: 10.0,
+                  imageUrl:
+                      'https://pic2.zhimg.com/80/v2-13f0b0528415120ce7966860e7f93c0c_hd.jpg',
+                ),
+              );
+            }),
           ),
         )
       ],

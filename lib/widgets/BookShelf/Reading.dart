@@ -13,34 +13,24 @@ class Reading extends StatelessWidget {
         ),
         Container(
           height: 180.0,
+          margin: EdgeInsets.only(top: 24.0),
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              BookCard(
-                title: '3书籍',
-                width: 84.0,
-                height: 125.0,
-                author: '--',
-                imageUrl:
-                    'http://admin.soscoon.com/uploadImages/763229ced887b7e1e61a20aa1b14b42425c01e01.png',
-              ),
-              BookCard(
-                title: '3书籍',
-                width: 84.0,
-                height: 125.0,
-                author: '--',
-                imageUrl:
-                    'http://admin.soscoon.com/uploadImages/763229ced887b7e1e61a20aa1b14b42425c01e01.png',
-              ),
-              BookCard(
-                title: '3书籍',
-                width: 84.0,
-                height: 125.0,
-                author: '--',
-                imageUrl:
-                    'http://admin.soscoon.com/uploadImages/763229ced887b7e1e61a20aa1b14b42425c01e01.png',
-              ),
-            ],
+            children: List.generate(10, (int index) {
+              return Padding(
+                padding: EdgeInsets.only(right: 15.0),
+                child: BookCard(
+                  title: '拥抱你的内在小孩',
+                  width: 84.0,
+                  height: 125.0,
+                  titleMaxLines: 1,
+                  author: 'Krishnananda Trobe、Amana Trobe',
+                  gap: 10.0,
+                  imageUrl:
+                      'https://pic3.zhimg.com/80/v2-c402f7fc59fdbacc24ed45142ad957d2_hd.jpg',
+                ),
+              );
+            }),
           ),
         )
       ],

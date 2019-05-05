@@ -8,6 +8,7 @@ class BookCard extends StatelessWidget {
   final double width;
   final double height;
   final double gap;
+  final int titleMaxLines;
 
   BookCard(
       {@required this.title,
@@ -15,6 +16,7 @@ class BookCard extends StatelessWidget {
       @required this.author,
       this.gap = 16.0,
       this.width = 96.0,
+      this.titleMaxLines = 2,
       this.height = 148.0})
       : assert(title != null),
         assert(imageUrl != null),
@@ -42,7 +44,7 @@ class BookCard extends StatelessWidget {
           ),
           Text(
             this.title,
-            maxLines: 2,
+            maxLines: titleMaxLines,
             textAlign: TextAlign.left,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(color: Color(AppColors.fontColor), fontSize: 14.0),
