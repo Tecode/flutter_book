@@ -15,6 +15,6 @@ class _FindState extends State<Find> {
   @override
   Widget build(BuildContext context) {
     print(findStore.tile);
-    return Observer(builder: (_) => findStore.tile ? BookTile() : BookCover());
+    return Observer(builder: (_) => findStore.tile ? Text("4") : Text("5"));
   }
 }
