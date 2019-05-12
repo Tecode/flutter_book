@@ -8,6 +8,13 @@
     <img width="375" title="Flutter" src="assets/preview/Success-min.png">
 </p>
 
+## 依赖插件
+
+  cupertino_icons: ^0.1.2
+  flutter_svg: ">=0.12.4"
+  carousel_slider: ^1.3.0
+  fluro: "^1.4.0"
+
 ## 开始
 
 This project is a starting point for a Flutter application.
