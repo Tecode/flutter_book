@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_book/widgets/Find/BookCover.dart';
 import 'package:flutter_book/widgets/Find/BookTile.dart';
+import 'package:flutter_book/stores/findStore.dart';
 
 class Find extends StatefulWidget {
   @override
@@ -8,10 +10,11 @@ class Find extends StatefulWidget {
 }
 
 class _FindState extends State<Find> {
-  bool _tile = true;
+  final findStore = FindStore();
 
   @override
   Widget build(BuildContext context) {
-    return BookTile();
+    print(findStore.tile);
+    return Observer(builder: (_) => findStore.tile ? BookTile() : BookCover());
   }
 }
