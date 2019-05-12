@@ -9,13 +9,6 @@ class Books extends StatefulWidget {
 class _BooksState extends State<Books> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("书架"),
-        centerTitle: true,
-        elevation: 0,
-      ),
-      body: BookShelf(),
-    );
+    return BookShelf();
   }
 }
