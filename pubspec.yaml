@@ -29,6 +29,7 @@ dependencies:
   flutter_svg: ">=0.12.4"
   carousel_slider: ^1.3.0
   fluro: "^1.4.0"
+  provider: ^2.0.1
 
 dev_dependencies:
   flutter_test:

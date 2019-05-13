@@ -27,10 +27,10 @@ mixin _$FindStore on _FindStore, Store {
   final _$_FindStoreActionController = ActionController(name: '_FindStore');
 
   @override
-  void setValue(String key, dynamic value) {
+  void setTile(String key, dynamic value) {
     final _$actionInfo = _$_FindStoreActionController.startAction();
     try {
-      return super.setValue(key, value);
+      return super.setTile(key, value);
     } finally {
       _$_FindStoreActionController.endAction(_$actionInfo);
     }

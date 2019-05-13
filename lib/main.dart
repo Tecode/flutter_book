@@ -6,18 +6,29 @@ import 'package:flutter/services.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/routers.dart';
 import 'package:flutter_book/routers/application.dart';
+import 'package:provider/provider.dart';
+
+import 'package:flutter_book/stores/findStore.dart';
 
 void main() {
   // 修改系统状态栏颜色
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Color(AppColors.themeColor), // navigation bar color
+    systemNavigationBarColor:
+        Color(AppColors.themeColor), // navigation bar color
     statusBarColor: Color(AppColors.themeColor), // status bar color
   ));
-  runApp(MyApp());
+  runApp(MultiProvider(
+    providers: [
+      Provider<FindStore>(
+        builder: (_) => FindStore(),
+      )
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  MyApp(){
+  MyApp() {
     final router = new Router();
     Routes.configureRoutes(router);
     Application.router = router;

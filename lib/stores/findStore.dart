@@ -12,10 +12,5 @@ abstract class _FindStore implements Store {
   bool tile = false;
 
   @action
-  void setValue(String key, dynamic value) {
-    // print(key);
-    // print(value);
-    // print(this.tile);
-    tile = value;
-  }
+  void setTile(String key, dynamic value) => tile = value;
 }
