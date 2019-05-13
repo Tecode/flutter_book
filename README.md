@@ -8,6 +8,23 @@
     <img width="375" title="Flutter" src="assets/preview/Success-min.png">
 </p>
 
+## 依赖插件
+
+```dart
+cupertino_icons: ^0.1.2
+flutter_svg: ">=0.12.4"
+carousel_slider: ^1.3.0
+fluro: "^1.4.0"
+```
+
+## Mobx
+
+```dart
+flutter packages pub run build_runner build
+flutter packages pub run build_runner watch
+flutter packages pub run build_runner watch --delete-conflicting-outputs
+```
+
 ## 开始
 
 This project is a starting point for a Flutter application.
