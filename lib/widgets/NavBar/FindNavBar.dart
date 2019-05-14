@@ -3,12 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/stores/findStore.dart';
+import 'package:provider/provider.dart';
 
 class FindNavBar extends StatelessWidget {
-  final FindStore findStore = FindStore();
-
   @override
   Widget build(BuildContext context) {
+    final findStore = Provider.of<FindStore>(context);
+
     return Observer(
       builder: (_) => AppBar(
             title: Text("发现"),
@@ -17,6 +18,7 @@ class FindNavBar extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 onPressed: () {
                   findStore.setTile('tile', true);
+                  findStore.counter();
                 },
                 icon: SvgPicture.asset(
                   'assets/icon/icon_more.svg',

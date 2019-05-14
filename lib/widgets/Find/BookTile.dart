@@ -1,40 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_book/widgets/Find/BookCover.dart';
-import 'package:flutter_book/stores/findStore.dart';
-
-import 'package:provider/provider.dart';
 
 class BookTile extends StatelessWidget {
-  final FindStore store;
-
-  BookTile(this.store);
-
   @override
-  Widget build(BuildContext context) {
-    final findStore = Provider.of<FindStore>(context);
-    print(store.tile);
-
-    return Observer(builder: (_) {
-      print(findStore.tile);
-      return findStore.tile
-          ? ListView(
-              children: <Widget>[
-                Center(
-                  child: Wrap(
-                    runSpacing: 24.0,
-                    spacing: 15.0,
-                    children: List.generate(4, (int index) {
-                      return _BookTile();
-                    }),
-                  ),
-                )
-              ],
-            )
-          : BookCover();
-    });
-  }
+  Widget build(BuildContext context) => ListView(
+        children: <Widget>[
+          Center(
+            child: Wrap(
+              runSpacing: 24.0,
+              spacing: 15.0,
+              children: List.generate(4, (int index) {
+                return _BookTile();
+              }),
+            ),
+          )
+        ],
+      );
 }
 
 class _BookTile extends StatelessWidget {
