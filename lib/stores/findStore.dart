@@ -1,4 +1,6 @@
 import 'package:mobx/mobx.dart';
+import 'package:flutter_book/api/http.dart';
+import 'package:dio/dio.dart';
 
 // Include generated file
 part 'findStore.g.dart';
@@ -19,4 +21,10 @@ abstract class _FindStore implements Store {
 
   @action
   num counter() => this.count++;
+
+  // api接口异步请求
+  void getInfo() async {
+    Response response = await HttpRequest().dio.get('http://api.soscoon.com/playlist/hot');
+    print(response);
+  }
 }

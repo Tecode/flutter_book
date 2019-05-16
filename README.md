@@ -45,6 +45,12 @@ flutter packages pub run build_runner watch
 flutter packages pub run build_runner watch --delete-conflicting-outputs
 ```
 
+## 运行
+
+Run `flutter packages pub run build_runner build`构建`mobx`，成功以后启动`mobx`监听
+
+Run `flutter packages pub run build_runner watch`，在你修改了`store`以后会自动刷新。
+
 ## 开始
 
 This project is a starting point for a Flutter application.
