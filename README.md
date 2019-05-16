@@ -29,6 +29,7 @@ dependencies:
   carousel_slider: ^1.3.0 // 轮播图
   fluro: "^1.4.0" // 路由
   provider: ^2.0.1 // 用于包裹mobx
+  dio: 2.1.0
 
 dev_dependencies:
   flutter_test:
