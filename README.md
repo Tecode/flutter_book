@@ -10,8 +10,8 @@
 
 ## 安卓IOS预览
 <p align="center">
-    <img width="375" title="安卓动画" src="https://user-gold-cdn.xitu.io/2019/5/14/16ab66b202c9a3ed?w=332&h=680&f=gif&s=3979240">
-    <img width="375" title="IOS动画" src="https://user-gold-cdn.xitu.io/2019/5/14/16ab6a1835dabaa9?w=354&h=654&f=gif&s=5219109">
+    <img width="375" title="安卓动画" src="assets/preview/android.gif">
+    <img width="375" title="IOS动画" src="assets/preview/iphone.gif">
 </p>
 
 ### 依赖库
