@@ -33,11 +33,14 @@ class BookCard extends StatelessWidget {
           Container(
             width: width,
             height: height,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                color: Color(AppColors.themeColorGray),
-                image: DecorationImage(
-                    fit: BoxFit.cover, image: NetworkImage(this.imageUrl))),
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(4.0)),
+              child: FadeInImage(
+                image: NetworkImage(this.imageUrl),
+                placeholder: AssetImage('assets/images/image_none.gif'),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           SizedBox(
             height: gap,

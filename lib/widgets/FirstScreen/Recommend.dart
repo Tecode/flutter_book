@@ -71,15 +71,13 @@ class _CardItem extends StatelessWidget {
           Container(
             width: 80.0,
             height: 80.0,
-            decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.all(Radius.circular(4.0))),
-            child: FadeInImage.assetNetwork(
-              placeholder: 'assets/images/image_none.png',
-              image: this.imageUrl,
-              fit: BoxFit.cover,
-              width: 80.0,
-              height: 80.0,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(4.0),
+              child: FadeInImage.assetNetwork(
+                placeholder: 'assets/images/image_none.gif',
+                image: this.imageUrl,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(

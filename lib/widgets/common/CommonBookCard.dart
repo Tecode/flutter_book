@@ -8,7 +8,10 @@ class CommonBookCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    boxWidth ??= MediaQuery.of(context).size.width - Constants.pageMargin * 2 - 52.0 - 114.0;
+    boxWidth ??= MediaQuery.of(context).size.width -
+        Constants.pageMargin * 2 -
+        52.0 -
+        114.0;
     return Stack(
       overflow: Overflow.visible,
       children: <Widget>[
@@ -49,21 +52,6 @@ class CommonBookCard extends StatelessWidget {
                                 fontSize: 14.0))
                       ],
                     )),
-                    // SizedBox(
-                    //   width: 18.0,
-                    //   height: 30.0,
-                    //   child: IconButton(
-                    //     padding: EdgeInsets.all(0.0),
-                    //     onPressed: () {
-                    //       print("object");
-                    //     },
-                    //     icon: SvgPicture.asset(
-                    //       'assets/icon/icon_view_more.svg',
-                    //       width: 20.0,
-                    //       height: 30.0,
-                    //     ),
-                    //   ),
-                    // ),
                   ],
                 ),
                 SizedBox(height: 14.0),
@@ -81,12 +69,14 @@ class CommonBookCard extends StatelessWidget {
             child: Container(
               width: 86.0,
               height: 126.0,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(4.0)),
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                          'http://admin.soscoon.com/uploadImages/95b0838eb05d6f8f91ad924dd7e6e5ea672ef183.png'))),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4.0),
+                child: FadeInImage.assetNetwork(
+                    image:
+                        'http://admin.soscoon.com/uploadImages/95b0838eb05d6f8f91ad924dd7e6e5ea672ef183.png',
+                    placeholder: 'assets/images/image_none.gif',
+                    fit: BoxFit.cover),
+              ),
             )),
       ],
     );
