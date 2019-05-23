@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_book/widgets/common/FullScreenWrapper.dart';
 
 class BasicInfo extends StatelessWidget {
   @override
@@ -30,13 +31,25 @@ class BasicInfo extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Container(
-                width: 120.0,
-                height: 120.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                    color: Color(AppColors.themeColorGray),
-                    image: DecorationImage(image: NetworkImage(avatarUrl))),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FullScreenWrapper(
+                            imageProvider: NetworkImage(avatarUrl),
+                          ),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 120.0,
+                  height: 120.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                      color: Color(AppColors.themeColorGray),
+                      image: DecorationImage(image: NetworkImage(avatarUrl))),
+                ),
               ),
               SizedBox(
                 width: 16.0,
@@ -114,30 +127,30 @@ class BasicInfo extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(2.0))),
             child: Row(
                 children: _statistics.map((Map<String, dynamic> data) {
-                  return Expanded(
-                      child: Container(
-                    decoration: BoxDecoration(border: _border(data['border'])),
-                    child: Column(
-                      children: <Widget>[
-                        Text(
-                          data['value'].toString(),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: Color(AppColors.fontColor),
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          data['key'],
-                          style: TextStyle(
-                              color: Color(AppColors.fontColorGray),
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
+              return Expanded(
+                  child: Container(
+                decoration: BoxDecoration(border: _border(data['border'])),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      data['value'].toString(),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Color(AppColors.fontColor),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold),
                     ),
-                  ));
-                }).toList()),
+                    Text(
+                      data['key'],
+                      style: TextStyle(
+                          color: Color(AppColors.fontColorGray),
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ));
+            }).toList()),
           )
         ],
       ),
