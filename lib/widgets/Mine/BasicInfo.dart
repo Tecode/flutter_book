@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutter_book/widgets/common/FullScreenWrapper.dart';
+import 'package:flutter_book/containers/AvatarEdit.dart';
 
 class BasicInfo extends StatelessWidget {
   @override
@@ -36,8 +36,8 @@ class BasicInfo extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FullScreenWrapper(
-                            imageProvider: NetworkImage(avatarUrl),
+                      builder: (context) => AvatarEdit(
+                            avatarUrl: avatarUrl,
                           ),
                     ),
                   );
