@@ -55,6 +55,15 @@ Engine • revision 816d3fc586
 Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
 ```
 
+### `Windows10`
+
+```bash
+Flutter 1.5.4 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision b593f5167b (5 weeks ago) • 2019-04-22 07:51:33 -0700
+Engine • revision ca31a7c57b
+Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
+```
+
 ## Mobx
 
 ```dart
