@@ -14,7 +14,12 @@
     <img width="375" title="IOS动画" src="assets/preview/iphone.gif">
 </p>
 
-### 依赖库
+## 功能
+
+- #### 图片延时加载
+- #### 大图缩放浏览
+
+## 依赖库
 
 ```dart
 environment:
