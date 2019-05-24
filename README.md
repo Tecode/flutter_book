@@ -39,6 +39,17 @@ dev_dependencies:
   mobx_codegen: // Mobx依赖
 ```
 
+## `Flutter`版本
+
+### `Ubuntu18`
+
+```bash
+Flutter 1.5.9-pre.223 • channel master • https://github.com/flutter/flutter.git
+Framework • revision b76a1e8312 (11 days ago) • 2019-05-13 09:06:30 +0100
+Engine • revision 816d3fc586
+Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
+```
+
 ## Mobx
 
 ```dart
