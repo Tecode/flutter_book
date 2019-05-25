@@ -1,6 +1,8 @@
 import 'package:flutter_book/containers/Setting.dart';
 import 'package:flutter_book/containers/FirstScreen.dart';
 import 'package:flutter_book/containers/Detail.dart';
+import 'package:flutter_book/containers/BookDetail.dart';
+
 // import 'package:flutter/painting.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,7 @@ Handler rootHandler = Handler(
   return FirstScreen();
 });
 
+// 我的设置路由
 Handler settingRouteHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   // String message = params["message"]?.first;
@@ -23,7 +26,11 @@ Handler detailRouterHandler = Handler(
   return Detail(
       title: FluroConvertUtils.fluroCnParamsDecode(params["title"]?.first));
 });
-
+// 书籍详情路由
+Handler bookDetailRouterHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return BookDetail();
+});
 // var demoFunctionHandler = Handler(
 //     type: HandlerType.function,
 //     handlerFunc: (BuildContext context, Map<String, List<String>> params) {

@@ -6,6 +6,7 @@ class Routes {
   static String root = "/";
   static String setting = "/setting";
   static String detail = "/detail";
+  static String bookDetail = "/bookDetail";
   static String demoSimpleFixedTrans = "/demo/fixedtrans";
   static String demoFunc = "/demo/func";
   static String deepLink = "/message";
@@ -18,6 +19,7 @@ class Routes {
     router.define(root, handler: rootHandler);
     router.define(setting, handler: settingRouteHandler);
     router.define(detail, handler: detailRouterHandler);
+    router.define(bookDetail, handler: bookDetailRouterHandler);
     // router.define(demoSimpleFixedTrans,
     //     handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
   }
