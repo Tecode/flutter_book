@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/widgets/BookDetail/BookDetailContent.dart';
 
 class BookDetail extends StatefulWidget {
   @override
@@ -8,6 +9,13 @@ class BookDetail extends StatefulWidget {
 class _BookDetailState extends State<BookDetail> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("详情"));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("活着"),
+        centerTitle: true,
+        elevation: 0,
+      ),
+      body: BookDetailContent(),
+    );
   }
 }

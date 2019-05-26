@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="19px" viewBox="0 0 20 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Book-details" transform="translate(-24.000000, -320.000000)" fill="#EE392F" fill-rule="nonzero">
+            <g id="Book-information" transform="translate(24.000000, 104.000000)">
+                <g id="Features" transform="translate(0.000000, 214.000000)">
+                    <g id="like">
+                        <g transform="translate(0.000000, 2.000000)" id="Shape">
+                            <path d="M14.6666667,0 C13.2926667,0 11.988,0.59432 10.992,1.67352 C10.8966667,1.77612 10.3946667,2.356 10.006,2.80592 L9.02,1.6872 C8.02333333,0.59888 6.714,0 5.33333333,0 C2.39266667,0 0,2.72764 0,6.08 C0,8.03776 0.858,9.50684 1.59333333,10.41428 L8.19533333,18.01732 C8.718,18.6124 9.298,19 10,19 C10.702,19 11.2826667,18.6124 11.8073333,18.01428 L18.406,10.41428 L18.452,10.35576 C19.248,9.22412 20,8.15556 20,6.08 C20,2.72764 17.6073333,0 14.6666667,0 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

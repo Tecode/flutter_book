@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>bookshelf selected</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Book-details" transform="translate(-252.000000, -320.000000)" fill="#71768C" fill-rule="nonzero">
+            <g id="Book-information" transform="translate(24.000000, 104.000000)">
+                <g id="Features" transform="translate(0.000000, 214.000000)">
+                    <g id="bookshelf" transform="translate(228.000000, 2.000000)">
+                        <g id="bookshelf-selected">
+                            <path d="M16.4523392,9.46938776 L0,9.46938776 L0,10.5645265 C1.09766727,10.8433992 1.9105515,11.8350276 1.9105515,13.0201976 C1.9105515,14.2049463 1.09757867,15.1971733 0,15.4757799 L0,16.5714286 L16.4523392,16.5714286 C18.4117758,16.5714286 20,14.9814621 20,13.0206188 C20,11.0597754 18.4114436,9.46980898 16.4523392,9.46980898 L16.4523392,9.46938776 Z" id="Shape"></path>
+                            <path d="M3.54766079,0 L20,0 L20,1.09513878 C18.9023327,1.37401142 18.0894485,2.36563987 18.0894485,3.5508098 C18.0894485,4.7355585 18.9024213,5.72778553 20,6.00639214 L20,7.10204082 L3.54766079,7.10204082 C1.58822415,7.10204082 0,5.51207436 0,3.55123102 C0,1.59038768 1.5885564,0.000421224276 3.54766079,0.000421224276 L3.54766079,0 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

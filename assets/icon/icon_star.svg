@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Star</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Book-details" transform="translate(-150.000000, -242.000000)" fill="#FB6894">
+            <g id="Book-information" transform="translate(24.000000, 104.000000)">
+                <g id="Book">
+                    <g id="score" transform="translate(126.000000, 132.000000)">
+                        <g id="Group-2" transform="translate(0.000000, 6.000000)">
+                            <polygon id="Star" points="7.36023557 11.6085145 2.81135982 14 3.68011778 8.93475242 5.10718937e-17 5.34752416 5.0857977 4.60851449 7.36023557 0 9.63467344 4.60851449 14.7204711 5.34752416 11.0403534 8.93475242 11.9091113 14"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
