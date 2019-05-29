@@ -45,6 +45,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^1.3.1 //Mobx依赖
   mobx_codegen: // Mobx依赖
+  liquid_pull_to_refresh: ^1.1.0 // 下拉刷新
 ```
 
 ## `Flutter`版本

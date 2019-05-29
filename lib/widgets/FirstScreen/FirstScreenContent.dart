@@ -12,6 +12,7 @@ class FirstScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PullRefresh(
+        showChildOpacityTransition: false,
         onRefresh: () {
           final Completer<void> completer = Completer<void>();
           Timer(const Duration(seconds: 1), () {
