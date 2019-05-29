@@ -14,7 +14,7 @@ abstract class _FindStore implements Store {
   bool tile = false;
 
   @observable
-  num count = 0;
+  num count = 10;
 
   @action
   void setTile(String key, dynamic value) => tile = value;
