@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_book/routers/route_handlers.dart';
 
 class Routes {
+  //  首页
   static String root = "/";
+  // 用户设置
   static String setting = "/setting";
+  // 全部书籍列表
   static String detail = "/detail";
+  // 书籍详情
   static String bookDetail = "/bookDetail";
-  static String demoSimpleFixedTrans = "/demo/fixedtrans";
-  static String demoFunc = "/demo/func";
-  static String deepLink = "/message";
+  // 登录
+  static String login = "/login";
+  // 注册
+  static String register = "/register";
 
   static void configureRoutes(Router router) {
     router.notFoundHandler = Handler(
@@ -20,6 +25,8 @@ class Routes {
     router.define(setting, handler: settingRouteHandler);
     router.define(detail, handler: detailRouterHandler);
     router.define(bookDetail, handler: bookDetailRouterHandler);
+    router.define(login, handler: loginRouterHandler);
+    router.define(register, handler: registerRouterHandler);
     // router.define(demoSimpleFixedTrans,
     //     handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
   }

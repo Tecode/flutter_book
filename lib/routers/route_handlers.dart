@@ -1,7 +1,9 @@
 import 'package:flutter_book/containers/Setting.dart';
-import 'package:flutter_book/containers/FirstScreen.dart';
+import 'package:flutter_book/containers/Entrance.dart';
 import 'package:flutter_book/containers/Detail.dart';
 import 'package:flutter_book/containers/BookDetail.dart';
+import 'package:flutter_book/containers/Login.dart';
+import 'package:flutter_book/containers/Register.dart';
 
 // import 'package:flutter/painting.dart';
 import 'package:fluro/fluro.dart';
@@ -10,7 +12,7 @@ import 'package:flutter_book/helpers/fluro_convert_util.dart';
 
 Handler rootHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-  return FirstScreen();
+  return Entrance();
 });
 
 // 我的设置路由
@@ -21,16 +23,31 @@ Handler settingRouteHandler = Handler(
   return Setting();
 });
 
+// 书籍列表
 Handler detailRouterHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return Detail(
       title: FluroConvertUtils.fluroCnParamsDecode(params["title"]?.first));
 });
+
 // 书籍详情路由
 Handler bookDetailRouterHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return BookDetail();
 });
+
+// 登录
+Handler loginRouterHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return Login();
+});
+
+// 注册
+Handler registerRouterHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return Register();
+});
+
 // var demoFunctionHandler = Handler(
 //     type: HandlerType.function,
 //     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
