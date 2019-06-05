@@ -3,6 +3,9 @@
 ## 预览图
 
 <p align="center">
+    <img width="375" title="Flutter" src="assets/preview/login.png">
+    <img width="375" title="Flutter" src="assets/preview/registered.png">
+    <img width="375" title="Flutter" src="assets/preview/Find-2-min.png">
     <img width="375" title="Flutter" src="assets/preview/Find-2-min.png">
     <img width="375" title="Flutter" src="assets/preview/Home-min.png">
     <img width="375" title="Flutter" src="assets/preview/Success-min.png">

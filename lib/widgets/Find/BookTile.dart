@@ -3,18 +3,16 @@ import 'package:flutter_book/helpers/constants.dart';
 
 class BookTile extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => ListView(
-        children: <Widget>[
-          Center(
-            child: Wrap(
-              runSpacing: 24.0,
-              spacing: 15.0,
-              children: List.generate(4, (int index) {
-                return _BookTile();
-              }),
-            ),
-          )
-        ],
+  Widget build(BuildContext context) => SingleChildScrollView(
+        child: Center(
+          child: Wrap(
+            runSpacing: 24.0,
+            spacing: 15.0,
+            children: List.generate(4, (int index) {
+              return _BookTile();
+            }),
+          ),
+        ),
       );
 }
 
