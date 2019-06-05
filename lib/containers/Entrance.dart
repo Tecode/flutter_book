@@ -22,6 +22,8 @@ class _EntranceState extends State<Entrance> {
   int _activeIndex = 0;
   List<Widget> _pages;
   List _navBars;
+  // 计数,点击次返回键退出程序
+  int _lastClickTime = 0;
   final List<String> _svgAssetUrl = [
     'assets/icon/icon_home.svg',
     'assets/icon/icon_find.svg',
@@ -46,31 +48,48 @@ class _EntranceState extends State<Entrance> {
             _activeIndex == index ? AppColors.mainColor : AppColors.lightGray));
   }
 
+  // 双击返回键退出应用
+  Future<bool> _doubleExit() {
+    int nowTime = new DateTime.now().microsecondsSinceEpoch;
+    if (_lastClickTime != 0 && nowTime - _lastClickTime > 1500) {
+      return new Future.value(true);
+    } else {
+      _lastClickTime = new DateTime.now().microsecondsSinceEpoch;
+      new Future.delayed(const Duration(milliseconds: 1500), () {
+        _lastClickTime = 0;
+      });
+      return new Future.value(false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.0),
-        child: _navBars[_activeIndex],
-      ),
-      body: IndexedStack(
-        index: _activeIndex,
-        children: _pages,
-      ),
-      bottomNavigationBar: CupertinoTabBar(
-        backgroundColor: Color(AppColors.themeColor),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: bottomIcon(0)),
-          BottomNavigationBarItem(icon: bottomIcon(1)),
-          BottomNavigationBarItem(icon: bottomIcon(2)),
-          BottomNavigationBarItem(icon: bottomIcon(3))
-        ],
-        currentIndex: _activeIndex,
-        onTap: (int index) {
-          setState(() {
-            _activeIndex = index;
-          });
-        },
+    return WillPopScope(
+      onWillPop: _doubleExit,
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50.0),
+          child: _navBars[_activeIndex],
+        ),
+        body: IndexedStack(
+          index: _activeIndex,
+          children: _pages,
+        ),
+        bottomNavigationBar: CupertinoTabBar(
+          backgroundColor: Color(AppColors.themeColor),
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: bottomIcon(0)),
+            BottomNavigationBarItem(icon: bottomIcon(1)),
+            BottomNavigationBarItem(icon: bottomIcon(2)),
+            BottomNavigationBarItem(icon: bottomIcon(3))
+          ],
+          currentIndex: _activeIndex,
+          onTap: (int index) {
+            setState(() {
+              _activeIndex = index;
+            });
+          },
+        ),
       ),
     );
   }
