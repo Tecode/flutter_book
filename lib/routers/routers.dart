@@ -15,6 +15,8 @@ class Routes {
   static String login = "/login";
   // 注册
   static String register = "/register";
+  // 搜索
+  static String search = "/search";
 
   static void configureRoutes(Router router) {
     router.notFoundHandler = Handler(
@@ -27,6 +29,7 @@ class Routes {
     router.define(bookDetail, handler: bookDetailRouterHandler);
     router.define(login, handler: loginRouterHandler);
     router.define(register, handler: registerRouterHandler);
+    router.define(search, handler: searchRouterHandler);
     // router.define(demoSimpleFixedTrans,
     //     handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
   }
