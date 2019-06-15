@@ -36,9 +36,9 @@ class SearchBox extends StatelessWidget {
                   height: Constants.appBarIconSize + 2.0,
                   color: Color(AppColors.fontColorGray),
                 ),
-                Container(
-                  width: 200.0,
+                Expanded(
                   child: TextField(
+                    autofocus: true,
                     onChanged: (value) {
                       print(value);
                     },
@@ -58,7 +58,7 @@ class SearchBox extends StatelessWidget {
         ),
         GestureDetector(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+            padding: EdgeInsets.only(left: 16.0, top: 16.0, bottom: 16.0),
             child: Text(
               "取消",
               style: TextStyle(
