@@ -71,7 +71,7 @@ Engine • revision ca31a7c57b
 Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
 ```
 
-## Mobx
+## `Mobx`和`JSON`序列化构建
 
 ```dart
 flutter packages pub run build_runner build

@@ -8,7 +8,12 @@ import 'package:flutter_book/routers/routers.dart';
 import 'package:flutter_book/routers/application.dart';
 import 'package:provider/provider.dart';
 
+// 发现
 import 'package:flutter_book/stores/findStore.dart';
+// 注册
+import 'package:flutter_book/stores/registerStore.dart';
+// 登录
+import 'package:flutter_book/stores/loginStore.dart';
 
 void main() {
   // 修改系统状态栏颜色
@@ -21,7 +26,13 @@ void main() {
     providers: [
       Provider<FindStore>(
         builder: (_) => FindStore(),
-      )
+      ),
+      Provider<RegisterStore>(
+        builder: (_) => RegisterStore(),
+      ),
+      Provider<LoginStore>(
+        builder: (_) => LoginStore(),
+      ),
     ],
     child: MyApp(),
   ));
