@@ -71,6 +71,15 @@ Engine • revision ca31a7c57b
 Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
 ```
 
+## `MacOS`
+
+```bash
+Flutter 1.5.4-hotfix.2 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 7a4c33425d (8 weeks ago) • 2019-04-29 11:05:24 -0700
+Engine • revision 52c7a1e849
+Tools • Dart 2.3.0 (build 2.3.0-dev.0.5 a1668566e5)
+```
+
 ## `Mobx`和`JSON`序列化构建
 
 ```dart
@@ -85,15 +94,11 @@ Run `flutter packages pub run build_runner build`构建`mobx`，成功以后启�
 
 Run `flutter packages pub run build_runner watch`，在你修改了`store`以后会自动刷新。
 
-## 开始
+## 错误信息
 
-This project is a starting point for a Flutter application.
+### 我使用安卓8.0解决了这个问题
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+Error connecting to the service protocol: HttpException: Connection closed before full header was received, uri = http://127.0.0.1:50626/DWu3_eY6i8s=/ws
+```
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.

@@ -4,6 +4,7 @@ import 'package:flutter_book/containers/Detail.dart';
 import 'package:flutter_book/containers/BookDetail.dart';
 import 'package:flutter_book/containers/Login.dart';
 import 'package:flutter_book/containers/Register.dart';
+import 'package:flutter_book/containers/Search.dart';
 
 // import 'package:flutter/painting.dart';
 import 'package:fluro/fluro.dart';
@@ -47,7 +48,11 @@ Handler registerRouterHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return Register();
 });
-
+// 搜索
+Handler searchRouterHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return Search();
+});
 // var demoFunctionHandler = Handler(
 //     type: HandlerType.function,
 //     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
