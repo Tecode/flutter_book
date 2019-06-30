@@ -13,7 +13,7 @@ class CarouselMap extends StatelessWidget {
       onPageChanged: (int index) {
         print(index);
       },
-      viewportFraction: 0.36,
+      viewportFraction: 0.40,
       items: [1, 2, 3, 4, 5].map((i) {
         return Container(
           margin: EdgeInsets.all(5.0),
