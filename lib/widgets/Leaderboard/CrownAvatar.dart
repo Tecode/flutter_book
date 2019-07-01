@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CrownAvatar extends StatelessWidget {
   @override
@@ -18,7 +19,16 @@ class CrownAvatar extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Text("35666")
+              Positioned(
+                child: SvgPicture.asset(
+                  'assets/icon/icon_crown.svg',
+                  width: 30.0,
+                  height: 23.0,
+                  color: Color(AppColors.colorRed),
+                ),
+                top: 0,
+                left: 0,
+              )
             ],
           ),
           Row(
