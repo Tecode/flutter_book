@@ -19,7 +19,7 @@ class FirstScreenNavBar extends StatelessWidget {
         },
         child: Container(
           padding:
-              EdgeInsets.only(right: 14.0, left: 14.0, top: 4.0, bottom: 6.0),
+              EdgeInsets.only(right: 14.0, left: 14.0, top: 6.0, bottom: 6.0),
           decoration: BoxDecoration(
               color: Color(AppColors.themeColorGray),
               borderRadius: BorderRadius.all(Radius.circular(4.0))),
@@ -52,7 +52,7 @@ class FirstScreenNavBar extends StatelessWidget {
             height: Constants.appBarIconSize,
           ),
           onPressed: () {
-            print("ok");
+            print("ok6");
           },
         )
       ],
@@ -65,7 +65,12 @@ class FirstScreenNavBar extends StatelessWidget {
           height: Constants.appBarIconSize + 5.0,
         ),
         onPressed: () {
-          print("ok");
+          // 跳到排行榜页面
+          Application.router.navigateTo(
+            context,
+            "/leaderboard",
+            transition: TransitionType.native,
+          );
         },
       ),
     );

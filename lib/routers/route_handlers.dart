@@ -5,6 +5,7 @@ import 'package:flutter_book/containers/BookDetail.dart';
 import 'package:flutter_book/containers/Login.dart';
 import 'package:flutter_book/containers/Register.dart';
 import 'package:flutter_book/containers/Search.dart';
+import 'package:flutter_book/containers/Leaderboard.dart';
 
 // import 'package:flutter/painting.dart';
 import 'package:fluro/fluro.dart';
@@ -52,6 +53,11 @@ Handler registerRouterHandler = Handler(
 Handler searchRouterHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return Search();
+});
+// 排行榜
+Handler leaderboardRouterHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return Leaderboard();
 });
 // var demoFunctionHandler = Handler(
 //     type: HandlerType.function,
