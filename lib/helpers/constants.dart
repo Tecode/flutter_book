@@ -8,6 +8,9 @@ class AppColors {
   static const int themeColorGray = 0xff2A2C33;
   static const int fontColorYellow = 0xffFFCE44;
   static const int borderColor = 0xff45485B;
+  static const int colorRed = 0xffDD4E43;
+  static const int colorYellow = 0xffFDAF01;
+  static const int colorBlue = 0xff00A2FF;
 }
 
 // 数值常量
