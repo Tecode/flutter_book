@@ -2,13 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_svg/svg.dart';
 
+/// 头像的类型，包含有皇冠的和没有皇冠的
+///  normal | crownLarge | crownSmall
+enum AvatarType {
+  normal,
+  crownLarge,
+  crownSmall
+}
 class CrownAvatar extends StatelessWidget {
+  final AvatarType crownAvatarType;
+  final int color;
+  int imageSize = 75;
+
+  CrownAvatar(
+      {@required this.crownAvatarType, this.color = AppColors.colorRed}) {
+        switch (this.crownAvatarType) {
+          case AvatarType.normal:
+          // this.imageSize = 4;
+            break;
+          
+          default:
+        }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: 24.0),
       child: Column(
         children: <Widget>[
           Stack(
+            overflow: Overflow.visible,
             children: <Widget>[
               ClipRRect(
                 borderRadius: BorderRadius.circular(100.0),
@@ -20,15 +44,15 @@ class CrownAvatar extends StatelessWidget {
                 ),
               ),
               Positioned(
-                child: SvgPicture.asset(
-                  'assets/icon/icon_crown.svg',
-                  width: 30.0,
-                  height: 23.0,
-                  color: Color(AppColors.colorRed),
-                ),
-                top: 0,
-                left: 0,
-              )
+                  width: 75.0,
+                  child: SvgPicture.asset(
+                    'assets/icon/icon_crown.svg',
+                    width: 37.0,
+                    height: 30.0,
+                    color: Color(color),
+                  ),
+                  top: -18.0,
+                  left: 0)
             ],
           ),
           Row(
@@ -46,16 +70,15 @@ class CrownAvatar extends StatelessWidget {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Color(AppColors.colorRed),
+                    color: Color(color),
                     borderRadius: BorderRadius.circular(20.0)),
               ),
               SizedBox(
                 width: 4.0,
               ),
               Text(
-                "Charlene",
-                style: TextStyle(
-                    color: Color(AppColors.fontColor), fontSize: 16.0),
+                "大中华区",
+                style: TextStyle(color: Color(color), fontSize: 16.0),
               )
             ],
           ),
@@ -64,7 +87,7 @@ class CrownAvatar extends StatelessWidget {
             children: <Widget>[
               Container(
                 child: Text(
-                  "4688",
+                  "46",
                   style: TextStyle(
                       color: Color(AppColors.fontColorGray), fontSize: 16.0),
                 ),
@@ -78,7 +101,7 @@ class CrownAvatar extends StatelessWidget {
                     color: Color(AppColors.fontColorGray), fontSize: 16.0),
               )
             ],
-          )
+          ),
         ],
       ),
     );
