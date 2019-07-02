@@ -5,17 +5,27 @@ import 'package:fluro/fluro.dart';
 // import 'package:flutter_svg/svg.dart';
 import 'package:flutter_book/helpers/constants.dart';
 
-class CommonBookCard extends StatelessWidget {
-  double boxWidth;
+class CommonBookCard extends StatefulWidget {
+  final double boxWidth;
 
   CommonBookCard({this.boxWidth});
 
   @override
+  _CommonBookCardState createState() => _CommonBookCardState();
+}
+
+class _CommonBookCardState extends State<CommonBookCard> {
+  double boxWidth;
+  @override
   Widget build(BuildContext context) {
-    boxWidth ??= MediaQuery.of(context).size.width -
-        Constants.pageMargin * 2 -
-        52.0 -
-        114.0;
+    if (widget.boxWidth == null) {
+      boxWidth = MediaQuery.of(context).size.width -
+          Constants.pageMargin * 2 -
+          52.0 -
+          114.0;
+    } else {
+      boxWidth = widget.boxWidth;
+    }
     return GestureDetector(
       onTap: () {
         Application.router.navigateTo(

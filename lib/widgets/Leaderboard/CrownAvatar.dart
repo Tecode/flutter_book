@@ -9,10 +9,9 @@ enum AvatarType {
   crownLarge,
   crownSmall
 }
-class CrownAvatar extends StatelessWidget {
+class CrownAvatar extends StatefulWidget {
   final AvatarType crownAvatarType;
   final int color;
-  int imageSize = 75;
 
   CrownAvatar(
       {@required this.crownAvatarType, this.color = AppColors.colorRed}) {
@@ -24,6 +23,13 @@ class CrownAvatar extends StatelessWidget {
           default:
         }
   }
+
+  @override
+  _CrownAvatarState createState() => _CrownAvatarState();
+}
+
+class _CrownAvatarState extends State<CrownAvatar> {
+  int imageSize = 75;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +55,7 @@ class CrownAvatar extends StatelessWidget {
                     'assets/icon/icon_crown.svg',
                     width: 37.0,
                     height: 30.0,
-                    color: Color(color),
+                    color: Color(widget.color),
                   ),
                   top: -18.0,
                   left: 0)
@@ -70,7 +76,7 @@ class CrownAvatar extends StatelessWidget {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Color(color),
+                    color: Color(widget.color),
                     borderRadius: BorderRadius.circular(20.0)),
               ),
               SizedBox(
@@ -78,7 +84,7 @@ class CrownAvatar extends StatelessWidget {
               ),
               Text(
                 "大中华区",
-                style: TextStyle(color: Color(color), fontSize: 16.0),
+                style: TextStyle(color: Color(widget.color), fontSize: 16.0),
               )
             ],
           ),

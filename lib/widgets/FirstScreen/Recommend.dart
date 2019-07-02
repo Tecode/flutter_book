@@ -27,14 +27,14 @@ class Recommend extends StatelessWidget {
       children: <Widget>[
         CommonTitle(
           title: "推荐",
-          onTap: () => {
-                Application.router.navigateTo(
-                  context,
-                  "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
-                  transition: TransitionType.native,
-                  // transitionDuration: const Duration(milliseconds: 300),
-                )
-              },
+          onTap: () {
+            Application.router.navigateTo(
+              context,
+              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
+              transition: TransitionType.native,
+              // transitionDuration: const Duration(milliseconds: 300),
+            );
+          },
         ),
         Container(
           height: 140.0,
