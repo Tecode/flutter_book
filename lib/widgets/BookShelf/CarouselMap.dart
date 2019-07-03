@@ -10,7 +10,7 @@ class CarouselMap extends StatelessWidget {
       enlargeCenterPage: true,
       aspectRatio: 2.0,
       onPageChanged: (int index) {
-        print(index);
+        // print(index);
       },
       viewportFraction: 0.40,
       items: [1, 2, 3, 4, 5].map((i) {
