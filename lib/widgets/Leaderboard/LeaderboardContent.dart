@@ -44,6 +44,7 @@ class LeaderboardContent extends StatelessWidget {
                     (_) => CrownAvatar(
                           crownAvatarType: AvatarType.normal,
                           color: AppColors.colorYellow,
+                          follow: true,
                           avatarUrl:
                               "http://admin.soscoon.com/uploadImages/0136afa3b04e2d754feaed525fa02f474dd08aa0.jpg",
                         ))),
@@ -59,6 +60,7 @@ class LeaderboardContent extends StatelessWidget {
                     (_) => CrownAvatar(
                           crownAvatarType: AvatarType.normal,
                           color: AppColors.colorYellow,
+                          follow: true,
                           avatarUrl:
                               "http://admin.soscoon.com/uploadImages/0136afa3b04e2d754feaed525fa02f474dd08aa0.jpg",
                         ))),

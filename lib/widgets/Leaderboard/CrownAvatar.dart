@@ -10,10 +10,12 @@ class CrownAvatar extends StatefulWidget {
   final AvatarType crownAvatarType;
   final int color;
   final String avatarUrl;
+  final bool follow;
 
   CrownAvatar(
       {@required this.crownAvatarType,
       @required this.avatarUrl,
+      this.follow = false,
       this.color = AppColors.colorRed});
 
   @override
@@ -32,6 +34,39 @@ class _CrownAvatarState extends State<CrownAvatar> {
   // 圆圈里面的字体大小
   double circleFontSize = 14.0;
   double crownTextSize = 16.0;
+
+  Widget get _followButton {
+    if (widget.follow) {
+      return Container(
+        margin: EdgeInsets.only(top: 4.0),
+        width: 60.0,
+        height: 26.0,
+        decoration: BoxDecoration(
+            color: Color(AppColors.colorBlue2),
+            borderRadius: BorderRadius.circular(4.0)),
+        child: Align(
+          child: Text(
+            "已关注",
+            style: TextStyle(color: Color(AppColors.fontColor), fontSize: 14.0),
+          ),
+        ),
+      );
+    }
+    return Container(
+      margin: EdgeInsets.only(top: 4.0),
+      width: 60.0,
+      height: 26.0,
+      decoration: BoxDecoration(
+          border: Border.all(color: Color(AppColors.boderGrayColor)),
+          borderRadius: BorderRadius.circular(4.0)),
+      child: Align(
+        child: Text(
+          "关注",
+          style: TextStyle(color: Color(AppColors.fontColor), fontSize: 14.0),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,16 +95,16 @@ class _CrownAvatarState extends State<CrownAvatar> {
                 fit: BoxFit.cover,
               ),
             ),
+            SizedBox(
+              height: 10.0,
+              width: 60.0,
+            ),
             Text(
               "阿明",
               style:
                   TextStyle(color: Color(AppColors.fontColor), fontSize: 16.0),
             ),
-            MaterialButton(
-              onPressed: () {},
-              child: Text("关注"),
-              color: Color(AppColors.lightGray),
-            )
+            _followButton,
           ],
         ),
       );
