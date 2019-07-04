@@ -52,7 +52,12 @@ class FirstScreenNavBar extends StatelessWidget {
             height: Constants.appBarIconSize,
           ),
           onPressed: () {
-            print("ok6");
+          // 跳到分类页面
+          Application.router.navigateTo(
+            context,
+            "/category",
+            transition: TransitionType.native,
+          );
           },
         )
       ],
