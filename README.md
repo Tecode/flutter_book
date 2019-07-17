@@ -1,4 +1,5 @@
 <h1 align="center">Flutter book App</h1>
+<h2 align="center">使用Flutter 1.7.8+hotfix.3，如果不能运行请检查你的Flutter版本</h2>
 
 ## 预览图
 
@@ -57,7 +58,7 @@ dev_dependencies:
 ### `Ubuntu18`
 
 ```bash
-Flutter 1.5.9-pre.223 • channel master • https://github.com/flutter/flutter.git
+Flutter 1.7.8+hotfix.3 • channel master • https://github.com/flutter/flutter.git
 Framework • revision b76a1e8312 (11 days ago) • 2019-05-13 09:06:30 +0100
 Engine • revision 816d3fc586
 Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
@@ -66,7 +67,7 @@ Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
 ### `Windows10`
 
 ```bash
-Flutter 1.5.4 • channel stable • https://github.com/flutter/flutter.git
+Flutter 1.7.8+hotfix.3 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision b593f5167b (5 weeks ago) • 2019-04-22 07:51:33 -0700
 Engine • revision ca31a7c57b
 Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
