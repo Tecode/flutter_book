@@ -10,7 +10,7 @@ part 'findStore.g.dart';
 class FindStore = _FindStore with _$FindStore;
 
 // The store-class
-abstract class _FindStore implements Store {
+abstract class _FindStore with Store {
   @observable
   bool tile = false;
 
@@ -29,3 +29,5 @@ abstract class _FindStore implements Store {
     print(response);
   }
 }
+
+FindStore $store = FindStore();

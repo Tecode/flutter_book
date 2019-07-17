@@ -10,7 +10,7 @@ part 'registerStore.g.dart';
 class RegisterStore = _RegisterStore with _$RegisterStore;
 
 // The store-class
-abstract class _RegisterStore implements Store {
+abstract class _RegisterStore with Store {
   // 用户信息
   Map<String, String> reginterInfo = {
     'email': 'animg02',
@@ -31,3 +31,4 @@ abstract class _RegisterStore implements Store {
     reginterInfo[key] = value;
   }
 }
+RegisterStore $store = RegisterStore();

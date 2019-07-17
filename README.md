@@ -87,6 +87,7 @@ Tools • Dart 2.4.0
 flutter packages pub run build_runner build
 flutter packages pub run build_runner watch
 flutter packages pub run build_runner watch --delete-conflicting-outputs
+flutter packages pub run build_runner clean
 ```
 
 ## 运行

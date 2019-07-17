@@ -9,7 +9,7 @@ part 'loginStore.g.dart';
 class LoginStore = _LoginStore with _$LoginStore;
 
 // The store-class
-abstract class _LoginStore implements Store {
+abstract class _LoginStore with Store {
   @observable
   bool tile = false;
 
@@ -28,3 +28,4 @@ abstract class _LoginStore implements Store {
     print(response);
   }
 }
+LoginStore $store = LoginStore();

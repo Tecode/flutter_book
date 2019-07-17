@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.1.0-dev <3.0.0"
 
 dependencies:
   flutter:
@@ -31,7 +31,7 @@ dependencies:
   fluro: "^1.4.0"
   provider: ^2.0.1
   dio: 2.1.0
-  photo_view: 0.3.3
+  photo_view: 0.4.2
   json_annotation: ^2.0.0
 
 dev_dependencies:
