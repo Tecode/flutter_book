@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/common/SearchInputBox.dart';
+import 'package:flutter_book/helpers/constants.dart';
 
 class CategoryContent extends StatefulWidget {
   const CategoryContent({Key key}) : super(key: key);
@@ -22,17 +23,23 @@ class _CategoryContentState extends State<CategoryContent>
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        SearchInputBox(),
+        Container(
+          margin: EdgeInsets.only(top: 10.0, left: Constants.pageMargin, right: Constants.pageMargin),
+          child: SearchInputBox(),
+        ),
         Container(
             height: 600.0,
             child: DefaultTabController(
               length: myTabs.length,
               child: Scaffold(
                 appBar: AppBar(
-                  leading: Text(""),
+                  leading: Text(''),
                   bottom: TabBar(
                     tabs: myTabs,
+                    indicatorWeight: 3.0,
                     isScrollable: true,
+                    indicatorColor: Color(AppColors.mainColor),
+                    unselectedLabelColor: Color(AppColors.fontColorGray),
                   ),
                 ),
                 body: TabBarView(
