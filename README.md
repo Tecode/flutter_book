@@ -30,27 +30,30 @@
 ## 依赖库
 
 ```dart
-environment:
-  sdk: ">=2.1.0 <3.0.0"
 dependencies:
   flutter:
     sdk: flutter
-  mobx:
-  flutter_mobx: // Mobx
+  mobx: ^0.3.3+2
+  flutter_mobx: ^0.3.0+1
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  flutter_svg: ">=0.12.4" // 处理SVG图片
-  carousel_slider: ^1.3.0 // 轮播图
-  fluro: "^1.4.0" // 路由
-  provider: ^2.0.1 // 用于包裹mobx
-  dio: 2.1.0 // 请求库
-  multi_image_picker 4.3.1 // 多选图片
+  flutter_svg: ">=0.12.4"
+  carousel_slider: ^1.3.0
+  fluro: "^1.4.0"
+  provider: ^2.0.1
+  dio: 2.1.0
+  photo_view: 0.4.2
+  json_annotation: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.3.1 //Mobx依赖
-  mobx_codegen: // Mobx依赖
-  liquid_pull_to_refresh: ^1.1.0 // 下拉刷新
+  build_runner: ^1.6.1
+  mobx_codegen: ^0.3.3+1
+  json_serializable: ^3.0.0
 ```
 
 ## `Flutter`版本
