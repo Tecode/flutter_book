@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/common/CommonTitle.dart';
 import 'package:flutter_book/helpers/constants.dart';
-import 'package:flutter_book/model/RecommendData.dart'
-    show RecommendModel, RecommendData;
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/application.dart';
 import 'package:flutter_book/helpers/fluro_convert_util.dart';
+import 'package:flutter_book/models/common.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_book/stores/homeStore.dart';
 
 class Recommend extends StatelessWidget {
-  final List<RecommendModel> recommendData = RecommendData().recommendData;
-
-  List<Widget> get cardList {
+  List<Widget> cardList(List<CommonData> recommendData) {
     List<Widget> newArr = [];
-    recommendData.forEach((RecommendModel data) {
+    recommendData.forEach((CommonData data) {
       newArr.add(_CardItem(
-        imageUrl: data.imageUrl,
+        imageUrl: data.bookImage,
         title: data.title,
       ));
     });
@@ -23,6 +22,8 @@ class Recommend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final homeStore = Provider.of<HomeStore>(context);
+    List<CommonData> recommendData = homeStore.recommendData.data;
     return Column(
       children: <Widget>[
         CommonTitle(
@@ -41,7 +42,7 @@ class Recommend extends StatelessWidget {
           margin: EdgeInsets.only(top: 40.0, bottom: 18.0),
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: cardList,
+            children: cardList(recommendData),
           ),
         )
       ],

@@ -26,21 +26,21 @@ mixin _$HomeStore on _HomeStore, Store {
     }, _$tileAtom, name: '${_$tileAtom.name}_set');
   }
 
-  final _$countAtom = Atom(name: '_HomeStore.count');
+  final _$recommendDataAtom = Atom(name: '_HomeStore.recommendData');
 
   @override
-  num get count {
-    _$countAtom.context.enforceReadPolicy(_$countAtom);
-    _$countAtom.reportObserved();
-    return super.count;
+  CommonDataList get recommendData {
+    _$recommendDataAtom.context.enforceReadPolicy(_$recommendDataAtom);
+    _$recommendDataAtom.reportObserved();
+    return super.recommendData;
   }
 
   @override
-  set count(num value) {
-    _$countAtom.context.conditionallyRunInAction(() {
-      super.count = value;
-      _$countAtom.reportChanged();
-    }, _$countAtom, name: '${_$countAtom.name}_set');
+  set recommendData(CommonDataList value) {
+    _$recommendDataAtom.context.conditionallyRunInAction(() {
+      super.recommendData = value;
+      _$recommendDataAtom.reportChanged();
+    }, _$recommendDataAtom, name: '${_$recommendDataAtom.name}_set');
   }
 
   final _$_HomeStoreActionController = ActionController(name: '_HomeStore');
@@ -50,16 +50,6 @@ mixin _$HomeStore on _HomeStore, Store {
     final _$actionInfo = _$_HomeStoreActionController.startAction();
     try {
       return super.setTile(key, value);
-    } finally {
-      _$_HomeStoreActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  num counter() {
-    final _$actionInfo = _$_HomeStoreActionController.startAction();
-    try {
-      return super.counter();
     } finally {
       _$_HomeStoreActionController.endAction(_$actionInfo);
     }
