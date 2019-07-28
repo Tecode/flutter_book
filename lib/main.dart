@@ -14,6 +14,8 @@ import 'package:flutter_book/stores/findStore.dart';
 import 'package:flutter_book/stores/registerStore.dart';
 // 登录
 import 'package:flutter_book/stores/loginStore.dart';
+// 首页
+import 'package:flutter_book/stores/homeStore.dart';
 
 void main() {
   // 修改系统状态栏颜色
@@ -32,6 +34,9 @@ void main() {
       ),
       Provider<LoginStore>(
         builder: (_) => LoginStore(),
+      ),
+      Provider<HomeStore>(
+        builder: (_) => HomeStore(),
       ),
     ],
     child: MyApp(),
