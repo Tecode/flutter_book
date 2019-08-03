@@ -1,4 +1,5 @@
 <h1 align="center">Flutter book App</h1>
+<h2 align="center">使用Flutter 1.7.8+hotfix.3，如果不能运行请检查你的Flutter版本</h2>
 
 ## 预览图
 
@@ -29,27 +30,30 @@
 ## 依赖库
 
 ```dart
-environment:
-  sdk: ">=2.1.0 <3.0.0"
 dependencies:
   flutter:
     sdk: flutter
-  mobx:
-  flutter_mobx: // Mobx
+  mobx: ^0.3.3+2
+  flutter_mobx: ^0.3.0+1
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  flutter_svg: ">=0.12.4" // 处理SVG图片
-  carousel_slider: ^1.3.0 // 轮播图
-  fluro: "^1.4.0" // 路由
-  provider: ^2.0.1 // 用于包裹mobx
-  dio: 2.1.0 // 请求库
-  multi_image_picker 4.3.1 // 多选图片
+  flutter_svg: ">=0.12.4"
+  carousel_slider: ^1.3.0
+  fluro: "^1.4.0"
+  provider: ^2.0.1
+  dio: 2.1.0
+  photo_view: 0.4.2
+  json_annotation: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.3.1 //Mobx依赖
-  mobx_codegen: // Mobx依赖
-  liquid_pull_to_refresh: ^1.1.0 // 下拉刷新
+  build_runner: ^1.6.1
+  mobx_codegen: ^0.3.3+1
+  json_serializable: ^3.0.0
 ```
 
 ## `Flutter`版本
@@ -57,7 +61,7 @@ dev_dependencies:
 ### `Ubuntu18`
 
 ```bash
-Flutter 1.5.9-pre.223 • channel master • https://github.com/flutter/flutter.git
+Flutter 1.7.8+hotfix.3 • channel master • https://github.com/flutter/flutter.git
 Framework • revision b76a1e8312 (11 days ago) • 2019-05-13 09:06:30 +0100
 Engine • revision 816d3fc586
 Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
@@ -66,7 +70,7 @@ Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
 ### `Windows10`
 
 ```bash
-Flutter 1.5.4 • channel stable • https://github.com/flutter/flutter.git
+Flutter 1.7.8+hotfix.3 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision b593f5167b (5 weeks ago) • 2019-04-22 07:51:33 -0700
 Engine • revision ca31a7c57b
 Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
