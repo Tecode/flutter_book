@@ -79,7 +79,7 @@ Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
 ## `MacOS`
 
 ```bash
-Flutter 1.7.8+hotfix.2 • channel stable • https://github.com/flutter/flutter.git
+Flutter 1.7.8+hotfix.4 • channel stable • https://github.com/flutter/flutter.git
 Framework • revision 2e540931f7 (3 days ago) • 2019-07-09 13:14:38 -0700
 Engine • revision 54ad777fd2
 Tools • Dart 2.4.0
