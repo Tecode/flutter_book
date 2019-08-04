@@ -43,6 +43,47 @@ mixin _$HomeStore on _HomeStore, Store {
     }, _$recommendDataAtom, name: '${_$recommendDataAtom.name}_set');
   }
 
+  final _$hotBooksDataAtom = Atom(name: '_HomeStore.hotBooksData');
+
+  @override
+  CommonDataList get hotBooksData {
+    _$hotBooksDataAtom.context.enforceReadPolicy(_$hotBooksDataAtom);
+    _$hotBooksDataAtom.reportObserved();
+    return super.hotBooksData;
+  }
+
+  @override
+  set hotBooksData(CommonDataList value) {
+    _$hotBooksDataAtom.context.conditionallyRunInAction(() {
+      super.hotBooksData = value;
+      _$hotBooksDataAtom.reportChanged();
+    }, _$hotBooksDataAtom, name: '${_$hotBooksDataAtom.name}_set');
+  }
+
+  final _$popularBookDataAtom = Atom(name: '_HomeStore.popularBookData');
+
+  @override
+  CommonDataList get popularBookData {
+    _$popularBookDataAtom.context.enforceReadPolicy(_$popularBookDataAtom);
+    _$popularBookDataAtom.reportObserved();
+    return super.popularBookData;
+  }
+
+  @override
+  set popularBookData(CommonDataList value) {
+    _$popularBookDataAtom.context.conditionallyRunInAction(() {
+      super.popularBookData = value;
+      _$popularBookDataAtom.reportChanged();
+    }, _$popularBookDataAtom, name: '${_$popularBookDataAtom.name}_set');
+  }
+
+  final _$getDataAsyncAction = AsyncAction('getData');
+
+  @override
+  Future<dynamic> getData() {
+    return _$getDataAsyncAction.run(() => super.getData());
+  }
+
   final _$_HomeStoreActionController = ActionController(name: '_HomeStore');
 
   @override

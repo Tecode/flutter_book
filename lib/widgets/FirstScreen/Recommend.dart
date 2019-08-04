@@ -4,6 +4,7 @@ import 'package:flutter_book/helpers/constants.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/application.dart';
 import 'package:flutter_book/helpers/fluro_convert_util.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_book/models/common.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_book/stores/homeStore.dart';
@@ -23,30 +24,33 @@ class Recommend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final homeStore = Provider.of<HomeStore>(context);
-    List<CommonData> recommendData = homeStore.recommendData.data;
-    return Column(
-      children: <Widget>[
-        CommonTitle(
-          title: "推荐",
-          onTap: () {
-            Application.router.navigateTo(
-              context,
-              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
-              transition: TransitionType.native,
-              // transitionDuration: const Duration(milliseconds: 300),
-            );
-          },
-        ),
-        Container(
-          height: 140.0,
-          margin: EdgeInsets.only(top: 40.0, bottom: 18.0),
-          child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: cardList(recommendData),
-          ),
-        )
-      ],
-    );
+    List<CommonData> recommendData = homeStore.recommendData?.data;
+    return Observer(
+        builder: (_) => recommendData == null
+            ? Text("正在获取数据")
+            : Column(
+                children: <Widget>[
+                  CommonTitle(
+                    title: "推荐",
+                    onTap: () {
+                      Application.router.navigateTo(
+                        context,
+                        "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
+                        transition: TransitionType.native,
+                        // transitionDuration: const Duration(milliseconds: 300),
+                      );
+                    },
+                  ),
+                  Container(
+                    height: 140.0,
+                    margin: EdgeInsets.only(top: 40.0, bottom: 18.0),
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: cardList(recommendData),
+                    ),
+                  )
+                ],
+              ));
   }
 }
 

@@ -7,8 +7,15 @@ import 'package:flutter_book/helpers/constants.dart';
 
 class CommonBookCard extends StatefulWidget {
   final double boxWidth;
+  final String title;
+  final String bookImage;
+  final String description;
 
-  CommonBookCard({this.boxWidth});
+  CommonBookCard(
+      {this.boxWidth,
+      this.title = "标题",
+      this.bookImage = "",
+      this.description = "简介"});
 
   @override
   _CommonBookCardState createState() => _CommonBookCardState();
@@ -60,14 +67,14 @@ class _CommonBookCardState extends State<CommonBookCard> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            '主要介绍Flutter布局中的Row、Column控件',
+                            widget.title,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
                             style: TextStyle(
                                 color: Color(AppColors.fontColor),
                                 fontSize: 18.0),
                           ),
-                          Text('从今天开始正式介绍 Flutter 中的各种 Widgets 了',
+                          Text(widget.description,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyle(
@@ -96,8 +103,7 @@ class _CommonBookCardState extends State<CommonBookCard> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(4.0),
                   child: FadeInImage.assetNetwork(
-                      image:
-                          'http://admin.soscoon.com/uploadImages/95b0838eb05d6f8f91ad924dd7e6e5ea672ef183.png',
+                      image: widget.bookImage,
                       placeholder: 'assets/images/image_none.gif',
                       fit: BoxFit.cover),
                 ),
