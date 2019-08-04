@@ -13,7 +13,6 @@ class PopularBooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final homeStore = Provider.of<HomeStore>(context);
-    List<CommonData> popularBookData = homeStore.recommendData?.data;
     return Column(
       children: <Widget>[
         SizedBox(
@@ -34,22 +33,25 @@ class PopularBooks extends StatelessWidget {
           height: 32.0,
         ),
         Observer(
-          builder: (_) => popularBookData == null
-              ? Text("正在获取数据")
-              : Container(
-                  height: 140.0,
-                  child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: popularBookData
-                          .map((CommonData data) => Container(
-                              margin: EdgeInsets.only(right: 16.0),
-                              child: CommonBookCard(
-                                title: data.title,
-                                bookImage: data.bookImage,
-                                description:data.description.trimLeft(),
-                              )))
-                          .toList()),
-                ),
+          builder: (_) {
+            List<CommonData> popularBookData = homeStore.recommendData?.data;
+            return popularBookData == null
+                ? Text("正在获取数据")
+                : Container(
+                    height: 140.0,
+                    child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: popularBookData
+                            .map((CommonData data) => Container(
+                                margin: EdgeInsets.only(right: 16.0),
+                                child: CommonBookCard(
+                                  title: data.title,
+                                  bookImage: data.bookImage,
+                                  description: data.description.trimLeft(),
+                                )))
+                            .toList()),
+                  );
+          },
         ),
       ],
     );

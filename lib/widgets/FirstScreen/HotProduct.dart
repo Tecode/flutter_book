@@ -16,7 +16,6 @@ class HotProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final homeStore = Provider.of<HomeStore>(context);
-    List<CommonData> hotBooksData = homeStore.hotBooksData?.data;
 
     return Column(
       children: <Widget>[
@@ -37,7 +36,9 @@ class HotProduct extends StatelessWidget {
         Container(
           width: MediaQuery.of(context).size.width,
           child: Observer(
-            builder: (_) => hotBooksData == null
+            builder: (_)  {
+              List<CommonData> hotBooksData = homeStore.hotBooksData?.data;
+              return hotBooksData == null
                 ? Text("正在获取数据")
                 : Wrap(
                     // spacing: 20.0,
@@ -50,7 +51,8 @@ class HotProduct extends StatelessWidget {
                             imageUrl: data.bookImage,
                             author: data.author))
                         .toList(),
-                  ),
+                  );
+            },
           ),
         ),
       ],

@@ -24,9 +24,9 @@ class Recommend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final homeStore = Provider.of<HomeStore>(context);
-    List<CommonData> recommendData = homeStore.recommendData?.data;
-    return Observer(
-        builder: (_) => recommendData == null
+    return Observer(builder: (_) {
+      List<CommonData> recommendData = homeStore.recommendData?.data;
+      return recommendData == null
             ? Text("正在获取数据")
             : Column(
                 children: <Widget>[
@@ -46,11 +46,12 @@ class Recommend extends StatelessWidget {
                     margin: EdgeInsets.only(top: 40.0, bottom: 18.0),
                     child: ListView(
                       scrollDirection: Axis.horizontal,
-                      children: cardList(recommendData),
+                      children: cardList(homeStore.recommendData?.data),
                     ),
                   )
                 ],
-              ));
+              );
+    });
   }
 }
 
