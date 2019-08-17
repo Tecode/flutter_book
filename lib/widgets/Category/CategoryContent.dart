@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/common/SearchInputBox.dart';
 import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/widgets/common/TabContainer.dart';
 
 class CategoryContent extends StatefulWidget {
   const CategoryContent({Key key}) : super(key: key);
@@ -21,27 +22,40 @@ class _CategoryContentState extends State<CategoryContent>
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
+    return SingleChildScrollView(
+      child: Column(children: <Widget>[
         Container(
-          margin: EdgeInsets.only(top: 10.0, left: Constants.pageMargin, right: Constants.pageMargin),
+          margin: EdgeInsets.only(
+              top: 10.0,
+              left: Constants.pageMargin,
+              right: Constants.pageMargin),
           child: SearchInputBox(),
         ),
         Container(
-            height: 600.0,
+            padding: EdgeInsets.only(top: 15.0),
+            height: 1600.0,
             child: DefaultTabController(
               length: myTabs.length,
               child: Scaffold(
                 appBar: AppBar(
-                  leading: Text(''),
-                  bottom: TabBar(
-                    tabs: myTabs,
-                    indicatorWeight: 3.0,
-                    isScrollable: true,
-                    indicatorColor: Color(AppColors.mainColor),
-                    unselectedLabelColor: Color(AppColors.fontColorGray),
-                  ),
-                ),
+                    elevation: 0.5,
+                    automaticallyImplyLeading: false,
+                    title: TabContainer(
+                      color: Color(AppColors.themeColor),
+                      child: TabBar(
+                        indicator: UnderlineTabIndicator(
+                          borderSide: BorderSide(
+                              color: Color(AppColors.mainColor), width: 4.0),
+                          insets: EdgeInsets.fromLTRB(15.0, 0.0, 10.0, 0.0),
+                        ),
+                        tabs: myTabs,
+                        labelPadding: EdgeInsets.all(16.0),
+                        isScrollable: true,
+                        labelStyle: TextStyle(fontSize: 14.0),
+                        indicatorColor: Color(AppColors.mainColor),
+                        unselectedLabelColor: Color(AppColors.fontColorGray),
+                      ),
+                    )),
                 body: TabBarView(
                   children: myTabs.map((Tab tab) {
                     return Center(child: Text(tab.text));
@@ -49,7 +63,7 @@ class _CategoryContentState extends State<CategoryContent>
                 ),
               ),
             ))
-      ],
+      ]),
     );
   }
 }
