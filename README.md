@@ -108,3 +108,35 @@ Run `flutter packages pub run build_runner watch`，在你修改了`store`以后
 Error connecting to the service protocol: HttpException: Connection closed before full header was received, uri = http://127.0.0.1:50626/DWu3_eY6i8s=/ws
 ```
 
+### 配置key.properties
+
+错误原因：由于配置了安卓发布的秘钥提交的时候忽略了，需要自行去配置。
+
+错误信息
+
+```bash
+* What went wrong:
+A problem occurred evaluating project ':app'.
+> D:\project\flutter_book\android\key.properties
+```
+
+
+在`<app dir>/android/`目录下，创建一个`key.properties`文件`<app dir>`代表工程的根目录,在`key.properties`写入
+
+复制粘贴即可，如果需要打包发布`APP`需要配置以下信息，而且要生成`key.jks`文件,这里只是让项目可以运行，如果需要发布详细请看[https://flutter.dev/docs/deployment/android](https://flutter.dev/docs/deployment/android)。
+
+```bash
+storePassword=<password from previous step>
+keyPassword=<password from previous step>
+keyAlias=key
+storeFile=<location of the key store file, e.g. /Users/<user name>/key.jks>
+```
+
+```
+storePassword    keystore 密码
+keyPassword      key密码
+keyAlias         key别名
+storeFile        .jks文件路径
+```
+
+
