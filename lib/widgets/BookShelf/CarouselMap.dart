@@ -6,7 +6,7 @@ class CarouselMap extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       height: 200.0,
-      autoPlay: true,
+      autoPlay: false,
       enlargeCenterPage: true,
       aspectRatio: 2.0,
       onPageChanged: (int index) {

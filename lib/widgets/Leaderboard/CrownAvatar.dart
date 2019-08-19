@@ -160,7 +160,7 @@ class _CrownAvatarState extends State<CrownAvatar> {
                 width: 4.0,
               ),
               Text(
-                "大中华区",
+                "阿明",
                 style: TextStyle(
                     color: Color(widget.color), fontSize: crownTextSize),
               )

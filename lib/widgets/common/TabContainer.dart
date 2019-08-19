@@ -181,5 +181,5 @@ class TabContainer extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => Size(
       width = width ?? MediaQueryData.fromWindow(ui.window).size.width,
-      height ?? 46);
+      height ?? 60);
 }

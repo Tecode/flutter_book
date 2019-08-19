@@ -45,7 +45,7 @@ class CommonTitle extends StatelessWidget {
         children: <Widget>[
           Text(
             this.title,
-            style: TextStyle(fontSize: 18.0, color: Color(AppColors.fontColor)),
+            style: TextStyle(fontSize: 18.0, color: Color(AppColors.fontColor),fontWeight: FontWeight.w500),
           ),
           _subTitle
         ],
