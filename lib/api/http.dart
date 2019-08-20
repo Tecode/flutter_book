@@ -5,7 +5,7 @@ class HttpRequest {
 
   HttpRequest() {
     // api地址
-    dio.options.baseUrl = 'http://192.168.0.108:8900';
+    dio.options.baseUrl = 'http://192.168.133.241:8080';
     // 请求超时时间
     dio.options.receiveTimeout = 15000;
     // 增加拦截器

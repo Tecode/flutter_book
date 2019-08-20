@@ -27,6 +27,7 @@ class _EconomicState extends State<Economic>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return SingleChildScrollView(
       child: Container(
         padding: EdgeInsets.only(

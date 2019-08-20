@@ -106,6 +106,7 @@ class _CategoryContentState extends State<CategoryContent>
       ),
       Expanded(
         child: TabBarView(
+          physics: const ScrollPhysics(),
           controller: _tabController,
           children: _listItem,
         ),

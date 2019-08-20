@@ -10,11 +10,13 @@ class CommonBookCard extends StatefulWidget {
   final String title;
   final String bookImage;
   final String description;
+  final String author;
 
   CommonBookCard(
       {this.boxWidth,
       this.title = "标题",
       this.bookImage = "",
+      this.author = "作者",
       this.description = "简介"});
 
   @override
@@ -85,7 +87,7 @@ class _CommonBookCardState extends State<CommonBookCard> {
                     ],
                   ),
                   SizedBox(height: 14.0),
-                  Text('After Thomas,Kruger',
+                  Text(widget.author,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(

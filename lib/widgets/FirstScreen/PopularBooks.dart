@@ -23,7 +23,7 @@ class PopularBooks extends StatelessWidget {
           onTap: () {
             Application.router.navigateTo(
               context,
-              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
+              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}&type=popularBooks",
               transition: TransitionType.native,
               // transitionDuration: const Duration(milliseconds: 300),
             );
@@ -48,6 +48,7 @@ class PopularBooks extends StatelessWidget {
                                   title: data.title,
                                   bookImage: data.bookImage,
                                   description: data.description.trimLeft(),
+                                  author: data.author,
                                 )))
                             .toList()),
                   );

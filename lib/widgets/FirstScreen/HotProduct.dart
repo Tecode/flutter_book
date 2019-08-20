@@ -24,7 +24,7 @@ class HotProduct extends StatelessWidget {
           onTap: () {
             Application.router.navigateTo(
               context,
-              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('热门图书')}",
+              "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('热门图书')}&type=hotProduct",
               transition: TransitionType.native,
               // transitionDuration: const Duration(milliseconds: 300),
             );

@@ -35,7 +35,7 @@ class Recommend extends StatelessWidget {
                     onTap: () {
                       Application.router.navigateTo(
                         context,
-                        "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('最受欢迎')}",
+                        "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('推荐')}&type=recommend",
                         transition: TransitionType.native,
                         // transitionDuration: const Duration(milliseconds: 300),
                       );

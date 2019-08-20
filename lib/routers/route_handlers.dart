@@ -30,7 +30,8 @@ Handler settingRouteHandler = Handler(
 Handler detailRouterHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return Detail(
-      title: FluroConvertUtils.fluroCnParamsDecode(params["title"]?.first));
+      title: FluroConvertUtils.fluroCnParamsDecode(params["title"]?.first),
+      type: params['type'].first);
 });
 
 // 书籍详情路由
