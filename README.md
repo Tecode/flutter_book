@@ -19,13 +19,6 @@
     <img width="375" title="IOS动画" src="assets/preview/iphone.gif">
 </p>
 
-## 已经实现的功能
-
-- 图片延时加载
-- 大图缩放浏览
-- 启动页
-- 下拉刷新
-- 路由跳转
 
 ## 依赖库
 
@@ -99,6 +92,24 @@ flutter packages pub run build_runner clean
 Run `flutter packages pub run build_runner build`构建`mobx`，成功以后启动`mobx`监听
 
 Run `flutter packages pub run build_runner watch`，在你修改了`store`以后会自动刷新。
+
+## `Mobx`踩坑
+
+获取`store`的方法是`build`方法使用`Provider.of<HomeStore>(context)`可以得到对应的`store`,这样虽然我们可以得到`store`但是在`build`方法里面会导致我们在页面跳转的时候或者切换页面的时候执行重新请求数据，我们想要的不是这个，而是下拉刷新来获取新的数据。如果在`build`里面发送请求会出现的用户滑动到某个位置回来以后数据重新请求导致重新构建。查看`performance`控制台你会发现内部的组件在疯狂的`rebuild`,为了数据能够共享还是在`initState`去发送请求，具体代码如下：
+
+```dart
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      // 获取对应的store
+      homeStore = Provider.of<HomeStore>(this.context);
+      // 发送请求
+      homeStore.getData();
+    });
+  }
+```
 
 ## 错误信息
 
