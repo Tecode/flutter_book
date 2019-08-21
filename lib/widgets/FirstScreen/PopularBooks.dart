@@ -34,14 +34,14 @@ class PopularBooks extends StatelessWidget {
         ),
         Observer(
           builder: (_) {
-            List<CommonData> popularBookData = homeStore.recommendData?.data;
-            return popularBookData == null
+            List<CommonData> _popularBookData = homeStore.recommendData?.data;
+            return _popularBookData == null
                 ? Text("正在获取数据")
                 : Container(
                     height: 140.0,
                     child: ListView(
                         scrollDirection: Axis.horizontal,
-                        children: popularBookData
+                        children: _popularBookData
                             .map((CommonData data) => Container(
                                 margin: EdgeInsets.only(right: 16.0),
                                 child: CommonBookCard(
