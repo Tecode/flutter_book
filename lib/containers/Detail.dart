@@ -10,7 +10,9 @@ import 'package:flutter_book/models/common.dart';
 class Detail extends StatefulWidget {
   final String title;
   final String type;
+
   Detail({@required this.title, this.type}) : assert(title != null);
+
   @override
   _DetailState createState() => _DetailState();
 }
@@ -18,6 +20,7 @@ class Detail extends StatefulWidget {
 class _DetailState extends State<Detail> {
   DetailStore _store;
   EasyRefreshController _controller;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -51,6 +54,7 @@ class _DetailState extends State<Detail> {
         child: Observer(
           builder: (_) {
             List<CommonData> _listData = _store.listData?.data;
+            print(_store.params['index']);
             return EasyRefresh(
               enableControlFinishRefresh: false,
               enableControlFinishLoad: false,
@@ -78,18 +82,24 @@ class _DetailState extends State<Detail> {
                           .toList(),
                     ),
               onRefresh: () async {
-                await Future.delayed(Duration(seconds: 2), () {
-                  // _controller.resetLoadState();
+                _store.changePage(1);
+                _store.listDetailApi(widget.type);
+                if (!_store.loading) {
                   _controller.finishRefresh(success: true);
-                });
+                }
               },
-              onLoad: () async {
-                await Future.delayed(Duration(seconds: 2), () {
-                  // _controller.resetLoadState();
-                  print("object");
-                  _controller.finishLoad(noMore: true);
-                });
-              },
+//              如果超过了总的条数就不要拉刷新了
+              onLoad: (_store.listData.totalElements / _store.params['size'])
+                          .ceil() >
+                      _store.params['index']
+                  ? () async {
+                      _store.changePage(_store.params['index'] + 1);
+                      _store.listDetailApi(widget.type);
+                      if (!_store.loading) {
+                        _controller.finishLoad(noMore: true);
+                      }
+                    }
+                  : null,
             );
           },
         ),

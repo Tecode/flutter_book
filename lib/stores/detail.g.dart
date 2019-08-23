@@ -59,4 +59,16 @@ mixin _$DetailStore on _DetailStore, Store {
       _$paramsAtom.reportChanged();
     }, _$paramsAtom, name: '${_$paramsAtom.name}_set');
   }
+
+  final _$_DetailStoreActionController = ActionController(name: '_DetailStore');
+
+  @override
+  void changePage(int index) {
+    final _$actionInfo = _$_DetailStoreActionController.startAction();
+    try {
+      return super.changePage(index);
+    } finally {
+      _$_DetailStoreActionController.endAction(_$actionInfo);
+    }
+  }
 }

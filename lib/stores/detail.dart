@@ -21,6 +21,12 @@ abstract class _DetailStore with Store {
   @observable
   Map<String, int> params = {'index': 1, 'size': 10};
 
+  // 修改页面参数
+  @action
+  void changePage(int index) {
+    params['index'] = index;
+  }
+
   // api接口异步请求
   void listDetailApi(String type) async {
     Response response;
@@ -51,7 +57,12 @@ abstract class _DetailStore with Store {
         break;
       default:
     }
-    listData = CommonDataList.fromJson(response.data['data']);
+    if (listData == null || params['index'] == 1) {
+      listData = CommonDataList.fromJson(response.data['data']);
+    } else {
+      listData.data.addAll(CommonDataList.fromJson(response.data['data']).data);
+    }
+    print(listData);
     loading = false;
   }
 }
