@@ -13,6 +13,8 @@ class AppColors {
   static const int colorBlue = 0xff00A2FF;
   static const int boderGrayColor = 0xff525467;
   static const int colorBlue2 = 0xff478CE0;
+  static const int commentTitleColor = 0xffD1D1D6;
+  static const int commentContentColor = 0xff969BAF;
 }
 
 // 数值常量
