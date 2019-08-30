@@ -2,6 +2,8 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'common.g.dart';
 
+// 公共的列表数据格式
+
 @JsonSerializable(nullable: false)
 class CommonData {
   final int id;
@@ -47,4 +49,15 @@ class CommonDataList {
 
   factory CommonDataList.fromJson(Map<String, dynamic> json) =>
       _$CommonDataListFromJson(json);
+}
+
+// 版本信息
+
+@JsonSerializable(nullable: false)
+class VersionData {
+  final String version;
+  final List<String> data;
+  VersionData({this.data, this.version});
+  factory VersionData.fromJson(Map<String, dynamic> json) =>
+      _$VersionDataFromJson(json);
 }

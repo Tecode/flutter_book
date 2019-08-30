@@ -22,6 +22,9 @@ abstract class _HomeStore with Store {
   // 最受欢迎
   @observable
   CommonDataList popularBookData;
+  // 版本信息
+  @observable
+  VersionData versionData;
 
   @action
   void setTile(String key, dynamic value) => tile = value;
@@ -46,6 +49,13 @@ abstract class _HomeStore with Store {
     recommendData = CommonDataList.fromJson(response[0].data['data']);
     popularBookData = CommonDataList.fromJson(response[1].data['data']);
     hotBooksData = CommonDataList.fromJson(response[2].data['data']);
+  }
+
+  // 获取版本更新通知
+  @action
+  Future getVersion() async {
+    Response response = await HttpRequest().dio.get('/api/public/version');
+    versionData = VersionData.fromJson(response.data);
   }
 }
 

@@ -55,3 +55,12 @@ Map<String, dynamic> _$CommonDataListToJson(CommonDataList instance) =>
       'totalElements': instance.totalElements,
       'data': instance.data
     };
+
+VersionData _$VersionDataFromJson(Map<String, dynamic> json) {
+  return VersionData(
+      data: (json['data'] as List).map((e) => e as String).toList(),
+      version: json['version'] as String);
+}
+
+Map<String, dynamic> _$VersionDataToJson(VersionData instance) =>
+    <String, dynamic>{'version': instance.version, 'data': instance.data};

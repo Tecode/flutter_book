@@ -77,11 +77,35 @@ mixin _$HomeStore on _HomeStore, Store {
     }, _$popularBookDataAtom, name: '${_$popularBookDataAtom.name}_set');
   }
 
+  final _$versionDataAtom = Atom(name: '_HomeStore.versionData');
+
+  @override
+  VersionData get versionData {
+    _$versionDataAtom.context.enforceReadPolicy(_$versionDataAtom);
+    _$versionDataAtom.reportObserved();
+    return super.versionData;
+  }
+
+  @override
+  set versionData(VersionData value) {
+    _$versionDataAtom.context.conditionallyRunInAction(() {
+      super.versionData = value;
+      _$versionDataAtom.reportChanged();
+    }, _$versionDataAtom, name: '${_$versionDataAtom.name}_set');
+  }
+
   final _$getDataAsyncAction = AsyncAction('getData');
 
   @override
   Future<dynamic> getData() {
     return _$getDataAsyncAction.run(() => super.getData());
+  }
+
+  final _$getVersionAsyncAction = AsyncAction('getVersion');
+
+  @override
+  Future<dynamic> getVersion() {
+    return _$getVersionAsyncAction.run(() => super.getVersion());
   }
 
   final _$_HomeStoreActionController = ActionController(name: '_HomeStore');

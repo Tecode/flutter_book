@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_book/models/common.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_book/stores/homeStore.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'package:flutter_book/helpers/constants.dart' show AppColors, Constants;
 
@@ -19,6 +23,8 @@ class Entrance extends StatefulWidget {
 }
 
 class _EntranceState extends State<Entrance> {
+  // 版本信息
+  VersionData versionData;
   int _activeIndex = 0;
   List<Widget> _pages;
   List _navBars;
@@ -37,6 +43,12 @@ class _EntranceState extends State<Entrance> {
     _pages = <Widget>[FirstScreen(), Find(), Books(), Mine()];
     // 导航栏
     _navBars = [FirstScreenNavBar(), FindNavBar(), BooksNavBar(), MineNavBar()];
+
+    Future.delayed(Duration.zero, () {
+      // 发送获取版本信息的请求
+      Provider.of<HomeStore>(context).getVersion();
+      // 获取数据，查看版本号
+    });
   }
 
 // 底部导航标签
@@ -64,33 +76,121 @@ class _EntranceState extends State<Entrance> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: _doubleExit,
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: _navBars[_activeIndex],
-        ),
-        body: IndexedStack(
-          index: _activeIndex,
-          children: _pages,
-        ),
-        bottomNavigationBar: CupertinoTabBar(
-          backgroundColor: Color(AppColors.themeColor),
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: bottomIcon(0)),
-            BottomNavigationBarItem(icon: bottomIcon(1)),
-            BottomNavigationBarItem(icon: bottomIcon(2)),
-            BottomNavigationBarItem(icon: bottomIcon(3))
-          ],
-          currentIndex: _activeIndex,
-          onTap: (int index) {
-            setState(() {
-              _activeIndex = index;
-            });
-          },
-        ),
-      ),
+    return Observer(
+      builder: (_) {
+        String version = Provider.of<HomeStore>(context)?.versionData?.version;
+        print(version);
+        if (version != null) {
+          // 版本更新弹窗
+          Future.delayed(Duration.zero, () {
+            showDialog(
+                context: context,
+                builder: (_) => Scaffold(
+                      backgroundColor: Colors.transparent,
+                      body: Center(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                              minHeight: 360.0,
+                              maxHeight: 500.0,
+                              maxWidth: 320),
+                          child: Container(
+                            padding: EdgeInsets.all(20.0),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10.0)),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  '新版本升级',
+                                  style: TextStyle(
+                                      color: Color(0xff202326), fontSize: 24.0),
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text('1、升级搜索页面UI'),
+                                      Text('1、升级搜索页面UI'),
+                                      Text('1、升级搜索页面UI')
+                                    ],
+                                  ),
+                                ),
+                                RaisedButton(
+                                  elevation: 0.0,
+                                  child: SizedBox(
+                                    width: double.infinity,
+                                    height: 50.0,
+                                    child: Text(
+                                      '暂不更新',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(height: 1.8),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    Navigator.of(context, rootNavigator: true)
+                                        .pop();
+                                  },
+                                ),
+                                SizedBox(
+                                  height: 15.0,
+                                ),
+                                RaisedButton(
+                                  elevation: 0.0,
+                                  child: SizedBox(
+                                    width: double.infinity,
+                                    height: 50.0,
+                                    child: Text(
+                                      '立即更新',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.white, height: 1.8),
+                                    ),
+                                  ),
+                                  color: Color(AppColors.mainColor),
+                                  onPressed: () {
+                                    Navigator.of(context, rootNavigator: true)
+                                        .pop();
+                                  },
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ));
+          });
+        }
+        return WillPopScope(
+          onWillPop: _doubleExit,
+          child: Scaffold(
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(50.0),
+              child: _navBars[_activeIndex],
+            ),
+            body: IndexedStack(
+              index: _activeIndex,
+              children: _pages,
+            ),
+            bottomNavigationBar: CupertinoTabBar(
+              backgroundColor: Color(AppColors.themeColor),
+              items: <BottomNavigationBarItem>[
+                BottomNavigationBarItem(icon: bottomIcon(0)),
+                BottomNavigationBarItem(icon: bottomIcon(1)),
+                BottomNavigationBarItem(icon: bottomIcon(2)),
+                BottomNavigationBarItem(icon: bottomIcon(3))
+              ],
+              currentIndex: _activeIndex,
+              onTap: (int index) {
+                setState(() {
+                  _activeIndex = index;
+                });
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }
