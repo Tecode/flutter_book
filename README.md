@@ -1,22 +1,30 @@
 <h1 align="center">Flutter book App</h1>
 <h2 align="center">使用Flutter 1.7.8+hotfix.3，如果不能运行请检查你的Flutter版本</h2>
 
-## 预览图
-
+## 安卓APK下载
 <p align="center">
-    <img width="375" title="Flutter" src="assets/preview/login.png">
-    <img width="375" title="Flutter" src="assets/preview/registered.png">
-    <img width="375" title="Flutter" src="assets/preview/Screenshot_1562249221.png">
-    <img width="375" title="Flutter" src="assets/preview/Find-2-min.png">
-    <img width="375" title="Flutter" src="assets/preview/Find-2-min.png">
-    <img width="375" title="Flutter" src="assets/preview/Home-min.png">
-    <img width="375" title="Flutter" src="assets/preview/Success-min.png">
+    <img width="258" title="apk二维码" src="assets/preview/flutter_book.png">
 </p>
 
 ## 安卓IOS预览
 <p align="center">
     <img width="375" title="安卓动画" src="assets/preview/android.gif">
     <img width="375" title="IOS动画" src="assets/preview/iphone.gif">
+</p>
+
+## 预览图
+
+<p align="center">
+    <img width="375" title="Flutter" src="assets/preview/home.png">
+    <img width="375" title="Flutter" src="assets/preview/discover.png">
+    <img width="375" title="Flutter" src="assets/preview/bookshelf.png">
+    <img width="375" title="Flutter" src="assets/preview/new_version.png">
+    <img width="375" title="Flutter" src="assets/preview/book_list.png">
+    <img width="375" title="Flutter" src="assets/preview/detail.png">
+    <img width="375" title="Flutter" src="assets/preview/category.png">
+    <img width="375" title="Flutter" src="assets/preview/setting.png">
+    <img width="375" title="Flutter" src="assets/preview/search.png">
+    <img width="375" title="Flutter" src="assets/preview/avatar_preview.png">
 </p>
 
 

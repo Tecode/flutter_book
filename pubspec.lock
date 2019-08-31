@@ -431,6 +431,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.3"
+  shared_preferences:
+    dependency: "direct main"
+    description:
+      name: shared_preferences
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.5.3+4"
   shelf:
     dependency: transitive
     description:
@@ -520,6 +527,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.1.6"
+  url_launcher:
+    dependency: "direct main"
+    description:
+      name: url_launcher
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.1.2"
   vector_math:
     dependency: transitive
     description:

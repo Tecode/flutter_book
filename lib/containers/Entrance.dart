@@ -16,6 +16,8 @@ import 'package:flutter_book/widgets/NavBar/FirstScreenNavBar.dart';
 import 'package:flutter_book/widgets/NavBar/BooksNavBar.dart';
 import 'package:flutter_book/widgets/NavBar/MineNavBar.dart';
 import 'package:flutter_book/widgets/NavBar/FindNavBar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Entrance extends StatefulWidget {
   @override
@@ -28,6 +30,8 @@ class _EntranceState extends State<Entrance> {
   int _activeIndex = 0;
   List<Widget> _pages;
   List _navBars;
+  String _localVersion;
+
   // 计数,点击次返回键退出程序
   int _lastClickTime = 0;
   final List<String> _svgAssetUrl = [
@@ -43,11 +47,17 @@ class _EntranceState extends State<Entrance> {
     _pages = <Widget>[FirstScreen(), Find(), Books(), Mine()];
     // 导航栏
     _navBars = [FirstScreenNavBar(), FindNavBar(), BooksNavBar(), MineNavBar()];
+    /**
+     * 获取本地的版本信息
+     */
+    _loadVersion();
 
     Future.delayed(Duration.zero, () {
-      // 发送获取版本信息的请求
+      /**
+       * 发送获取版本信息的请求
+       * 获取数据，查看版本号
+       * */
       Provider.of<HomeStore>(context).getVersion();
-      // 获取数据，查看版本号
     });
   }
 
@@ -74,13 +84,42 @@ class _EntranceState extends State<Entrance> {
     }
   }
 
+  // 获取本地存储的版本信息
+  _loadVersion() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _localVersion = prefs.getString('app_veriosn') ?? '1.0.0';
+    });
+  }
+
+  // 保存版本信息
+  _saveVersion(String appVeriosn) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('app_veriosn', appVeriosn);
+    setState(() {
+      _localVersion = appVeriosn;
+    });
+  }
+
+  // 跳转链接
+  _launchURL() async {
+    const url = 'https://www.pgyer.com/x5lH';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Observer(
       builder: (_) {
-        String version = Provider.of<HomeStore>(context)?.versionData?.version;
-        print(version);
-        if (version != null) {
+        String _version = Provider.of<HomeStore>(context)?.versionData?.version;
+        List<String> _versionList =
+            Provider.of<HomeStore>(context)?.versionData?.data;
+
+        if (_version != null && _version != _localVersion) {
           // 版本更新弹窗
           Future.delayed(Duration.zero, () {
             showDialog(
@@ -88,74 +127,80 @@ class _EntranceState extends State<Entrance> {
                 builder: (_) => Scaffold(
                       backgroundColor: Colors.transparent,
                       body: Center(
-                        child: ConstrainedBox(
-                          constraints: BoxConstraints(
-                              minHeight: 360.0,
-                              maxHeight: 500.0,
-                              maxWidth: 320),
-                          child: Container(
-                            padding: EdgeInsets.all(20.0),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10.0)),
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  '新版本升级',
-                                  style: TextStyle(
-                                      color: Color(0xff202326), fontSize: 24.0),
-                                ),
-                                Expanded(
+                        child: Container(
+                          width: 320.0,
+                          height: 420.0,
+                          padding: EdgeInsets.all(20.0),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Column(
+                            children: <Widget>[
+                              Text(
+                                '新版本升级',
+                                style: TextStyle(
+                                    color: Color(0xff202326), fontSize: 24.0),
+                              ),
+                              SizedBox(
+                                height: 15.0,
+                              ),
+                              Expanded(
+                                child: SingleChildScrollView(
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Text('1、升级搜索页面UI'),
-                                      Text('1、升级搜索页面UI'),
-                                      Text('1、升级搜索页面UI')
-                                    ],
+                                    children: _versionList
+                                        .map((String info) => Text(
+                                              info,
+                                              textAlign: TextAlign.left,
+                                              style: TextStyle(
+                                                  fontSize: 18.0, height: 1.3),
+                                            ))
+                                        .toList(),
                                   ),
                                 ),
-                                RaisedButton(
-                                  elevation: 0.0,
-                                  child: SizedBox(
-                                    width: double.infinity,
-                                    height: 50.0,
-                                    child: Text(
-                                      '暂不更新',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(height: 1.8),
-                                    ),
+                              ),
+                              RaisedButton(
+                                elevation: 0.0,
+                                child: SizedBox(
+                                  width: double.infinity,
+                                  height: 50.0,
+                                  child: Text(
+                                    '暂不更新',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(height: 2.0),
                                   ),
-                                  onPressed: () {
-                                    Navigator.of(context, rootNavigator: true)
-                                        .pop();
-                                  },
                                 ),
-                                SizedBox(
-                                  height: 15.0,
-                                ),
-                                RaisedButton(
-                                  elevation: 0.0,
-                                  child: SizedBox(
-                                    width: double.infinity,
-                                    height: 50.0,
-                                    child: Text(
-                                      '立即更新',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: Colors.white, height: 1.8),
-                                    ),
+                                onPressed: () {
+                                  _saveVersion(_version);
+                                  Navigator.of(context, rootNavigator: true)
+                                      .pop();
+                                },
+                              ),
+                              SizedBox(
+                                height: 15.0,
+                              ),
+                              RaisedButton(
+                                elevation: 0.0,
+                                child: SizedBox(
+                                  width: double.infinity,
+                                  height: 50.0,
+                                  child: Text(
+                                    '立即更新',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: Colors.white, height: 2.0),
                                   ),
-                                  color: Color(AppColors.mainColor),
-                                  onPressed: () {
-                                    Navigator.of(context, rootNavigator: true)
-                                        .pop();
-                                  },
-                                )
-                              ],
-                            ),
+                                ),
+                                color: Color(AppColors.mainColor),
+                                onPressed: () {
+                                  _saveVersion(_version);
+                                  _launchURL();
+                                  Navigator.of(context, rootNavigator: true)
+                                      .pop();
+                                },
+                              )
+                            ],
                           ),
                         ),
                       ),

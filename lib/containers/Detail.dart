@@ -54,7 +54,6 @@ class _DetailState extends State<Detail> {
         child: Observer(
           builder: (_) {
             List<CommonData> _listData = _store.listData?.data;
-            print(_store.params['index']);
             return EasyRefresh(
               enableControlFinishRefresh: false,
               enableControlFinishLoad: false,
@@ -89,7 +88,7 @@ class _DetailState extends State<Detail> {
                 }
               },
 //              如果超过了总的条数就不要拉刷新了
-              onLoad: (_store.listData.totalElements / _store.params['size'])
+              onLoad: (_store.listData?.totalElements ?? 0 / _store.params['size'])
                           .ceil() >
                       _store.params['index']
                   ? () async {
