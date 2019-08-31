@@ -158,4 +158,15 @@ keyAlias         key别名
 storeFile        .jks文件路径
 ```
 
+### 解决正式版发布不能联网问题
+
+修改`android/app/src/main/AndroidManifest.xml`,新增以下权限
+
+```bash
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.INTERNET"/>
+```
 
