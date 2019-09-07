@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 
 class BookCard extends StatelessWidget {
   final String title;
@@ -26,13 +27,13 @@ class BookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: width,
+      width: Adapt.width(width),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            width: width,
-            height: height,
+            width: Adapt.width(width),
+            height: Adapt.height(height),
             child: ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(4.0)),
               child: FadeInImage(
@@ -43,14 +44,15 @@ class BookCard extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: gap,
+            height: Adapt.height(gap),
           ),
           Text(
             this.title,
             maxLines: titleMaxLines,
             textAlign: TextAlign.left,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(color: Color(AppColors.fontColor), fontSize: 14.0),
+            style: TextStyle(
+                color: Color(AppColors.fontColor), fontSize: Adapt.px(14.0)),
           ),
           Text(
             this.author,
@@ -58,7 +60,8 @@ class BookCard extends StatelessWidget {
             textAlign: TextAlign.left,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: Color(AppColors.fontColorGray), fontSize: 12.0),
+                color: Color(AppColors.fontColorGray),
+                fontSize: Adapt.px(12.0)),
           ),
         ],
       ),

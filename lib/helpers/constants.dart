@@ -19,8 +19,8 @@ class AppColors {
 
 // 数值常量
 class Constants {
-  static const double bottomIconWidth = 24.0;
-  static const double bottomIconHeight = 24.0;
+  static const double bottomIconWidth = 22.0;
+  static const double bottomIconHeight = 22.0;
   static const double appBarIconSize = 16.0;
   // 页面左右边距
   static const double pageMargin = 24.0;

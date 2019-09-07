@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/BookDetail/BookInformation.dart';
 import 'package:flutter_book/widgets/BookDetail/Comment.dart';
 import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 
 class BookDetailContent extends StatelessWidget {
   @override
@@ -32,9 +33,9 @@ class BookDetailContent extends StatelessWidget {
                   child: SizedBox(
                     child: Text(
                       '试读',
-                      style: TextStyle(height: 1.8),
+                      style: TextStyle(height: 1.8, fontSize: Adapt.px(14.0)),
                     ),
-                    height: 47.0,
+                    height: Adapt.height(47.0),
                   ),
                 ),
                 SizedBox(
@@ -48,9 +49,9 @@ class BookDetailContent extends StatelessWidget {
                     child: SizedBox(
                       child: Text(
                         '立即购买',
-                        style: TextStyle(height: 1.8),
+                        style: TextStyle(height: 1.8, fontSize: Adapt.px(14.0)),
                       ),
-                      height: 47.0,
+                      height: Adapt.height(47.0),
                     ),
                   ),
                 )

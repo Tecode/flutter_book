@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_svg/svg.dart';
 
 /// 头像的类型，包含有皇冠的和没有皇冠的
@@ -33,36 +34,40 @@ class _CrownAvatarState extends State<CrownAvatar> {
   double circleSize = 18.0;
   // 圆圈里面的字体大小
   double circleFontSize = 14.0;
-  double crownTextSize = 16.0;
+  double crownTextSize = 12.0;
 
   Widget get _followButton {
     if (widget.follow) {
       return Container(
         margin: EdgeInsets.only(top: 4.0),
-        width: 60.0,
-        height: 26.0,
+        width: Adapt.width(60.0),
+        height: Adapt.height(26.0),
         decoration: BoxDecoration(
             color: Color(AppColors.colorBlue2),
             borderRadius: BorderRadius.circular(4.0)),
         child: Align(
           child: Text(
             "已关注",
-            style: TextStyle(color: Color(AppColors.fontColor), fontSize: 14.0),
+            style: TextStyle(
+                color: Color(AppColors.fontColor),
+                fontSize: Adapt.px(14.0),
+                fontWeight: FontWeight.w400),
           ),
         ),
       );
     }
     return Container(
       margin: EdgeInsets.only(top: 4.0),
-      width: 60.0,
-      height: 26.0,
+      width: Adapt.width(60.0),
+      height: Adapt.height(26.0),
       decoration: BoxDecoration(
           border: Border.all(color: Color(AppColors.boderGrayColor)),
           borderRadius: BorderRadius.circular(4.0)),
       child: Align(
         child: Text(
           "关注",
-          style: TextStyle(color: Color(AppColors.fontColor), fontSize: 14.0),
+          style: TextStyle(
+              color: Color(AppColors.fontColor), fontSize: Adapt.px(14.0)),
         ),
       ),
     );
@@ -90,19 +95,19 @@ class _CrownAvatarState extends State<CrownAvatar> {
               borderRadius: BorderRadius.circular(40.0),
               child: Image.network(
                 widget.avatarUrl,
-                width: 60.0,
-                height: 60.0,
+                width: Adapt.width(60.0),
+                height: Adapt.height(60.0),
                 fit: BoxFit.cover,
               ),
             ),
             SizedBox(
-              height: 10.0,
-              width: 60.0,
+              height: Adapt.height(10.0),
+              width: Adapt.width(60.0),
             ),
             Text(
               "阿明",
-              style:
-                  TextStyle(color: Color(AppColors.fontColor), fontSize: 16.0),
+              style: TextStyle(
+                  color: Color(AppColors.fontColor), fontSize: Adapt.px(16.0)),
             ),
             _followButton,
           ],
@@ -120,36 +125,39 @@ class _CrownAvatarState extends State<CrownAvatar> {
                 borderRadius: BorderRadius.circular(100.0),
                 child: Image.network(
                   widget.avatarUrl,
-                  width: imageSize,
-                  height: imageSize,
+                  width: Adapt.width(imageSize),
+                  height: Adapt.height(imageSize),
                   fit: BoxFit.cover,
                 ),
               ),
               Positioned(
-                  width: imageSize,
+                  width: Adapt.width(imageSize),
                   child: SvgPicture.asset(
                     'assets/icon/icon_crown.svg',
-                    width: crownWidth,
-                    height: crownHeight,
+                    width: Adapt.width(crownWidth),
+                    height: Adapt.height(crownHeight),
                     color: Color(widget.color),
                   ),
-                  top: crowTop,
+                  top: Adapt.height(crowTop),
                   left: 0)
             ],
+          ),
+          SizedBox(
+            height: Adapt.height(16.0),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
-                width: circleSize,
-                height: circleSize,
+                width: Adapt.width(circleSize),
+                height: Adapt.height(circleSize),
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
                     "2",
                     style: TextStyle(
                         color: Color(AppColors.fontColor),
-                        fontSize: circleFontSize),
+                        fontSize: Adapt.px(circleFontSize)),
                   ),
                 ),
                 decoration: BoxDecoration(
@@ -157,12 +165,13 @@ class _CrownAvatarState extends State<CrownAvatar> {
                     borderRadius: BorderRadius.circular(40.0)),
               ),
               SizedBox(
-                width: 4.0,
+                width: Adapt.width(4.0),
               ),
               Text(
                 "阿明",
                 style: TextStyle(
-                    color: Color(widget.color), fontSize: crownTextSize),
+                    color: Color(widget.color),
+                    fontSize: Adapt.px(crownTextSize)),
               )
             ],
           ),
@@ -171,20 +180,20 @@ class _CrownAvatarState extends State<CrownAvatar> {
             children: <Widget>[
               Container(
                 child: Text(
-                  "46",
+                  "50",
                   style: TextStyle(
                       color: Color(AppColors.fontColorGray),
-                      fontSize: crownTextSize),
+                      fontSize: Adapt.px(crownTextSize)),
                 ),
               ),
               SizedBox(
-                width: 4.0,
+                width: Adapt.width(4.0),
               ),
               Text(
                 "关注者",
                 style: TextStyle(
                     color: Color(AppColors.fontColorGray),
-                    fontSize: crownTextSize),
+                    fontSize: Adapt.px(crownTextSize - 2.0)),
               )
             ],
           ),

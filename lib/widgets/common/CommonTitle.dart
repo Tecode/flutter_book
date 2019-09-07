@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CommonTitle extends StatelessWidget {
@@ -21,15 +22,16 @@ class CommonTitle extends StatelessWidget {
         children: <Widget>[
           Text(
             '全部',
-            style: TextStyle(fontSize: 15.0, color: Color(AppColors.lightGray)),
+            style: TextStyle(
+                fontSize: Adapt.px(12), color: Color(AppColors.lightGray)),
           ),
           SizedBox(
             width: 9.0,
           ),
           SvgPicture.asset(
             'assets/icon/icon_right.svg',
-            width: Constants.appBarIconSize - 6.0,
-            height: Constants.appBarIconSize - 4.0,
+            width: Adapt.width(6.0),
+            height: Adapt.height(10.0),
           )
         ],
       ),
@@ -45,7 +47,10 @@ class CommonTitle extends StatelessWidget {
         children: <Widget>[
           Text(
             this.title,
-            style: TextStyle(fontSize: 18.0, color: Color(AppColors.fontColor),fontWeight: FontWeight.w500),
+            style: TextStyle(
+                fontSize: Adapt.px(18),
+                color: Color(AppColors.fontColor),
+                fontWeight: FontWeight.w400),
           ),
           _subTitle
         ],

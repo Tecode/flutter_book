@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 
 class CommentBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.only(left: Constants.pageMargin),
+        margin: EdgeInsets.only(left: Constants.pageMargin, top: Adapt.height(24.0)),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(right: 12.0),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(Adapt.width(30.0)),
                 child: FadeInImage.assetNetwork(
-                    width: 30.0,
-                    height: 30.0,
+                    width: Adapt.width(30.0),
+                    height: Adapt.height(30.0),
                     image:
                         'http://cdn.duitang.com/uploads/item/201407/24/20140724190906_MCkXs.thumb.700_0.jpeg',
                     placeholder: 'assets/images/image_none.gif',

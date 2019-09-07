@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_book/stores/homeStore.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/helpers/constants.dart' show AppColors, Constants;
 
 import './FirstScreen.dart';
@@ -64,8 +64,8 @@ class _EntranceState extends State<Entrance> {
 // 底部导航标签
   SvgPicture bottomIcon(int index) {
     return SvgPicture.asset(_svgAssetUrl[index],
-        width: Constants.bottomIconWidth,
-        height: Constants.bottomIconHeight,
+        width: Adapt.width(Constants.bottomIconWidth),
+        height: Adapt.height(Constants.bottomIconHeight),
         color: Color(
             _activeIndex == index ? AppColors.mainColor : AppColors.lightGray));
   }
