@@ -4,6 +4,7 @@ import 'package:flutter_book/widgets/common/BookCard.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/application.dart';
 import 'package:flutter_book/helpers/fluro_convert_util.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 
 class PopularSearches extends StatelessWidget {
   @override
@@ -22,13 +23,13 @@ class PopularSearches extends StatelessWidget {
           },
         ),
         Container(
-          height: 180.0,
-          margin: EdgeInsets.only(top: 24.0),
+          height: Adapt.height(180.0),
+          margin: EdgeInsets.only(top: Adapt.height(24.0)),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(10, (int index) {
               return Padding(
-                padding: EdgeInsets.only(right: 15.0),
+                padding: EdgeInsets.only(right: Adapt.width(15.0)),
                 child: BookCard(
                   title: '拥抱你的内在小孩',
                   width: 84.0,

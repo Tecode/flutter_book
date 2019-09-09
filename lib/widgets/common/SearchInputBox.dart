@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_book/helpers/constants.dart';
 
@@ -10,12 +11,14 @@ class SearchInputBox extends StatelessWidget {
       child: Row(
         children: <Widget>[
           SizedBox(
-            width: 16.0,
+            width: Adapt.width(16.0),
           ),
           SvgPicture.asset(
             'assets/icon/icon_search.svg',
-            width: Constants.appBarIconSize + 2.0,
-            height: Constants.appBarIconSize + 2.0,
+            width: Adapt.width(
+              Constants.appBarIconSize + 2.0,
+            ),
+            height: Adapt.width(Constants.appBarIconSize + 2.0),
             color: Color(AppColors.fontColorGray),
           ),
           Expanded(
@@ -30,7 +33,8 @@ class SearchInputBox extends StatelessWidget {
                   border: InputBorder.none,
                   fillColor: Color(AppColors.themeColorGray),
                   filled: true,
-                  hintStyle: TextStyle(color: Colors.grey, fontSize: 16.0)),
+                  hintStyle:
+                      TextStyle(color: Colors.grey, fontSize: Adapt.px(16.0))),
             ),
           )
         ],

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/routers/application.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 
 class FirstScreenNavBar extends StatelessWidget {
   @override
@@ -18,24 +19,24 @@ class FirstScreenNavBar extends StatelessWidget {
           );
         },
         child: Container(
-          padding:
-              EdgeInsets.only(right: 14.0, left: 14.0, top: 6.0, bottom: 6.0),
+          padding: EdgeInsets.symmetric(
+              vertical: Adapt.height(6.0), horizontal: Adapt.width(14.0)),
           decoration: BoxDecoration(
               color: Color(AppColors.themeColorGray),
               borderRadius: BorderRadius.all(Radius.circular(4.0))),
           child: Row(
             children: <Widget>[
               SvgPicture.asset('assets/icon/icon_search.svg',
-                  width: Constants.appBarIconSize + 2.0,
-                  height: Constants.appBarIconSize + 2.0),
+                  width: Adapt.width(Constants.appBarIconSize + 2.0),
+                  height: Adapt.height(Constants.appBarIconSize + 2.0)),
               SizedBox(
-                width: 10.0,
+                width: Adapt.width(10.0),
                 height: 1.0,
               ),
               Text(
                 "搜索",
                 style: TextStyle(
-                    color: Color(AppColors.fontColorGray), fontSize: 16.0),
+                    color: Color(AppColors.fontColorGray), fontSize: Adapt.px(16.0)),
               )
             ],
           ),
@@ -48,16 +49,16 @@ class FirstScreenNavBar extends StatelessWidget {
           alignment: Alignment.centerLeft,
           icon: SvgPicture.asset(
             'assets/icon/icon_classification.svg',
-            width: Constants.appBarIconSize,
-            height: Constants.appBarIconSize,
+            width: Adapt.width(Constants.appBarIconSize),
+            height: Adapt.height(Constants.appBarIconSize),
           ),
           onPressed: () {
-          // 跳到分类页面
-          Application.router.navigateTo(
-            context,
-            "/category",
-            transition: TransitionType.native,
-          );
+            // 跳到分类页面
+            Application.router.navigateTo(
+              context,
+              "/category",
+              transition: TransitionType.native,
+            );
           },
         )
       ],
@@ -66,8 +67,8 @@ class FirstScreenNavBar extends StatelessWidget {
         alignment: Alignment.centerRight,
         icon: SvgPicture.asset(
           'assets/icon/icon_trophy.svg',
-          width: Constants.appBarIconSize + 5.0,
-          height: Constants.appBarIconSize + 5.0,
+          width: Adapt.width(Constants.appBarIconSize + 5.0),
+          height: Adapt.height(Constants.appBarIconSize + 5.0),
         ),
         onPressed: () {
           // 跳到排行榜页面

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/widgets/Search/SearchBox.dart';
 import 'package:flutter_book/widgets/Search/PopularSearches.dart';
 import 'package:flutter_book/widgets/Search/History.dart';
@@ -15,7 +16,9 @@ class _SearchState extends State<Search> {
     return Scaffold(
       body: Container(
         margin: EdgeInsets.only(
-            top: 37.0, left: Constants.pageMargin, right: Constants.pageMargin),
+            top: Adapt.height(56.0),
+            left: Constants.pageMargin,
+            right: Constants.pageMargin),
         child: Column(
           children: <Widget>[
             SearchBox(),

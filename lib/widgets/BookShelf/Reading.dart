@@ -4,6 +4,7 @@ import 'package:flutter_book/widgets/common/BookCard.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/application.dart';
 import 'package:flutter_book/helpers/fluro_convert_util.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 
 class Reading extends StatelessWidget {
   @override
@@ -22,8 +23,9 @@ class Reading extends StatelessWidget {
           },
         ),
         Container(
-          height: 180.0,
-          margin: EdgeInsets.only(top: 24.0),
+          height: Adapt.height(180.0),
+          margin: EdgeInsets.only(
+              top: Adapt.height(24.0), bottom: Adapt.height(10.0)),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: List.generate(10, (int index) {
