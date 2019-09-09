@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_book/containers/AvatarEdit.dart';
@@ -18,9 +19,9 @@ class BasicInfo extends StatelessWidget {
       if (boder != null) {
         return Border(
             left: BorderSide(
-                width: 1.0, color: Color.fromRGBO(255, 255, 255, 0.5)),
+                width: 1.0, color: Color.fromRGBO(255, 255, 255, 0.05)),
             right: BorderSide(
-                width: 1.0, color: Color.fromRGBO(255, 255, 255, 0.5)));
+                width: 1.0, color: Color.fromRGBO(255, 255, 255, 0.05)));
       }
       return Border();
     }
@@ -37,8 +38,8 @@ class BasicInfo extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => AvatarEdit(
-                            avatarUrl: avatarUrl,
-                          ),
+                        avatarUrl: avatarUrl,
+                      ),
                     ),
                   );
                 },
@@ -92,9 +93,10 @@ class BasicInfo extends StatelessWidget {
                                     width: 1.0,
                                     color: Color(AppColors.fontColorGray)),
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(4.0))),
+                                    BorderRadius.all(Radius.circular(6.0))),
                             padding: EdgeInsets.symmetric(
-                                vertical: 7.0, horizontal: 15.0),
+                                vertical: Adapt.height(7.0),
+                                horizontal: Adapt.width(15.0)),
                             child: Row(
                               children: <Widget>[
                                 SvgPicture.asset(
@@ -106,7 +108,7 @@ class BasicInfo extends StatelessWidget {
                                   "分享",
                                   style: TextStyle(
                                       color: Color(AppColors.fontColorGray),
-                                      fontSize: 13.0),
+                                      fontSize: Adapt.px(13.0)),
                                 )
                               ],
                             ),
@@ -137,14 +139,15 @@ class BasicInfo extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Color(AppColors.fontColor),
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold),
+                          fontSize: Adapt.px(18.0),
+                          fontWeight: FontWeight.w500),
                     ),
                     Text(
                       data['key'],
                       style: TextStyle(
                           color: Color(AppColors.fontColorGray),
-                          fontSize: 12.0,
+                          fontSize: Adapt.px(12.0),
+                          height: 1.2,
                           fontWeight: FontWeight.bold),
                     )
                   ],

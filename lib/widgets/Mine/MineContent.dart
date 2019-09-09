@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 
 //import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/widgets/Mine/BasicInfo.dart';
@@ -13,7 +14,7 @@ class MineContent extends StatelessWidget {
           children: <Widget>[
             BasicInfo(),
             SizedBox(
-              height: 10.0,
+              height: Adapt.height(16.0),
             ),
             ListInfo()
           ],

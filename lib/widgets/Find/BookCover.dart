@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/widgets/Find/ReadUser.dart';
 
@@ -14,9 +15,9 @@ class BookCover extends StatelessWidget {
           Column(
             children: <Widget>[
               Container(
-                width: 196.0,
-                height: 290.0,
-                margin: EdgeInsets.only(top: 40.0),
+                width: Adapt.width(196.0),
+                height: Adapt.height(290.0),
+                margin: EdgeInsets.only(top: Adapt.height(40.0)),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(4.0)),
                     color: Color(AppColors.themeColorGray),
@@ -25,7 +26,7 @@ class BookCover extends StatelessWidget {
                             'http://admin.soscoon.com/uploadImages/21dc88543e012af8e8d55440b9cbcf8b379c4206.png'))),
               ),
               Container(
-                width: 168.0,
+                width: Adapt.width(168.0),
                 margin: EdgeInsets.symmetric(vertical: 24.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +36,7 @@ class BookCover extends StatelessWidget {
                       'Empowering children and youth',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Color(AppColors.fontColor), fontSize: 18.0),
+                          color: Color(AppColors.fontColor), fontSize: Adapt.px(18.0)),
                     ),
                     SizedBox(
                       height: 2.0,
@@ -45,7 +46,7 @@ class BookCover extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Color(AppColors.fontColorGray),
-                          fontSize: 14.0),
+                          fontSize: Adapt.px(14.0)),
                     )
                   ],
                 ),
@@ -59,8 +60,8 @@ class BookCover extends StatelessWidget {
         right: 0.0,
         bottom: 35.0,
         child: Container(
-            height: 42.0,
-            width: 124.0,
+            height: Adapt.height(42.0),
+            width: Adapt.width(124.0),
             padding: EdgeInsets.only(left: 4.0),
             margin: EdgeInsets.only(top: 4.0, bottom: 4.0),
             decoration: BoxDecoration(
@@ -71,8 +72,8 @@ class BookCover extends StatelessWidget {
             child: Row(
               children: <Widget>[
                 Container(
-                  width: 34.0,
-                  height: 34.0,
+                  width: Adapt.width(34.0),
+                  height: Adapt.height(34.0),
                   margin: EdgeInsets.only(right: 4.0),
                   decoration: BoxDecoration(
                       color: Color(AppColors.themeColorGray),
@@ -82,13 +83,14 @@ class BookCover extends StatelessWidget {
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         '小明同学',
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                            color: Color(AppColors.fontColor), fontSize: 14.0),
+                            color: Color(AppColors.fontColor), fontSize: Adapt.px(14.0)),
                       ),
                       Text(
                         "Recommended",
@@ -96,7 +98,7 @@ class BookCover extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             color: Color(AppColors.fontColorGray),
-                            fontSize: 12.0),
+                            fontSize: Adapt.px(12.0)),
                       )
                     ],
                   ),

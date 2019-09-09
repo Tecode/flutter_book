@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/widgets/common/FullScreenWrapper.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_svg/svg.dart';
@@ -21,7 +22,7 @@ class _AvatarEditState extends State<AvatarEdit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("我的资料"),
+          title: Text("头像"),
           centerTitle: true,
           elevation: 0,
           actions: <Widget>[
@@ -51,14 +52,17 @@ class _AvatarEditState extends State<AvatarEdit> {
                                 new Text("保存头像", textAlign: TextAlign.center),
                             onTap: () async {},
                           ),
+                          SizedBox(
+                            height: Adapt.height(20.0),
+                          )
                         ],
                       );
                     });
               },
               icon: SvgPicture.asset(
                 'assets/icon/icon_setting.svg',
-                width: Constants.appBarIconSize + 4.0,
-                height: Constants.appBarIconSize + 4.0,
+                width: Adapt.width(Constants.appBarIconSize + 4.0),
+                height: Adapt.height(Constants.appBarIconSize + 4.0),
               ),
             )
           ]),

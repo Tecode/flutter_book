@@ -19,15 +19,17 @@ class _SearchState extends State<Search> {
             top: Adapt.height(56.0),
             left: Constants.pageMargin,
             right: Constants.pageMargin),
-        child: Column(
-          children: <Widget>[
-            SearchBox(),
-            SizedBox(
-              height: 32.0,
-            ),
-            PopularSearches(),
-            History()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              SearchBox(),
+              SizedBox(
+                height: 32.0,
+              ),
+              PopularSearches(),
+              History()
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/widgets/common/SearchInputBox.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/widgets/common/TabContainer.dart';
@@ -85,13 +86,13 @@ class _CategoryContentState extends State<CategoryContent>
                             indicator: UnderlineTabIndicator(
                               borderSide: BorderSide(
                                   color: Color(AppColors.mainColor),
-                                  width: 4.0),
+                                  width: Adapt.width(3.0)),
                               insets: EdgeInsets.fromLTRB(15.0, 0.0, 10.0, 0.0),
                             ),
                             tabs: myTabs,
                             labelPadding: EdgeInsets.all(14.0),
                             isScrollable: true,
-                            labelStyle: TextStyle(fontSize: 16.0),
+                            labelStyle: TextStyle(fontSize: Adapt.px(16.0)),
                             indicatorColor: Color(AppColors.mainColor),
                             unselectedLabelColor:
                                 Color(AppColors.fontColorGray),
