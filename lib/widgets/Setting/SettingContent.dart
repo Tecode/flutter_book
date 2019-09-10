@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/widgets/Mine/ListItem.dart';
+import 'package:flutter_book/routers/application.dart';
+import 'package:fluro/fluro.dart';
 
 class SettingContent extends StatefulWidget {
   @override
@@ -15,7 +17,7 @@ class _SettingContentState extends State<SettingContent> {
     {'title': '通知'},
     {'title': '清除缓存', 'tip': 'cache', 'subTitle': '34M'},
     {'title': '反馈'},
-    {'title': '关于我们'}
+    {'title': '关于我们', 'type': 'aboutUs'}
   ];
   bool _value = true;
   // 右边显示的信息
@@ -58,6 +60,21 @@ class _SettingContentState extends State<SettingContent> {
     }
   }
 
+  // 列表到操作
+  void _onTap(String type) {
+    switch (type) {
+      case 'aboutUs':
+        Application.router.navigateTo(
+          context,
+          "/aboutUs",
+          transition: TransitionType.native,
+        );
+        break;
+      default:
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -69,6 +86,9 @@ class _SettingContentState extends State<SettingContent> {
             height: Adapt.height(66.0),
             title: data['title'],
             rightWidget: _rightWidget(data['tip'], data),
+            onTap: () {
+              _onTap(data['type']);
+            },
           );
         }).toList()),
         Container(

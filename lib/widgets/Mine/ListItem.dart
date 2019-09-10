@@ -8,17 +8,19 @@ class ListItem extends StatelessWidget {
   final String subTitle;
   final double height;
   final Widget rightWidget;
+  final GestureTapCallback onTap;
 
   ListItem(
       {this.title,
       this.subTitle,
       this.height = 80.0,
+      this.onTap,
       this.rightWidget = const SizedBox()});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: EdgeInsets.only(right: Constants.pageMargin),
         margin: EdgeInsets.only(left: Constants.pageMargin),
