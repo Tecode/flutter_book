@@ -72,15 +72,15 @@ class _EntranceState extends State<Entrance> {
 
   // 双击返回键退出应用
   Future<bool> _doubleExit() {
-    int nowTime = new DateTime.now().microsecondsSinceEpoch;
+    int nowTime = DateTime.now().microsecondsSinceEpoch;
     if (_lastClickTime != 0 && nowTime - _lastClickTime > 1500) {
-      return new Future.value(true);
+      return Future.value(true);
     } else {
-      _lastClickTime = new DateTime.now().microsecondsSinceEpoch;
-      new Future.delayed(const Duration(milliseconds: 1500), () {
+      _lastClickTime = DateTime.now().microsecondsSinceEpoch;
+      Future.delayed(const Duration(milliseconds: 1500), () {
         _lastClickTime = 0;
       });
-      return new Future.value(false);
+      return Future.value(false);
     }
   }
 

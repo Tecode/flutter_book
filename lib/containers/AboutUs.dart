@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_book/helpers/Adapt.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter_book/helpers/constants.dart';
 
@@ -9,6 +11,7 @@ class AboutUs extends StatefulWidget {
 }
 
 class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
+  bool loading = true;
   // webview
   final Completer<WebViewController> _controller =
       Completer<WebViewController>();
@@ -21,14 +24,14 @@ class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
     // TODO: implement initState
     super.initState();
     _colorController = AnimationController(
-        duration: const Duration(milliseconds: 4000), vsync: this);
+        duration: const Duration(milliseconds: 8000), vsync: this);
     _animation = Tween(begin: 0.0, end: 1.0).animate(_colorController)
       ..addListener(() {
         setState(() {
           // the state that has changed here is the animation object’s value
         });
       });
-      _colorController.forward();
+    _colorController.forward();
   }
 
   JavascriptChannel _toasterJavascriptChannel(BuildContext context) {
@@ -48,12 +51,26 @@ class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
         title: Text("关于我们"),
         centerTitle: true,
         elevation: 0,
+        leading: SizedBox(
+          width: Adapt.width(18.0),
+          height: Adapt.height(18.0),
+          child: IconButton(
+            icon: SvgPicture.asset(
+              'assets/icon/icon_close.svg',
+              width: Adapt.width(18.0),
+              height: Adapt.height(18.0),
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
       ),
       body: Stack(
         children: <Widget>[
           WebView(
-            initialUrl:
-                'https://github.com/Tecode/flutter_book/blob/master/README.md',
+            initialUrl: 'https://www.soscoon.com/',
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (WebViewController webViewController) {
               _controller.complete(webViewController);
@@ -64,19 +81,27 @@ class _AboutUsState extends State<AboutUs> with SingleTickerProviderStateMixin {
             onPageFinished: (String url) {
               print('Page finished loading: $url');
               _colorController.fling();
+              Future.delayed(Duration(milliseconds: 200), () {
+                this.setState(() {
+                  loading = false;
+                });
+              });
             },
           ),
           Positioned(
             width: MediaQuery.of(context).size.width,
             top: 0.0,
-            child: SizedBox(
-              height: 2.0,
-              child: LinearProgressIndicator(
-                value: _animation.value ?? 0.0,
-                backgroundColor: Colors.white,
-                valueColor: AlwaysStoppedAnimation<Color>(Color(AppColors.mainColor)),
-              ),
-            ),
+            child: loading
+                ? SizedBox(
+                    height: 2.0,
+                    child: LinearProgressIndicator(
+                      value: _animation.value ?? 0.0,
+                      backgroundColor: Colors.white,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                          Color(AppColors.mainColor)),
+                    ),
+                  )
+                : SizedBox(),
           )
         ],
       ),
