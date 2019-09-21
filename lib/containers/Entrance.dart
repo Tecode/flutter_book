@@ -52,7 +52,7 @@ class _EntranceState extends State<Entrance> {
      */
     _loadVersion();
 
-    Future.delayed(Duration.zero, () {
+    Future(() {
       /**
        * 发送获取版本信息的请求
        * 获取数据，查看版本号

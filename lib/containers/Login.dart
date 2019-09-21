@@ -3,6 +3,7 @@ import 'package:flutter_book/containers/Entrance.dart';
 import 'package:flutter_book/routers/application.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/helpers/constants.dart';
+import 'package:fluwx/fluwx.dart' as fluwx;
 
 class Login extends StatefulWidget {
   @override
@@ -19,6 +20,30 @@ class _LoginState extends State<Login> {
   _LoginState() {
     _emailFilter.addListener(_emailListen);
     _passwordFilter.addListener(_passwordListen);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // 初始化的时候跳转到主页，不然会报错
+    // Future(() {
+    //   Navigator.of(context).pushAndRemoveUntil(
+    //       MaterialPageRoute(builder: (context) => Entrance()),
+    //       (route) => route == null);
+    // });
+
+    _initFluwx();
+  }
+
+  _initFluwx() async {
+    await fluwx.register(
+        appId: "wxd930ea5d5a258f4f",
+        doOnAndroid: true,
+        doOnIOS: true,
+        enableMTA: false);
+    var result = await fluwx.isWeChatInstalled();
+    print("is installed $result");
   }
 
   void _emailListen() {
@@ -112,6 +137,18 @@ class _LoginState extends State<Login> {
               ),
             ),
           ),
+          InkWell(
+            onTap: () {
+              fluwx
+                  .sendAuth(
+                      scope: "snsapi_userinfo", state: "wechat_sdk_demo_test")
+                  .then((data) {});
+            },
+            child: Text("微信登录",
+                style: TextStyle(
+                    color: Color(AppColors.mainColor),
+                    fontFamily: "Poppins-Bold")),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -141,3 +178,5 @@ class _LoginState extends State<Login> {
     );
   }
 }
+
+class Futrue {}
