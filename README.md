@@ -1,5 +1,5 @@
 <h1 align="center">Flutter book App</h1>
-<h2 align="center">使用Flutter 1.7.8+hotfix.3，如果不能运行请检查你的Flutter版本</h2>
+<h2 align="center">使用Flutter 1.9.1+hotfix.2，如果不能运行请检查你的Flutter版本</h2>
 
 ## 安卓APK下载
 <p align="center">
@@ -80,10 +80,11 @@ Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
 ## `MacOS`
 
 ```bash
-Flutter 1.7.8+hotfix.4 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 2e540931f7 (3 days ago) • 2019-07-09 13:14:38 -0700
-Engine • revision 54ad777fd2
-Tools • Dart 2.4.0
+[✓] Flutter (Channel stable, v1.9.1+hotfix.2, on Mac OS X 10.14.6 18G87, locale zh-Hans-CN)
+    • Flutter version 1.9.1+hotfix.2 at /Users/aming/Applications/flutter
+    • Framework revision 2d2a1ffec9 (2 weeks ago), 2019-09-06 18:39:49 -0700
+    • Engine revision b863200c37
+    • Dart version 2.5.0
 ```
 
 ## `Mobx`和`JSON`序列化构建
@@ -170,3 +171,24 @@ storeFile        .jks文件路径
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
+### 微信SDK配置
+
+#### android/build.gradle
+
+```bash
+buildscript {
+    ext.kotlin_version = '1.3.31'
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+```
+```
+android/gradle/wrapper/gradle-wrapper.properties
+```

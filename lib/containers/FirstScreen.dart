@@ -23,7 +23,7 @@ class _FirstScreenState extends State<FirstScreen>
     // 下拉刷新
     _controller = EasyRefreshController();
     // 发送请求
-    Future.delayed(Duration.zero, () {
+    Future(() {
       homeStore = Provider.of<HomeStore>(this.context);
       homeStore.getData();
     });
@@ -34,6 +34,7 @@ class _FirstScreenState extends State<FirstScreen>
     super.build(context);
     return EasyRefresh(
       enableControlFinishRefresh: false,
+      bottomBouncing: Theme.of(context).platform == TargetPlatform.iOS,
       header: MyHeader(
           refreshedText: "更新成功",
           refreshFailedText: "刷新失败，请稍后重试",

@@ -1,7 +1,15 @@
 PODS:
   - Flutter (1.0.0)
+  - fluwx (0.0.1):
+    - Flutter
+  - image_cropper (0.0.1):
+    - Flutter
+    - TOCropViewController (~> 2.5.0)
+  - image_picker (0.0.1):
+    - Flutter
   - shared_preferences (0.0.1):
     - Flutter
+  - TOCropViewController (2.5.1)
   - url_launcher (0.0.1):
     - Flutter
   - webview_flutter (0.0.1):
@@ -9,13 +17,26 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
+  - fluwx (from `.symlinks/plugins/fluwx/ios`)
+  - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
+  - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
   - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - TOCropViewController
+
 EXTERNAL SOURCES:
   Flutter:
     :path: ".symlinks/flutter/ios"
+  fluwx:
+    :path: ".symlinks/plugins/fluwx/ios"
+  image_cropper:
+    :path: ".symlinks/plugins/image_cropper/ios"
+  image_picker:
+    :path: ".symlinks/plugins/image_picker/ios"
   shared_preferences:
     :path: ".symlinks/plugins/shared_preferences/ios"
   url_launcher:
@@ -24,8 +45,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/webview_flutter/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  fluwx: 765c6052398eaf6fe13c73409488b0d0b9d00fd6
+  image_cropper: f25bdfbf1ef970c9a0a0f78306fb6a0aaac7229e
+  image_picker: 16e5fec1fbc87fd3b297c53e4048521eaf17cd06
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
+  TOCropViewController: 00dc36c4e4a0f4a45efa91adbf22df8a4fae01d3
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
   webview_flutter: 1aa7604e6cdb451a9b7ed2c37d5454c0b440246b
 
