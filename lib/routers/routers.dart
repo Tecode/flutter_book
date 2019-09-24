@@ -23,6 +23,8 @@ class Routes {
   static String category = "/category";
   // 关于我们
   static String aboutUs = "/aboutUs";
+  // 闪屏页面
+  static String splash = "/splash";
 
   static void configureRoutes(Router router) {
     router.notFoundHandler = Handler(
@@ -39,6 +41,7 @@ class Routes {
     router.define(leaderboard, handler: leaderboardRouterHandler);
     router.define(category, handler: categoryRouterHandler);
     router.define(aboutUs, handler: aboutUsRouterHandler);
+    router.define(splash, handler: splashRouterHandler);
     // router.define(demoSimpleFixedTrans,
     //     handler: demoRouteHandler, transitionType: TransitionType.inFromLeft);
   }

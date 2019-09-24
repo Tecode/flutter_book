@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 class Adapt {
+  static Adapt instance = Adapt();
   static MediaQueryData mediaQuery = MediaQueryData.fromWindow(window);
   static double _width = mediaQuery.size.width;
   static double _height = mediaQuery.size.height;
@@ -19,11 +20,19 @@ class Adapt {
   /// @param [allowFontScaling] 是否跟随系统进行字体缩放
   /// @param [uiwidth] 设计图的宽度px
   /// @param [uiheight] 设计图的高度px
-  Adapt.init(
-      {allowFontScaling = false, @required uiwidth, @required uiheight}) {
-    _allowFontScaling = allowFontScaling;
-    _uiwidth = uiwidth;
-    _uiheight = uiheight;
+
+  void init(BuildContext context) {
+    mediaQuery = MediaQuery.of(context);
+    _width = mediaQuery.size.width;
+    _height = mediaQuery.size.height;
+    _topbarH = mediaQuery.padding.top;
+    _botbarH = mediaQuery.padding.bottom;
+    _pixelRatio = mediaQuery.devicePixelRatio;
+    _textScaleFactor = mediaQuery.textScaleFactor;
+  }
+
+  static Adapt getInstance() {
+    return instance;
   }
 
   // 设置字体大小px
@@ -54,6 +63,14 @@ class Adapt {
   static padTopH() {
     return _topbarH;
   }
+
+  double setPx(number) {
+    return _allowFontScaling
+        ? (number * scaleWidth) / _textScaleFactor
+        : number * scaleWidth;
+  }
+
+  double get getPadTopH => _topbarH;
 
 // 底部安全区距离
   static padBotH() {

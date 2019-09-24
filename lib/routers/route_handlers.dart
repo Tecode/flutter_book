@@ -8,6 +8,7 @@ import 'package:flutter_book/containers/Search.dart';
 import 'package:flutter_book/containers/Leaderboard.dart';
 import 'package:flutter_book/containers/Category.dart';
 import 'package:flutter_book/containers/AboutUs.dart';
+import 'package:flutter_book/containers/SplashPage.dart';
 
 // import 'package:flutter/painting.dart';
 import 'package:fluro/fluro.dart';
@@ -72,6 +73,12 @@ Handler categoryRouterHandler = Handler(
 Handler aboutUsRouterHandler = Handler(
     handlerFunc: (BuildContext context, Map<String, List<String>> params) {
   return AboutUs();
+});
+
+// 闪屏
+Handler splashRouterHandler = Handler(
+    handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+  return SplashPage();
 });
 
 // var demoFunctionHandler = Handler(

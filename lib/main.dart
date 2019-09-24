@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_book/containers/Login.dart';
-import 'package:flutter_book/containers/Entrance.dart';
+import 'package:flutter_book/containers/SplashPage.dart';
 import 'package:flutter_book/helpers/constants.dart' show AppColors;
 import 'package:flutter/services.dart';
 import 'package:fluro/fluro.dart';
@@ -60,7 +59,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Color(AppColors.themeColor),
           accentColor: Color(AppColors.themeColor),
           scaffoldBackgroundColor: Color(AppColors.themeColor)),
-      home: Login(),
+      home: SplashPage(),
       onGenerateRoute: Application.router.generator,
     );
   }
