@@ -3,6 +3,7 @@ import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/helpers/constants.dart';
 import 'package:flutter_book/widgets/Mine/ListItem.dart';
 import 'package:flutter_book/routers/application.dart';
+import 'package:flutter_book/containers/Login.dart';
 import 'package:fluro/fluro.dart';
 
 class SettingContent extends StatefulWidget {
@@ -91,18 +92,25 @@ class _SettingContentState extends State<SettingContent> {
             },
           );
         }).toList()),
-        Container(
-          margin: EdgeInsets.only(top: Adapt.height(120.0)),
-          padding: EdgeInsets.symmetric(vertical: Adapt.height(14.0)),
-          width: double.infinity,
-          decoration: BoxDecoration(color: Color(AppColors.themeColorGray)),
-          child: Text(
-            "登出",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Color(AppColors.fontColor),
-                fontSize: Adapt.px(20.0),
-                fontWeight: FontWeight.w400),
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => Login()),
+                (route) => route == null);
+          },
+          child: Container(
+            margin: EdgeInsets.only(top: Adapt.height(120.0)),
+            padding: EdgeInsets.symmetric(vertical: Adapt.height(14.0)),
+            width: double.infinity,
+            decoration: BoxDecoration(color: Color(AppColors.themeColorGray)),
+            child: Text(
+              "登出",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Color(AppColors.fontColor),
+                  fontSize: Adapt.px(20.0),
+                  fontWeight: FontWeight.w400),
+            ),
           ),
         ),
       ],
