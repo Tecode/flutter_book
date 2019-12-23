@@ -3,6 +3,7 @@
 
 ## 安卓APK下载
 <p align="center">
+    <h1>密码：123456</h1>
     <img width="258" title="apk二维码" src="assets/preview/flutter_book.png">
 </p>
 
