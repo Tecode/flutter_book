@@ -1,5 +1,5 @@
 <h1 align="center">Flutter book App</h1>
-<h2 align="center">使用Flutter 1.9.1+hotfix.6，如果不能运行请检查你的Flutter版本</h2>
+<h2 align="center">使用Flutter 1.12.13+hotfix.5，如果不能运行请检查你的Flutter版本</h2>
 
 ## 安卓APK下载
 <p align="center">
@@ -64,29 +64,28 @@ dev_dependencies:
 ### `Ubuntu18`
 
 ```bash
-Flutter 1.9.1+hotfix.6 • channel master • https://github.com/flutter/flutter.git
-Framework • revision b76a1e8312 (11 days ago) • 2019-05-13 09:06:30 +0100
-Engine • revision 816d3fc586
-Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
+Flutter 1.12.13+hotfix.5 • channel unknown • unknown source
+Framework • revision 27321ebbad (6 weeks ago) • 2019-12-10 18:15:01 -0800
+Engine • revision 2994f7e1e6
+Tools • Dart 2.7.0
 ```
 
 ### `Windows10`
 
 ```bash
-Flutter 1.9.1+hotfix.6 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision b593f5167b (5 weeks ago) • 2019-04-22 07:51:33 -0700
-Engine • revision ca31a7c57b
-Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
+Flutter 1.12.13+hotfix.5 • channel unknown • unknown source
+Framework • revision 27321ebbad (6 weeks ago) • 2019-12-10 18:15:01 -0800
+Engine • revision 2994f7e1e6
+Tools • Dart 2.7.0
 ```
 
 ## `MacOS`
 
 ```bash
-[✓] Flutter (Channel stable, v1.9.1+hotfix.6, on Mac OS X 10.14.6 18G87, locale zh-Hans-CN)
-    • Flutter version 1.9.1+hotfix.2 at /Users/aming/Applications/flutter
-    • Framework revision 2d2a1ffec9 (2 weeks ago), 2019-09-06 18:39:49 -0700
-    • Engine revision b863200c37
-    • Dart version 2.5.0
+Flutter 1.12.13+hotfix.5 • channel unknown • unknown source
+Framework • revision 27321ebbad (6 weeks ago) • 2019-12-10 18:15:01 -0800
+Engine • revision 2994f7e1e6
+Tools • Dart 2.7.0
 ```
 
 ## `Mobx`和`JSON`序列化构建
