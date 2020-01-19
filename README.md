@@ -1,6 +1,8 @@
 <h1 align="center">Flutter book App</h1>
 <h2 align="center">使用Flutter 1.12.13+hotfix.5，如果不能运行请检查你的Flutter版本</h2>
 
+#### 后端使用[GoLang+Mysql](https://github.com/Tecode/golang_api)
+
 ## 安卓APK下载
 <p align="center">
     <img width="258" title="apk二维码" src="assets/preview/flutter_book.png">
