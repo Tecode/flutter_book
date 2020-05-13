@@ -1,5 +1,5 @@
 <h1 align="center">Flutter book App</h1>
-<h2 align="center">使用Flutter 1.12.13+hotfix.5，如果不能运行请检查你的Flutter版本</h2>
+<h2 align="center">使用Flutter 1.12.13+hotfix.9，如果不能运行请检查你的Flutter版本</h2>
 
 #### 后端使用[GoLang+Mysql](https://github.com/Tecode/golang_api)
 
@@ -66,28 +66,31 @@ dev_dependencies:
 ### `Ubuntu18`
 
 ```bash
-Flutter 1.12.13+hotfix.5 • channel unknown • unknown source
-Framework • revision 27321ebbad (6 weeks ago) • 2019-12-10 18:15:01 -0800
-Engine • revision 2994f7e1e6
-Tools • Dart 2.7.0
+Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
+Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
+Engine • revision af51afceb8
+Tools • Dart 2.7.2
+
 ```
 
 ### `Windows10`
 
 ```bash
-Flutter 1.12.13+hotfix.5 • channel unknown • unknown source
-Framework • revision 27321ebbad (6 weeks ago) • 2019-12-10 18:15:01 -0800
-Engine • revision 2994f7e1e6
-Tools • Dart 2.7.0
+Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
+Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
+Engine • revision af51afceb8
+Tools • Dart 2.7.2
+
 ```
 
 ## `MacOS`
 
 ```bash
-Flutter 1.12.13+hotfix.5 • channel unknown • unknown source
-Framework • revision 27321ebbad (6 weeks ago) • 2019-12-10 18:15:01 -0800
-Engine • revision 2994f7e1e6
-Tools • Dart 2.7.0
+Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
+Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
+Engine • revision af51afceb8
+Tools • Dart 2.7.2
+
 ```
 
 ## `Mobx`和`JSON`序列化构建
