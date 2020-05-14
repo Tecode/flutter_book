@@ -1,10 +1,14 @@
 <h1 align="center">Flutter book App</h1>
-<h2 align="center">使用Flutter 1.9.1+hotfix.2，如果不能运行请检查你的Flutter版本</h2>
+<h2 align="center">使用Flutter 1.12.13+hotfix.9，如果不能运行请检查你的Flutter版本</h2>
+
+#### 后端使用[GoLang+Mysql](https://github.com/Tecode/golang_api)
 
 ## 安卓APK下载
 <p align="center">
     <img width="258" title="apk二维码" src="assets/preview/flutter_book.png">
 </p>
+
+<h2 align="center">密码：123456</h2>
 
 ## 安卓IOS预览
 <p align="center">
@@ -62,29 +66,31 @@ dev_dependencies:
 ### `Ubuntu18`
 
 ```bash
-Flutter 1.7.8+hotfix.3 • channel master • https://github.com/flutter/flutter.git
-Framework • revision b76a1e8312 (11 days ago) • 2019-05-13 09:06:30 +0100
-Engine • revision 816d3fc586
-Tools • Dart 2.3.1 (build 2.3.1-dev.0.0 a0290f823c)
+Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
+Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
+Engine • revision af51afceb8
+Tools • Dart 2.7.2
+
 ```
 
 ### `Windows10`
 
 ```bash
-Flutter 1.7.8+hotfix.3 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision b593f5167b (5 weeks ago) • 2019-04-22 07:51:33 -0700
-Engine • revision ca31a7c57b
-Tools • Dart 2.3.0 (build 2.3.0-dev.0.1 cf4444b803)
+Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
+Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
+Engine • revision af51afceb8
+Tools • Dart 2.7.2
+
 ```
 
 ## `MacOS`
 
 ```bash
-[✓] Flutter (Channel stable, v1.9.1+hotfix.2, on Mac OS X 10.14.6 18G87, locale zh-Hans-CN)
-    • Flutter version 1.9.1+hotfix.2 at /Users/aming/Applications/flutter
-    • Framework revision 2d2a1ffec9 (2 weeks ago), 2019-09-06 18:39:49 -0700
-    • Engine revision b863200c37
-    • Dart version 2.5.0
+Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
+Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
+Engine • revision af51afceb8
+Tools • Dart 2.7.2
+
 ```
 
 ## `Mobx`和`JSON`序列化构建

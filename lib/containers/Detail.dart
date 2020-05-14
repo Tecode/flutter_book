@@ -88,17 +88,18 @@ class _DetailState extends State<Detail> {
                 }
               },
 //              如果超过了总的条数就不要拉刷新了
-              onLoad: (_store.listData?.totalElements ?? 0 / _store.params['size'])
-                          .ceil() >
-                      _store.params['index']
-                  ? () async {
-                      _store.changePage(_store.params['index'] + 1);
-                      _store.listDetailApi(widget.type);
-                      if (!_store.loading) {
-                        _controller.finishLoad(noMore: true);
-                      }
-                    }
-                  : null,
+              onLoad:
+                  (_store.listData?.totalElements ?? 0 / _store.params['size'])
+                              .ceil() >
+                          _store.params['index']
+                      ? () async {
+                          _store.changePage(_store.params['index'] + 1);
+                          _store.listDetailApi(widget.type);
+                          if (!_store.loading) {
+                            _controller.finishLoad(noMore: true);
+                          }
+                        }
+                      : null,
             );
           },
         ),
