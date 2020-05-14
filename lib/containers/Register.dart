@@ -13,53 +13,11 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  final TextEditingController _emailFilter = TextEditingController();
   final TextEditingController _passwordFilter = TextEditingController();
   final TextEditingController _confirmPasswordFilter = TextEditingController();
   final TextEditingController _nameFilter = TextEditingController();
 
   RegisterStore registerStore;
-  String _email = '';
-  String _password = '';
-
-  _RegisterState() {
-    _emailFilter.addListener(_emailListen);
-    _passwordFilter.addListener(_passwordListen);
-    _confirmPasswordFilter.addListener(_confirmPasswordListen);
-    _nameFilter.addListener(_nameListen);
-  }
-
-  void _emailListen() {
-    if (_emailFilter.text.isEmpty) {
-      _email = '';
-    } else {
-      _email = _emailFilter.text;
-    }
-  }
-
-  void _passwordListen() {
-    if (_passwordFilter.text.isEmpty) {
-      _password = '';
-    } else {
-      _password = _passwordFilter.text;
-    }
-  }
-
-  void _confirmPasswordListen() {
-    if (_passwordFilter.text.isEmpty) {
-      _password = '';
-    } else {
-      _password = _passwordFilter.text;
-    }
-  }
-
-  void _nameListen() {
-    if (_passwordFilter.text.isEmpty) {
-      _password = '';
-    } else {
-      _password = _passwordFilter.text;
-    }
-  }
 
   @override
   Widget build(BuildContext context) {

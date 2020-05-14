@@ -34,9 +34,7 @@ class _DetailState extends State<Detail> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
-    _store.dispose();
     _controller.dispose();
     print("销毁");
   }
