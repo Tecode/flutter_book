@@ -35,11 +35,7 @@ packages:
       name: async
       url: "https://pub.flutter-io.cn"
     source: hosted
-<<<<<<< HEAD
-    version: "2.2.0"
-=======
     version: "2.4.0"
->>>>>>> 5a05c501a5edf13a0929eff818c657afbd8cdf5b
   boolean_selector:
     dependency: transitive
     description:
