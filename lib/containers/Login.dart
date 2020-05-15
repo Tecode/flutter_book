@@ -38,10 +38,12 @@ class _LoginState extends State<Login> {
 
   _initFluwx() async {
     await fluwx.register(
-        appId: "wxd930ea5d5a258f4f",
-        doOnAndroid: true,
-        doOnIOS: true,
-        enableMTA: false);
+      appId: "wxd930ea5d5a258f4f",
+      doOnAndroid: true,
+      doOnIOS: false,
+      universalLink: '',
+      // enableMTA: false,
+    );
     var result = await fluwx.isWeChatInstalled();
     print("is installed $result");
   }

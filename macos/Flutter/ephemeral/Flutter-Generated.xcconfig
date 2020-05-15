@@ -1,8 +1,7 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=/Users/aming/Applications/flutter
 FLUTTER_APPLICATION_PATH=/Users/aming/testFile/flutter_book
-FLUTTER_TARGET=/Users/aming/testFile/flutter_book/lib/main.dart
 FLUTTER_BUILD_DIR=build
 FLUTTER_FRAMEWORK_DIR=/Users/aming/Applications/flutter/bin/cache/artifacts/engine/darwin-x64
-FLUTTER_BUILD_NAME=1.0.0
-FLUTTER_BUILD_NUMBER=1
+FLUTTER_BUILD_NAME=1.0.4
+FLUTTER_BUILD_NUMBER=1.0.4
