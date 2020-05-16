@@ -1,5 +1,5 @@
 <h1 align="center">Flutter book App</h1>
-<h2 align="center">使用Flutter 1.17.0，如果不能运行请检查你的Flutter版本</h2>
+<h2 align="center">使用Flutter 1.17.x，如果不能运行请检查你的Flutter版本</h2>
 
 #### 后端使用[GoLang+Mysql](https://github.com/Tecode/golang_api)
 
@@ -70,10 +70,10 @@ dev_dependencies:
 ## `Flutter`版本
 
 ```bash
-Flutter 1.17.0 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision e6b34c2b5c (13 days ago) • 2020-05-02 11:39:18 -0700
-Engine • revision 540786dd51
-Tools • Dart 2.8.1
+Flutter 1.17.1 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision f7a6a7906b (3 days ago) • 2020-05-12 18:39:00 -0700
+Engine • revision 6bc433c6b6
+Tools • Dart 2.8.2
 ```
 
 ## `Mobx`和`JSON`序列化构建
