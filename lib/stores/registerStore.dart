@@ -21,7 +21,8 @@ abstract class _RegisterStore with Store {
   // 注册新用户
   void handleRegister() async {
     print(reginterInfo);
-    Response response = await HttpRequest().dio.post('/user/', data: reginterInfo);
+    Response response =
+        await HttpRequest().dio.post('/user/', data: reginterInfo);
     print(response);
   }
 
@@ -30,4 +31,5 @@ abstract class _RegisterStore with Store {
     reginterInfo[key] = value;
   }
 }
+
 RegisterStore $store = RegisterStore();

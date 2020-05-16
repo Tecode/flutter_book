@@ -42,9 +42,9 @@ class _AvatarEditState extends State<AvatarEdit> {
   Future<Null> _cropImage() async {
     File croppedFile = await ImageCropper.cropImage(
       sourcePath: imageFile.path,
-      toolbarTitle: 'Cropper',
-      toolbarColor: Colors.blue,
-      toolbarWidgetColor: Colors.white,
+//      toolbarTitle: 'Cropper',
+//      toolbarColor: Colors.blue,
+//      toolbarWidgetColor: Colors.white,
     );
     if (croppedFile != null) {
       imageFile = croppedFile;

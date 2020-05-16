@@ -1,5 +1,5 @@
 <h1 align="center">Flutter book App</h1>
-<h2 align="center">使用Flutter 1.12.13+hotfix.9，如果不能运行请检查你的Flutter版本</h2>
+<h2 align="center">使用Flutter 1.17.0，如果不能运行请检查你的Flutter版本</h2>
 
 #### 后端使用[GoLang+Mysql](https://github.com/Tecode/golang_api)
 

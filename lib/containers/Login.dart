@@ -13,35 +13,10 @@ class _LoginState extends State<Login> {
   final TextEditingController _emailFilter = TextEditingController();
   final TextEditingController _passwordFilter = TextEditingController();
 
-  String _email = "";
-  String _password = "";
-
-  _LoginState() {
-    _emailFilter.addListener(_emailListen);
-    _passwordFilter.addListener(_passwordListen);
-  }
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    print('$_password $_email');
-  }
-
-  void _emailListen() {
-    if (_emailFilter.text.isEmpty) {
-      _email = "";
-    } else {
-      _email = _emailFilter.text;
-    }
-  }
-
-  void _passwordListen() {
-    if (_passwordFilter.text.isEmpty) {
-      _password = "";
-    } else {
-      _password = _passwordFilter.text;
-    }
   }
 
   @override
