@@ -23,7 +23,6 @@ class _DetailState extends State<Detail> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller = EasyRefreshController();
     // store没有定义为全局的store
@@ -34,11 +33,8 @@ class _DetailState extends State<Detail> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
-    _store.dispose();
     _controller.dispose();
-    print("销毁");
   }
 
   @override

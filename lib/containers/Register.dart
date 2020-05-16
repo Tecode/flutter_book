@@ -63,8 +63,12 @@ class _RegisterState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+    print('$_email $_password');
     // 注册的store
-    registerStore = Provider.of<RegisterStore>(context);
+    registerStore = Provider.of<RegisterStore>(
+      context,
+      listen: false,
+    );
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -167,18 +171,18 @@ class _RegisterState extends State<Register> {
                     color: Colors.transparent,
                     child: Observer(
                       builder: (_) => InkWell(
-                            onTap: () {
-                              registerStore.handleRegister();
-                            },
-                            child: Center(
-                              child: Text('注册',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: 'Poppins-Bold',
-                                      fontSize: 18,
-                                      letterSpacing: 1.0)),
-                            ),
-                          ),
+                        onTap: () {
+                          registerStore.handleRegister();
+                        },
+                        child: Center(
+                          child: Text('注册',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Poppins-Bold',
+                                  fontSize: 18,
+                                  letterSpacing: 1.0)),
+                        ),
+                      ),
                     ),
                   ),
                 ),

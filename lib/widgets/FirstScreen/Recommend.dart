@@ -23,34 +23,37 @@ class Recommend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final homeStore = Provider.of<HomeStore>(context);
+    final homeStore = Provider.of<HomeStore>(
+      context,
+      listen: false,
+    );
     return Observer(builder: (_) {
       List<CommonData> recommendData = homeStore.recommendData?.data;
       return recommendData == null
-            ? Text("正在获取数据")
-            : Column(
-                children: <Widget>[
-                  CommonTitle(
-                    title: "推荐",
-                    onTap: () {
-                      Application.router.navigateTo(
-                        context,
-                        "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('推荐')}&type=recommend",
-                        transition: TransitionType.native,
-                        // transitionDuration: const Duration(milliseconds: 300),
-                      );
-                    },
+          ? Text("正在获取数据")
+          : Column(
+              children: <Widget>[
+                CommonTitle(
+                  title: "推荐",
+                  onTap: () {
+                    Application.router.navigateTo(
+                      context,
+                      "/detail?title=${FluroConvertUtils.fluroCnParamsEncode('推荐')}&type=recommend",
+                      transition: TransitionType.native,
+                      // transitionDuration: const Duration(milliseconds: 300),
+                    );
+                  },
+                ),
+                Container(
+                  height: 140.0,
+                  margin: EdgeInsets.only(top: 40.0, bottom: 18.0),
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: cardList(homeStore.recommendData?.data),
                   ),
-                  Container(
-                    height: 140.0,
-                    margin: EdgeInsets.only(top: 40.0, bottom: 18.0),
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: cardList(homeStore.recommendData?.data),
-                    ),
-                  )
-                ],
-              );
+                )
+              ],
+            );
     });
   }
 }

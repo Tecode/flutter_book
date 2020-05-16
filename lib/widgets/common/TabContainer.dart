@@ -4,22 +4,22 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:ui' as ui;
 
-/**
+/*
  * 自定义的TabBar
  * 因为原生的tabbar无法改变宽高，因此无法自定义
  * 这里是自定义的，实现了PreferredSizeWidget，因为在AppBar的bottom属性里，只支持PreferredSizeWidget这样的widget
  * 同时是此控件还能设置padding
  */
 class TabContainer extends StatelessWidget implements PreferredSizeWidget {
-  /// Creates a widget that combines common painting, positioning, and sizing widgets.
-  ///
-  /// The `height` and `width` values include the padding.
-  ///
-  /// The `color` argument is a shorthand for `decoration: new
-  /// BoxDecoration(color: color)`, which means you cannot supply both a `color`
-  /// and a `decoration` argument. If you want to have both a `color` and a
-  /// `decoration`, you can pass the color as the `color` argument to the
-  /// `BoxDecoration`.
+  // Creates a widget that combines common painting, positioning, and sizing widgets.
+  //
+  // The `height` and `width` values include the padding.
+  //
+  // The `color` argument is a shorthand for `decoration: new
+  // BoxDecoration(color: color)`, which means you cannot supply both a `color`
+  // and a `decoration` argument. If you want to have both a `color` and a
+  // `decoration`, you can pass the color as the `color` argument to the
+  // `BoxDecoration`.
   TabContainer({
     Key key,
     this.alignment,

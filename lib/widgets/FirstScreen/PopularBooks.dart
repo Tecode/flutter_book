@@ -12,7 +12,10 @@ import 'package:flutter_book/stores/homeStore.dart';
 class PopularBooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final homeStore = Provider.of<HomeStore>(context);
+    final homeStore = Provider.of<HomeStore>(
+      context,
+      listen: false,
+    );
     return Column(
       children: <Widget>[
         SizedBox(

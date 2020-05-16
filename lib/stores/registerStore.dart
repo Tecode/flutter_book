@@ -1,7 +1,6 @@
 import 'package:mobx/mobx.dart';
 import 'package:flutter_book/api/http.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_book/models/register.dart';
 
 // Include generated file
 part 'registerStore.g.dart';

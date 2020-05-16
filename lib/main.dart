@@ -27,16 +27,16 @@ void main() {
   runApp(MultiProvider(
     providers: [
       Provider<FindStore>(
-        builder: (_) => FindStore(),
+        create: (_) => FindStore(),
       ),
       Provider<RegisterStore>(
-        builder: (_) => RegisterStore(),
+        create: (_) => RegisterStore(),
       ),
       Provider<LoginStore>(
-        builder: (_) => LoginStore(),
+        create: (_) => LoginStore(),
       ),
       Provider<HomeStore>(
-        builder: (_) => HomeStore(),
+        create: (_) => HomeStore(),
       ),
     ],
     child: MyApp(),

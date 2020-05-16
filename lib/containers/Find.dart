@@ -14,7 +14,10 @@ class Find extends StatefulWidget {
 class _FindState extends State<Find> {
   @override
   Widget build(BuildContext context) {
-    final findStore = Provider.of<FindStore>(context);
+    final findStore = Provider.of<FindStore>(
+      context,
+      listen: false,
+    );
     // 发送请求获取数据
     // findStore.getInfo();
     return Observer(builder: (_) => findStore.tile ? BookTile() : BookCover());

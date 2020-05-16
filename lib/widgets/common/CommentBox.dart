@@ -46,7 +46,7 @@ class CommentBox extends StatelessWidget {
                         style: TextStyle(
                             color: Color(AppColors.commentContentColor),
                             fontSize: 12.0,
-                            height: 1.0,
+                            height: 1.3,
                             fontWeight: FontWeight.w400)),
                   ),
                   Container(

@@ -119,7 +119,7 @@ Run `flutter packages pub run build_runner watch`，在你修改了`store`以后
     super.initState();
     Future.delayed(Duration.zero, () {
       // 获取对应的store
-      homeStore = Provider.of<HomeStore>(this.context);
+      homeStore = Provider.of<HomeStore>(this.context, listen: false);
       // 发送请求
       homeStore.getData();
     });

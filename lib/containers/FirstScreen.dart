@@ -18,13 +18,15 @@ class _FirstScreenState extends State<FirstScreen>
   EasyRefreshController _controller;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     // 下拉刷新
     _controller = EasyRefreshController();
     // 发送请求
     Future(() {
-      homeStore = Provider.of<HomeStore>(this.context);
+      homeStore = Provider.of<HomeStore>(
+        this.context,
+        listen: false,
+      );
       homeStore.getData();
     });
   }

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/FirstScreen/Recommend.dart';
 import 'package:flutter_book/widgets/FirstScreen/HotProduct.dart';

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_book/helpers/Adapt.dart';
 import 'package:flutter_book/helpers/constants.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 
 const List<String> _avatarUrl = [
   'http://admin.soscoon.com/uploadImages/2bdcbd37d2fae6874cce4bba45d14573630925b1.jpeg',
@@ -15,30 +14,28 @@ const List<String> _avatarUrl = [
 class ReadUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Observer(
-      builder: (_) => Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: _avatarUrl.sublist(0, 4).map((url) {
-              return Container(
-                margin: EdgeInsets.symmetric(horizontal: 3.0),
-                width: Adapt.width(34.0),
-                height: Adapt.height(34.0),
-                decoration: BoxDecoration(
-                    color: Color(AppColors.themeColorGray),
-                    image: DecorationImage(image: NetworkImage(url)),
-                    borderRadius: BorderRadius.all(Radius.circular(40.0))),
-              );
-            }).toList(),
-          ),
-          SizedBox(height: Adapt.height(16.0)),
-          Text(
-            "562 位用户已学习",
-            style: TextStyle(color: Color(AppColors.fontColor)),
-          )
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: _avatarUrl.sublist(0, 4).map((url) {
+            return Container(
+              margin: EdgeInsets.symmetric(horizontal: 3.0),
+              width: Adapt.width(34.0),
+              height: Adapt.height(34.0),
+              decoration: BoxDecoration(
+                  color: Color(AppColors.themeColorGray),
+                  image: DecorationImage(image: NetworkImage(url)),
+                  borderRadius: BorderRadius.all(Radius.circular(40.0))),
+            );
+          }).toList(),
+        ),
+        SizedBox(height: Adapt.height(16.0)),
+        Text(
+          "562 位用户已学习",
+          style: TextStyle(color: Color(AppColors.fontColor)),
+        )
+      ],
     );
   }
 }

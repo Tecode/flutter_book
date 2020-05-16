@@ -1,5 +1,4 @@
 import 'package:fluro/fluro.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_book/routers/route_handlers.dart';
 
 class Routes {
@@ -27,10 +26,6 @@ class Routes {
   static String splash = "/splash";
 
   static void configureRoutes(Router router) {
-    router.notFoundHandler = Handler(
-        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-      print("ROUTE WAS NOT FOUND !!!");
-    });
     router.define(root, handler: rootHandler);
     router.define(setting, handler: settingRouteHandler);
     router.define(detail, handler: detailRouterHandler);

@@ -1,7 +1,5 @@
 PODS:
   - Flutter (1.0.0)
-  - fluwx (0.0.1):
-    - Flutter
   - image_cropper (0.0.1):
     - Flutter
     - TOCropViewController (~> 2.5.0)
@@ -17,7 +15,6 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - fluwx (from `.symlinks/plugins/fluwx/ios`)
   - image_cropper (from `.symlinks/plugins/image_cropper/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
@@ -31,8 +28,6 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  fluwx:
-    :path: ".symlinks/plugins/fluwx/ios"
   image_cropper:
     :path: ".symlinks/plugins/image_cropper/ios"
   image_picker:
@@ -46,13 +41,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  fluwx: 765c6052398eaf6fe13c73409488b0d0b9d00fd6
   image_cropper: f25bdfbf1ef970c9a0a0f78306fb6a0aaac7229e
   image_picker: 16e5fec1fbc87fd3b297c53e4048521eaf17cd06
   shared_preferences: 1feebfa37bb57264736e16865e7ffae7fc99b523
   TOCropViewController: 00dc36c4e4a0f4a45efa91adbf22df8a4fae01d3
   url_launcher: 0067ddb8f10d36786672aa0722a21717dba3a298
-  webview_flutter: 1aa7604e6cdb451a9b7ed2c37d5454c0b440246b
+  webview_flutter: d2b4d6c66968ad042ad94cbb791f5b72b4678a96
 
 PODFILE CHECKSUM: 3dbe063e9c90a5d7c9e4e76e70a821b9e2c1d271
 

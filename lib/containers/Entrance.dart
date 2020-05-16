@@ -57,7 +57,7 @@ class _EntranceState extends State<Entrance> {
        * 发送获取版本信息的请求
        * 获取数据，查看版本号
        * */
-      Provider.of<HomeStore>(context).getVersion();
+      Provider.of<HomeStore>(context, listen: false).getVersion();
     });
   }
 
@@ -103,7 +103,7 @@ class _EntranceState extends State<Entrance> {
 
   // 跳转链接
   _launchURL() async {
-    const url = 'https://www.pgyer.com/x5lH';
+    const url = 'https://www.pgyer.com/kBdY';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -115,7 +115,9 @@ class _EntranceState extends State<Entrance> {
   Widget build(BuildContext context) {
     return Observer(
       builder: (_) {
-        String _version = Provider.of<HomeStore>(context)?.versionData?.version;
+        String _version = Provider.of<HomeStore>(
+          context,
+        )?.versionData?.version;
         List<String> _versionList =
             Provider.of<HomeStore>(context)?.versionData?.data;
 
@@ -165,10 +167,12 @@ class _EntranceState extends State<Entrance> {
                                 child: SizedBox(
                                   width: double.infinity,
                                   height: 50.0,
-                                  child: Text(
-                                    '暂不更新',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(height: 2.0),
+                                  child: Center(
+                                    child: Text(
+                                      '暂不更新',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(height: 1.2),
+                                    ),
                                   ),
                                 ),
                                 onPressed: () {
@@ -185,11 +189,13 @@ class _EntranceState extends State<Entrance> {
                                 child: SizedBox(
                                   width: double.infinity,
                                   height: 50.0,
-                                  child: Text(
-                                    '立即更新',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.white, height: 2.0),
+                                  child: Center(
+                                    child: Text(
+                                      '立即更新(密码：123456)',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Colors.white, height: 1.2),
+                                    ),
                                   ),
                                 ),
                                 color: Color(AppColors.mainColor),

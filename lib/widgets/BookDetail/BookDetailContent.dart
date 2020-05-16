@@ -31,9 +31,11 @@ class BookDetailContent extends StatelessWidget {
                   textColor: Color(AppColors.fontColor),
                   color: Color(0xff9295A9),
                   child: SizedBox(
-                    child: Text(
-                      '试读',
-                      style: TextStyle(height: 1.8, fontSize: Adapt.px(14.0)),
+                    child: Center(
+                      child: Text(
+                        '试读',
+                        style: TextStyle(height: 1.2, fontSize: Adapt.px(14.0)),
+                      ),
                     ),
                     height: Adapt.height(47.0),
                   ),
@@ -47,9 +49,11 @@ class BookDetailContent extends StatelessWidget {
                     onPressed: () {},
                     textColor: Color(AppColors.fontColor),
                     child: SizedBox(
-                      child: Text(
-                        '立即购买',
-                        style: TextStyle(height: 1.8, fontSize: Adapt.px(14.0)),
+                      child: Center(
+                        child: Text(
+                          '立即购买',
+                          style: TextStyle(height: 1.2, fontSize: Adapt.px(14.0)),
+                        ),
                       ),
                       height: Adapt.height(47.0),
                     ),
