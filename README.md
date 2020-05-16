@@ -38,59 +38,42 @@
 dependencies:
   flutter:
     sdk: flutter
-  mobx: ^0.3.3+2
-  flutter_mobx: ^0.3.0+1
+  mobx: 1.2.0
+  flutter_mobx: 1.1.0
+  shared_preferences: 0.5.3+4
+  url_launcher: 5.1.2
+  webview_flutter: 0.3.21
+  image_cropper: 1.0.2
+  image_picker: 0.6.1+4
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  flutter_svg: ">=0.12.4"
-  carousel_slider: ^1.3.0
-  fluro: "^1.4.0"
-  provider: ^2.0.1
-  dio: 2.1.0
-  photo_view: 0.4.2
-  json_annotation: ^2.0.0
+  flutter_svg: 0.17.4
+  carousel_slider: 2.1.0
+  fluro: 1.6.3
+  provider: 4.1.2
+  dio: 3.0.9
+  photo_view: 0.9.2
+  json_annotation: 3.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.6.1
-  mobx_codegen: ^0.3.3+1
-  json_serializable: ^3.0.0
+  build_runner: 1.10.0
+  mobx_codegen: 1.1.0
+  json_serializable: 3.3.0
+  flutter_easyrefresh: 2.0.4
 ```
 
 ## `Flutter`版本
 
-### `Ubuntu18`
-
 ```bash
-Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
-Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
-Engine • revision af51afceb8
-Tools • Dart 2.7.2
-
-```
-
-### `Windows10`
-
-```bash
-Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
-Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
-Engine • revision af51afceb8
-Tools • Dart 2.7.2
-
-```
-
-## `MacOS`
-
-```bash
-Flutter 1.12.13+hotfix.9 • channel unknown • unknown source
-Framework • revision f139b11009 (6 weeks ago) • 2020-03-30 13:57:30 -0700
-Engine • revision af51afceb8
-Tools • Dart 2.7.2
-
+Flutter 1.17.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision e6b34c2b5c (13 days ago) • 2020-05-02 11:39:18 -0700
+Engine • revision 540786dd51
+Tools • Dart 2.8.1
 ```
 
 ## `Mobx`和`JSON`序列化构建
