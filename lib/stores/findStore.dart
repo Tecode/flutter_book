@@ -1,3 +1,4 @@
+// @dart=2.9
 // import 'dart:convert';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_book/api/http.dart';

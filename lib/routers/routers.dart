@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:fluro/fluro.dart';
 import 'package:flutter_book/routers/route_handlers.dart';
 

@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter_book/containers/Setting.dart';
 import 'package:flutter_book/containers/Entrance.dart';
 import 'package:flutter_book/containers/Detail.dart';

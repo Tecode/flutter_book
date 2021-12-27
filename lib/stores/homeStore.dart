@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:mobx/mobx.dart';
 import 'package:flutter_book/api/http.dart';
 import 'package:flutter_book/models/common.dart';

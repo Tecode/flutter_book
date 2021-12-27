@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/Leaderboard/CrownAvatar.dart';
 import 'package:flutter_book/helpers/constants.dart';

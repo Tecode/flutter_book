@@ -1,3 +1,4 @@
+// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:flutter_book/widgets/common/CommentBox.dart';
 import 'package:flutter_book/helpers/Adapt.dart';
